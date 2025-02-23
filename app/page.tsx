@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { client } from "../sanity/lib/client";
 import { Casino } from "./utils/interface";
-import CasinoComponent from "./components/CasinoComponent";
+import ContentPromo from "./components/ContentPromo";
+import CasinoComponent2 from "./components/CasinoComponent2";
 import AnimatedSection from "./components/AnimatedSection";
 import { blackjackData } from "./data/pages/blackjack";
 import { sicboData } from "./data/pages/sicbo";
@@ -195,109 +196,89 @@ export default async function Home() {
           </div>
         </AnimatedSection>
 
-        {/* Top Picks Section */}
-        <section className="relative  bg-[#0D0D0D]">
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'linear-gradient(45deg, #C1FF72 1px, transparent 1px), linear-gradient(-45deg, #C1FF72 1px, transparent 1px)',
-              backgroundSize: '30px 30px'
-            }}></div>
-          </div>
-          <TopPicksComponent casinos={casinos} />
-        </section>
-
-        {/* New Informational Section */}
-        <AnimatedSection className="relative py-24 overflow-hidden">
-          {/* Background Effects */}
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-[#0D0D0D]/95 to-[#0D0D0D]"></div>
-            <div className="absolute inset-0" style={{
-              backgroundImage: `radial-gradient(circle at 50% 50%, rgba(193, 255, 114, 0.15) 0%, transparent 50%)`
-            }}></div>
-          </div>
-
-          <div className="container mx-auto px-4">
-            <div className="relative grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-              {/* Left Content */}
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C1FF72]/10 border border-[#C1FF72]/20">
-                  <span className="w-2 h-2 rounded-full bg-[#C1FF72] animate-pulse"></span>
-                  <span className="text-sm font-medium text-[#C1FF72]">Expert Gaming Insights</span>
+     
+       
+         {/* Casino List Section */}
+         <AnimatedSection className="w-full py-20 bg-[#0D0D0D]">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative mb-16 text-center">
+              {/* Background glow effect */}
+              <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-cyan-500/20 via-transparent to-cyan-500/20 opacity-30" />
+              
+              {/* Section title with cyberpunk accents */}
+              <div className="relative">
+                <div className="inline-flex items-center gap-2 text-cyan-400 mb-4">
+                  <div className="w-12 h-[2px] bg-cyan-400"></div>
+                  <span className="text-sm font-mono uppercase tracking-[0.2em]">Elite Selection</span>
+                  <div className="w-12 h-[2px] bg-cyan-400"></div>
                 </div>
                 
-                <h2 className="text-4xl font-bold leading-tight">
-                  Master the Art of 
-                  <span className="block text-[#C1FF72] mt-1">Online Casino Gaming</span>
+                <h2 className="text-4xl font-display mb-4 text-white">
+                  Top-Rated Casinos on <span className="text-cyan-400">SPINNERTOP</span>
                 </h2>
                 
-                <p className="text-lg text-gray-400 leading-relaxed">
-                  Dive into the world of online casinos with confidence. Our comprehensive guides and expert advice will help you navigate the best gaming opportunities and maximize your chances of success.
+                <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                  Access the most trusted online casinos, featuring secure payment methods and exclusive bonuses. Your gateway to premium gaming experiences.
                 </p>
-
-                <div className="flex flex-wrap gap-6 pt-2">
-                  <Link 
-                    href="/game-guides" 
-                    className="inline-flex items-center px-6 py-3 bg-[#C1FF72] text-black font-semibold rounded-xl hover:bg-[#C1FF72]/90 transition-all duration-300 group"
-                  >
-                    Start Learning
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Content - Feature Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-[#1A1A1A] p-6 rounded-2xl border border-[#C1FF72]/10">
-                  <div className="text-[#C1FF72] mb-3">🎮</div>
-                  <h3 className="text-lg font-semibold mb-2">Game Strategies</h3>
-                  <p className="text-gray-400 text-sm">Expert tips and proven tactics for popular casino games</p>
-                </div>
                 
-                <div className="bg-[#1A1A1A] p-6 rounded-2xl border border-[#C1FF72]/10">
-                  <div className="text-[#C1FF72] mb-3">🎁</div>
-                  <h3 className="text-lg font-semibold mb-2">Bonus Tips</h3>
-                  <p className="text-gray-400 text-sm">Maximize your rewards with smart bonus strategies</p>
-                </div>
-                
-                <div className="bg-[#1A1A1A] p-6 rounded-2xl border border-[#C1FF72]/10">
-                  <div className="text-[#C1FF72] mb-3">🛡️</div>
-                  <h3 className="text-lg font-semibold mb-2">Safe Gaming</h3>
-                  <p className="text-gray-400 text-sm">Best practices for secure and responsible gaming</p>
-                </div>
-                
-                <div className="bg-[#1A1A1A] p-6 rounded-2xl border border-[#C1FF72]/10">
-                  <div className="text-[#C1FF72] mb-3">📈</div>
-                  <h3 className="text-lg font-semibold mb-2">Pro Tips</h3>
-                  <p className="text-gray-400 text-sm">Advanced techniques from industry experts</p>
-                </div>
+                {/* Corner accents */}
+                <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-cyan-500/40" />
+                <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-cyan-500/40" />
               </div>
             </div>
-          </div>
-        </AnimatedSection>
 
-        {/* Casino Offers */}
-        <AnimatedSection className="w-full py-20 bg-[#0D0D0D]">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-12 text-white">
-              Most exciting offers picked by <span className="text-[#C1FF72]">Bangerslots</span>
-            </h2>
-
-
-            {/* First 4 Casinos Removed */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-
-           
-              {casinos?.length > 0 && casinos.slice(4, 50).map((casino, index) => (
-                <CasinoComponent key={casino._id} casino={casino} index={index} />
-              ))}
+            <div className="space-y-4">
+              {casinos?.length > 0 && casinos.slice(0, 15).map((casino, index) => {
+                if (index === 4) {
+                  return (
+                    <div key={`${casino._id}-section-1`}>
+                      <CasinoComponent2 casino={casino} index={index} />
+                      <ContentPromo 
+                        title="Safe Casino Deposits"
+                        description="Explore secure payment methods for online casino gaming."
+                        link="/deposit-methods"
+                      />
+                    </div>
+                  );
+                }
+                if (index === 8) {
+                  return (
+                    <div key={`${casino._id}-section-2`}>
+                      <CasinoComponent2 casino={casino} index={index} />
+                      <ContentPromo 
+                        title="Casino Game Types"
+                        description="Explore a diverse range of casino games, from classic slots to modern video poker."
+                        link="/casino-game-types"
+                      />
+                    </div>
+                  );
+                }
+                if (index === 11) {
+                  return (
+                    <div key={`${casino._id}-section-3`}>
+                      <CasinoComponent2 casino={casino} index={index} />
+                      <ContentPromo 
+                        title="Casino Tips & Tricks"
+                        description="Improve your gaming experience with our curated tips and tricks."
+                        link="/casino-tips-tricks"
+                      />
+                    </div>
+                  );
+                }
+                return <CasinoComponent2 key={casino._id} casino={casino} index={index} />;
+              })}
             </div>
 
             <div className="flex justify-center mt-12">
-                <Link href={`/category/all-bonuses`} className="inline-flex items-center px-6 py-3 rounded-lg bg-[#C1FF72] hover:bg-[#C1FF72]/80 text-black font-semibold transition-colors duration-300">
-                  View All Bonuses
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
+              <Link href="/category/all-casinos" className="group relative bg-black/60 border-2 border-cyan-500/40 text-cyan-400 px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:border-cyan-400 overflow-hidden">
+                <div className="absolute inset-0 bg-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent -translate-y-6 group-hover:translate-y-6 transition-transform duration-700" />
+                <span className="relative z-10 flex items-center gap-2 font-mono tracking-wider">
+                  EXPLORE ALL CASINOS
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            </div>
           </div>
         </AnimatedSection>
 

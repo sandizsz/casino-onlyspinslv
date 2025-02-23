@@ -3,14 +3,16 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Category } from "../utils/interface"
+import { Category, Casino } from "../utils/interface"
+import { GiftIcon } from "./GiftIcon"
 import { useState } from "react"
 
 interface NavbarClientProps {
   categories: Category[]
+  casinos?: Casino[]
 }
 
-export function NavbarClient({ categories }: NavbarClientProps) {
+export function NavbarClient({ categories, casinos }: NavbarClientProps) {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -110,23 +112,26 @@ export function NavbarClient({ categories }: NavbarClientProps) {
 
             {/* Right side - Other Pages */}
             <div className="flex-1 flex justify-end">
-              <div className="flex space-x-1 bg-[#1A1A1A]/50 backdrop-blur-sm rounded-full border border-[#C1FF72]/10 p-1">
-                {[
-                  { href: "/game-guides", label: "Game Guides" },
-                  { href: "/gambling-advice", label: "Gambling Advice" }
-                ].map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`whitespace-nowrap px-2.5 lg:px-3 py-1.5 rounded-full text-sm lg:text-base font-['Rajdhani'] font-semibold transition-all duration-300 ${
-                      pathname === item.href
-                        ? "bg-[#C1FF72] text-black shadow-[0_0_20px_rgba(193,255,114,0.3)]"
-                        : "text-[#C0C0C0] hover:text-white hover:bg-[#C1FF72]/10"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+              <div className="flex items-center space-x-3">
+                <div className="flex space-x-1 bg-[#1A1A1A]/50 backdrop-blur-sm rounded-full border border-[#C1FF72]/10 p-1">
+                  {[
+                    { href: "/game-guides", label: "Game Guides" },
+                    { href: "/gambling-advice", label: "Gambling Advice" }
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`whitespace-nowrap px-2.5 lg:px-3 py-1.5 rounded-full text-sm lg:text-base font-['Rajdhani'] font-semibold transition-all duration-300 ${
+                        pathname === item.href
+                          ? "bg-[#C1FF72] text-black shadow-[0_0_20px_rgba(193,255,114,0.3)]"
+                          : "text-[#C0C0C0] hover:text-white hover:bg-[#C1FF72]/10"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+                <GiftIcon casinos={casinos} />
               </div>
             </div>
           </div>

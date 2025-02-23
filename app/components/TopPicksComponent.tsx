@@ -39,10 +39,10 @@ const TopPicksComponent = ({ casinos }: TopPicksComponentProps) => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             <span className="bg-gradient-to-r from-[#C1FF72] to-[#C1FF72] text-transparent bg-clip-text">
-              Hand-Picked
-            </span> Top Deals
+            Labākie
+            </span> Piedāvājumi
           </h2>
-          <p className="text-gray-400">Exclusive offers selected just for you</p>
+          <p className="text-gray-400">Ekskluzīvi piedāvājumi, kas atlasīti tieši jums</p>
         </div>
 
         {/* Cards Grid */}
@@ -58,7 +58,15 @@ const TopPicksComponent = ({ casinos }: TopPicksComponentProps) => {
               {/* Category Badge */}
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
                 <div className="bg-gradient-to-r from-[#C1FF72] to-[#C1FF72] text-black text-sm font-bold px-8 py-1.5 rounded-full shadow-lg min-w-[180px] text-center whitespace-nowrap">
-                  {casino.tags?.[0]?.title || tagOrder[index].toUpperCase()}
+                  {casino.tags?.[0]?.title || (() => {
+                    const tagTranslations: { [key: string]: string } = {
+                      'best-deposit-bonus': 'LABĀKAIS DEPOZĪTA BONUSS',
+                      'fast-withdrawal': 'ĀTRA IZMAKSA',
+                      'most-reliable': 'UZTICAMĀKAIS',
+                      'vip': 'VIP'
+                    };
+                    return tagTranslations[tagOrder[index]] || tagOrder[index].toUpperCase();
+                  })()}
                 </div>
               </div>
 
@@ -100,7 +108,7 @@ const TopPicksComponent = ({ casinos }: TopPicksComponentProps) => {
                         href={casino.termsConditionsUrl}
                         className="relative text-[10px] text-center text-gray-400 hover:text-[#C1FF72] transition-colors z-20"
                       >
-                        Terms & Conditions Apply
+                        Nosacījumi un noteikumi
                       </Link>
                     )}
                   </div>
