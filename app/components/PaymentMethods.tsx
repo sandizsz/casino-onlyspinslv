@@ -30,11 +30,11 @@ export default function PaymentMethods({ paymentMethods }: PaymentMethodsProps) 
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Popular
-            <span className="text-[#C1FF72]"> payment methods</span>
+            Populākās
+            <span className="text-[#C1FF72]"> maksājumu metodes</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Fast and secure payment options for deposits and withdrawals
+          Ātras un drošas maksājumu iespējas iemaksām un izmaksām
           </p>
         </div>
         

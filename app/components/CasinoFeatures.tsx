@@ -5,23 +5,23 @@ import { Shield, Zap, Gift, Clock } from 'lucide-react'
 const features = [
   {
     icon: Shield,
-    title: 'Licensed & Secure',
-    description: 'All casinos are fully licensed and use the latest security measures'
+    title: 'Licencēts un Drošs',
+    description: 'Visi kazino ir pilnībā licencēti un izmanto jaunākos drošības standartus'
   },
   {
     icon: Zap,
-    title: 'Fast Payouts',
-    description: 'Get your winnings quickly with rapid withdrawal processing'
+    title: 'Ātras Izmaksas',
+    description: 'Saņemiet savus laimestus nekavējoties'
   },
   {
     icon: Gift,
-    title: 'Exclusive Bonuses',
-    description: 'Access special bonuses and promotions only available through us'
+    title: 'Ekskluzīvi Bonusi',
+    description: 'Piekļūstiet īpašiem bonusiem un akcijām, kas pieejami tikai pie mums'
   },
   {
     icon: Clock,
-    title: '24/7 Support',
-    description: 'Round-the-clock customer support for all your gaming needs'
+    title: '24/7 Atbalsts',
+    description: 'Diennakts klientu atbalsts visām jūsu spēļu vajadzībām'
   }
 ]
 
@@ -30,12 +30,12 @@ export default function CasinoFeatures() {
     <div className="">
       <div className="container mx-auto px-4">
            <h2 className="text-3xl font-bold text-white text-center mb-4">
-              Casino
-                <span className="text-[#C1FF72]"> Features</span>
+              Kazino
+                <span className="text-[#C1FF72]"> Funkcijas</span>
               </h2>
 
               <p className="text-gray-400 text-center mb-12">
-                Discover the best casino features for an unforgettable gaming experience
+                Atklājiet labākās kazino funkcijas neaizmirstamai spēļu pieredzei
               </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 

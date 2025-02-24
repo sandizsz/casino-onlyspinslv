@@ -148,7 +148,7 @@ export default async function Home() {
                   className="group px-8 py-4 bg-transparent border-2 border-[#C1FF72]/20 hover:border-[#C1FF72]/40 text-white font-bold text-lg rounded-xl transition-colors"
                 >
                   <span className="flex items-center justify-center">
-                    Game Guides
+                      Spēļu pamācības
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
@@ -297,12 +297,11 @@ export default async function Home() {
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-4 mb-12">
               <h2 className="text-3xl font-bold text-white">
-                Various casino guides to
-                <span className="text-[#C1FF72]"> increase your winnings</span>
+                Noderīgas kazino pamācības,
+                <span className="text-[#C1FF72]"> lai tu uzvarētu biežāk</span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
-                We care about you and your experience in the casinos we are providing, that&apos;s why we have
-                prepared complete guides of most popular casino games
+              Mēs rūpējamies par jums un jūsu pieredzi mūsu piedāvātajos kazino, tāpēc esam sagatavojuši populārākās kazino spēļu pamācības.
               </p>
             </div>
             <div className="space-y-8">
@@ -311,7 +310,7 @@ export default async function Home() {
                   <AnimatedSection key={guide.title} delay={index * 0.2}>
                     <Link href={`/${guide.slug}`}>
                       <div className="bg-[#1A1F2C] border border-[#C1FF72]/20 rounded-2xl p-8 hover:border-[#C1FF72]/40 transition-colors h-full">
-                        <p className="text-md uppercase tracking-wider text-gray-400 game-guide-label">Game guides</p>
+                        <p className="text-md uppercase tracking-wider text-gray-400 game-guide-label">Spēļu pamācības</p>
                         <h2 className="text-2xl font-bold mb-4">{guide.title}</h2>
                         <div className="w-24 h-1 bg-[#C1FF72] mb-6"></div>
                         <p className="text-gray-300 mb-4">{guide.description}</p>
@@ -323,7 +322,7 @@ export default async function Home() {
               </div>
               <div className="flex justify-center">
                 <Link href={`/${casinoGuidesData.slug}`} className="inline-flex items-center px-6 py-3 rounded-lg bg-[#C1FF72] hover:bg-[#C1FF72]/80 text-black font-semibold transition-colors duration-300">
-                  Read More Guides
+                  Lasīt vairāk
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>

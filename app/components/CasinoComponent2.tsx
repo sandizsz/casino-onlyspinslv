@@ -5,6 +5,7 @@ import { TypedObject } from '@portabletext/types'
 import { PortableText } from '@portabletext/react';
 import ClaimButton from './ClaimButton';
 import { Sparkles, Shield, Flame, ThumbsUp } from 'lucide-react';
+import GaugeComponent from 'react-gauge-component'
 
 interface Category {
   _id: string;
@@ -200,6 +201,55 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
 
         {/* CTA section */}
         <div className="flex-shrink-0 w-full lg:w-48 flex flex-col items-stretch justify-end gap-4 mt-8 lg:mt-0 px-4 lg:px-0">
+          <div className="flex flex-col items-center mb-6">
+            <div className="w-[120px] h-[75px]">
+              <GaugeComponent
+                id={`gauge-${casino._id}`}
+                type="semicircle"
+                arc={{
+                  colorArray: ['#C1FF72'],
+                  subArcs: [{
+                    limit: 10,
+                    color: '#2B2B2B',
+                    showTick: true
+                  }],
+                  width: 0.2,
+                  padding: 0.02,
+                  cornerRadius: 1
+                }}
+                pointer={{
+                  type: "arrow",
+                  color: '#FFF',
+                  length: 10,
+                  width: 40,
+                  elastic: true
+                }}
+                value={casino.rating}
+                minValue={0}
+                maxValue={10}
+                labels={{
+                  valueLabel: {
+                    formatTextValue: value => value.toFixed(1),
+                    style: { 
+                      fontSize: "80px",
+                      fill: "#ffffff",
+                    }
+                  },
+                  tickLabels: {
+                    hideMinMax: true,
+                    ticks: [],
+                    defaultTickValueConfig: {
+                      hide: true
+                    },
+                    defaultTickLineConfig: {
+                      hide: true
+                    }
+                  }
+                }}
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+          </div>
           <div className="w-full">
             <ClaimButton 
               offerUrl={casino.offerUrl}

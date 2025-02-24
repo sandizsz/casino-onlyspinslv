@@ -2,7 +2,7 @@ export const blackjackData = {
   slug: "blackjack",
   title: "Blackjack Guide",
   image: "/images/blackjack.webp",
-  description: "You must know the basics of the game before you get down to playing it. Go through our entire website to learn about the different aspects of playing blackjack.",
+  description: "Apgūstiet populārāko kazino kāršu spēli, kas apvieno prasmes un veiksmi. Uzziniet pamata stratēģiju, kāršu skaitīšanas tehnikas un to, kā maksimāli palielināt savas izredzes pret dīleri šajā klasiskajā galda spēlē, kas gadsimtiem ilgi ir izklaidējusi spēlētājus.",
   content: `
     <h2>Introduction to Blackjack</h2>
     <p>Blackjack is one of the most popular casino card games in the world. The objective is to beat the dealer by getting a hand value as close to 21 as possible without going over.</p>

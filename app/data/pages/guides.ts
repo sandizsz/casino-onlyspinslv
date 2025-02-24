@@ -8,7 +8,7 @@ const gameGuides: GameGuide[] = [
   {
     title: "BLACKJACK",
     slug: "blackjack",
-    description: "Master the most popular casino card game that combines skill and chance. Learn basic strategy, card counting techniques, and how to maximize your odds against the dealer in this classic table game that has entertained players for centuries..."
+    description: "Apgūstiet populārāko kazino kāršu spēli, kas apvieno prasmes un veiksmi. Uzziniet pamata stratēģiju, kāršu skaitīšanas tehnikas un to, kā maksimāli palielināt savas izredzes pret dīleri šajā klasiskajā galda spēlē, kas gadsimtiem ilgi ir izklaidējusi spēlētājus..."
   },
   {
     title: "ROULETTE",

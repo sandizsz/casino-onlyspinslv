@@ -9,16 +9,16 @@ export default function Footer() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-wrap justify-center gap-8 text-sm text-[#C0C0C0]">
             <Link href="/privacy-policy" className="hover:text-[#C1FF72] transition-colors duration-300">
-              Privacy Policy
+              Privātuma politika
             </Link>
             <Link href="/terms-conditions" className="hover:text-[#C1FF72] transition-colors duration-300">
-              Terms & Conditions
+              Noteikumi & nosacījumi
             </Link>
             <Link href="/cookie-policy" className="hover:text-[#C1FF72] transition-colors duration-300">
-              Cookie Policy
+            Sīkfailu politika
             </Link>
-            <Link href="/disclaimer" className="hover:text-[#C1FF72] transition-colors duration-300">
-              Disclaimer
+            <Link href="/atruna" className="hover:text-[#C1FF72] transition-colors duration-300">
+            Atruna
             </Link>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function Footer() {
       <div className="border-t border-[#C1FF72]/20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
           <p className="text-center text-sm text-[#C0C0C0]">
-            Copyright {new Date().getFullYear()} Bangerslots. All rights reserved.
+{new Date().getFullYear()} © Only-spins. Visas tiesības paturētas.
           </p>
         </div>
       </div>

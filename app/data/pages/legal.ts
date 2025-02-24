@@ -6,8 +6,8 @@ export const privacyPolicyData = {
   content: `
     <h2>1. General</h2>
     <p>1.1 The Terms and Conditions defined in this text (hereinafter referred to as "Terms and Conditions") regulate the usage of the games provided through Bangerslots</p>
-    <p>1.2 Bangerslots is here referred to as "Bangerslots", "We", "Us" or "Our" and the Player and registered Account Holder shall be referred to as "You", "Yours", "User" or "the Player", as and where appropriate.</p>
-    <p>1.3 Bangerslots reserves the right to modify these Terms and Conditions from time to time for a number of reasons, including to comply with applicable laws and regulations, as well as other regulatory requirements, consequently we may amend this agreement between you and Bangerslots at any time. The full Terms and Conditions are available on the front page of the Website at all times. It is always recommended to check the Terms and Conditions from time to time to ensure that you agree with them.</p>
+    <p>1.2 Bangerslots, turpmāk, “Bangerslots”, “Mēs”, “Mēs” vai “Mūsu”, un Spēlētājs un reģistrētais Konta turētājs tiek saukts par “Jums”, “Jūsu”, “Lietotāju” vai “Spēlētāju” atkarībā no situācijas.</p>
+    <p>1.3 Bangerslots patur tiesības laiku pa laikam veikt izmaiņas Noteikumos un nosacījumos dažādu iemeslu dēļ, tostarp, lai ievērotu piemērojamos likumus un noteikumus, kā arī citas normatīvās prasības, līdz ar to mēs jebkurā laikā varam grozīt šo līgumu starp Jums un Bangerslots. Pilns Noteikumu un nosacījumu teksts vienmēr ir pieejams tīmekļa vietnes pirmajā lapā. Ieteicams laiku pa laikam pārbaudīt Noteikumus un nosacījumus, lai pārliecinātos, ka Jūs tiem piekrītat.</p>
     <p>1.4 These Terms and Conditions may be published in a number of languages and shall reflect the same principles. This is done for information purposes and to help players. It is however only the English version that is the legal basis of the relationship between you and Bangerslots. In case of any discrepancy between the English version and the non-English version of these Terms and Conditions, the English version shall always prevail.</p>
 
     <h2>2. Intellectual Property</h2>
@@ -38,17 +38,17 @@ export const privacyPolicyData = {
 };
 
 export const disclaimerData = {
-  slug: "disclaimer",
-  title: "Disclaimer",
+  slug: "atruna",
+  title: "Atruna",
   image: "",
-  description: "Important information about using our service",
+  description: "Svarīga informācija par mūsu pakalpojumu izmantošanu",
   content: `
-    <h2>Disclaimer</h2>
+    <h2>Atruna</h2>
     
-    <h3>Responsible Gaming</h3>
-    <p>Please note, during your use of this site, that online gambling is an entertainment vehicle, and that it carries with it a certain degree of financial risk. Players should be aware of this risk, and govern themselves accordingly. All users of this site should exercise responsibility when playing in online casinos.</p>
+    <h3>Atbildīga spēlēšana</h3>
+ <p>Lūdzu, lietojot šo vietni, ņemiet vērā, ka tiešsaistes azartspēles ir izklaides līdzeklis un ka tās ir saistītas ar zināmu finansiālu risku. Spēlētājiem jāapzinās šis risks un attiecīgi jārīkojas. Visiem šīs vietnes lietotājiem, spēlējot tiešsaistes kazino, ir jābūt atbildīgiem.</p>
     
-    <p>Bangerslots.com has undertaken to inform all those interested in online gaming about the dangers of excess that could potentially result from such an activity. Recognizing that the laws and regulations involving online gaming are different everywhere, readers are advised to check with the laws that exist within their own jurisdiction to ascertain the legality of the activities which are covered.</p>
+    <p>Online-slots.com ir apņēmies informēt visus, kas interesējas par tiešsaistes spēlēm, par pārmērīgām briesmām, kas potenciāli var rasties šādas darbības rezultātā. Atzīstot, ka ar tiešsaistes spēlēm saistītie likumi un noteikumi visur ir atšķirīgi, lasītājiem tiek ieteikts iepazīties ar savā jurisdikcijā pastāvošajiem likumiem, lai pārliecinātos par tajos ietverto darbību likumību.</p>
 
     <h3>Accuracy of Information</h3>
     <p>Any information posted within this website is accurate to the best of our knowledge. All measures are taken to ensure that such information is accurate and up-to-date, but please take note that some of it may become outdated and/or may be subject to change at any time, including descriptions of features at the casinos that are mentioned, at the discretion of said casino.</p>
