@@ -120,10 +120,36 @@ export const casinoType = defineType({
       validation: (Rule) => Rule.unique()
     },
     {
+      name: 'freeSpins',
+      title: 'Free Spins',
+      type: 'number',
+      description: 'Number of free spins offered',
+      validation: (Rule) => Rule.min(0)
+    },
+    {
+      name: 'license',
+      title: 'License',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Kirasao', value: 'Kirasao' },
+          { title: 'Latvija', value: 'Latvija' },
+          { title: 'Anjouan', value: 'Anjouan' }
+        ]
+      }
+    },
+    {
+      name: 'minDeposit',
+      title: 'Minimum Deposit',
+      type: 'number',
+      description: 'Minimum deposit amount in EUR',
+      validation: (Rule) => Rule.min(0)
+    },
+    {
       name: 'paymentMethods',
       title: "Payment Methods",
       type: "array",
       of: [{ type: "reference", to: [{ type: "paymentMethod"}]}],
-    }
+    },
   ],
 });

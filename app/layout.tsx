@@ -35,8 +35,8 @@ const rajdhani = Rajdhani({
 })
 
 export const metadata: Metadata = {
-  title: "Bangerslots",
-  description: "Best offers 2024 by Bangerslots",
+  title: "Baltic Slots",
+  description: "Labākā kazino salīdzināšanas platforma Latvijā",
   icons: {
     icon: '/images/loco-bonus.ico',
   },

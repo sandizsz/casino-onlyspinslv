@@ -26,14 +26,13 @@ export default function PaymentMethods({ paymentMethods }: PaymentMethodsProps) 
   }
 
   return (
-    <div className="py-16 bg-[#1E1E1E]">
+    <div className="py-16 bg-[#0D0D0D]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Populākās
-            <span className="text-[#C1FF72]"> maksājumu metodes</span>
+          <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF] mb-4">
+            Populārākās maksājumu metodes
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-[#F9F5FF]/70 max-w-2xl mx-auto text-lg leading-relaxed">
           Ātras un drošas maksājumu iespējas iemaksām un izmaksām
           </p>
         </div>
@@ -42,9 +41,9 @@ export default function PaymentMethods({ paymentMethods }: PaymentMethodsProps) 
           {methodsWithImages.map((method) => (
             <div 
               key={method._id}
-              className="w-[calc(50%-8px)] md:w-[calc(25%-12px)] lg:w-[calc(25%-14px)] p-4 rounded-lg bg-[#2B2B2B] border border-[#C1FF72]/10 hover:border-[#C1FF72]/30 transition-all duration-300"
+              className="w-[calc(50%-8px)] md:w-[calc(25%-12px)] lg:w-[calc(25%-14px)] p-4 rounded-xl bg-[#1D053F]/80 backdrop-blur-sm border border-[#8126FF]/20 hover:border-[#8126FF]/40 hover:shadow-[0_0_15px_rgba(129,38,255,0.2)] transition-all duration-300"
             >
-              <div className="relative w-full h-12 bg-white/5 rounded flex items-center justify-center overflow-hidden p-2">
+              <div className="relative w-full h-12 bg-white/5 rounded-lg flex items-center justify-center overflow-hidden p-2">
                 <div className="relative w-full h-full">
                   <Image
                     src={method.image.asset.url}

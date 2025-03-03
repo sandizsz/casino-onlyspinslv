@@ -3,21 +3,21 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#1A1A1A] text-white border-t border-[#C1FF72]/20 backdrop-blur-sm">
+    <footer className="w-full bg-[#1D053F]/80 text-[#F9F5FF] border-t border-[#8126FF]/20 backdrop-blur-sm">
       {/* Legal Links */}
-      <div className="border-b border-[#C1FF72]/20">
+      <div className="border-b border-[#8126FF]/20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-[#C0C0C0]">
-            <Link href="/privacy-policy" className="hover:text-[#C1FF72] transition-colors duration-300">
+          <div className="flex flex-wrap justify-center gap-8 text-sm text-[#F9F5FF]/70">
+            <Link href="/privacy-policy" className="hover:text-[#8126FF] transition-colors duration-300">
               Privātuma politika
             </Link>
-            <Link href="/terms-conditions" className="hover:text-[#C1FF72] transition-colors duration-300">
+            <Link href="/terms-conditions" className="hover:text-[#8126FF] transition-colors duration-300">
               Noteikumi & nosacījumi
             </Link>
-            <Link href="/cookie-policy" className="hover:text-[#C1FF72] transition-colors duration-300">
+            <Link href="/cookie-policy" className="hover:text-[#8126FF] transition-colors duration-300">
             Sīkfailu politika
             </Link>
-            <Link href="/atruna" className="hover:text-[#C1FF72] transition-colors duration-300">
+            <Link href="/atruna" className="hover:text-[#8126FF] transition-colors duration-300">
             Atruna
             </Link>
           </div>
@@ -26,7 +26,7 @@ export default function Footer() {
 
       {/* Gambling Awareness Logos */}
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 bg-white/10 p-6 rounded-xl backdrop-blur-sm">
           <Link href="https://www.gamblingtherapy.org" className="transform hover:scale-110 hover:rotate-2 transition-all duration-300">
             <Image 
               src="/images/GAMBLING_THERAPY-logo.png" 
@@ -76,10 +76,10 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-[#C1FF72]/20">
+      <div className="border-t border-[#8126FF]/20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-          <p className="text-center text-sm text-[#C0C0C0]">
-{new Date().getFullYear()} © Only-spins. Visas tiesības paturētas.
+          <p className="text-center text-sm text-[#F9F5FF]/70">
+{new Date().getFullYear()} © Baltic Slots. Visas tiesības paturētas.
           </p>
         </div>
       </div>

@@ -18,11 +18,16 @@ export default {
         'spin-slow': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' }
+        },
+        'spin-slow-reverse': {
+          '0%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(0deg)' }
         }
       },
       animation: {
         shine: 'shine 2s infinite',
-        'spin-slow': 'spin-slow 20s linear infinite'
+        'spin-slow': 'spin-slow 20s linear infinite',
+        'slow-spin-reverse': 'spin-slow-reverse 20s linear infinite'
       },
       typography: {
         DEFAULT: {

@@ -35,7 +35,7 @@ const Navbar = async () => {
   ]);
   
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#C1FF72] to-[#1E2A44] shadow-lg">
+    <header className="w-full z-50">
       <NavbarClient categories={categories} casinos={casinos} />
     </header>
   );

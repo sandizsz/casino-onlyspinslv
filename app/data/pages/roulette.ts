@@ -1,8 +1,8 @@
 export const rouletteData = {
   slug: "roulette",
-  title: "Roulette Guide",
+  title: "Rulete",
   image: "/images/roulette.webp",
-  description: "This guide has everything you need to know on how to increase your chances to win at roulette and get better odds when you play this exciting casino game.",
+  description: "Šajā pamācībā ir viss, kas jums jāzina par to, kā palielināt savas izredzes uzvarēt ruletē, spēlējot šo aizraujošo kazino spēli.",
   content: `
     <h2>Introduction to Roulette</h2>
     <p>Roulette is a classic casino game where players bet on where a ball will land on a spinning wheel. The game offers various betting options with different odds and payouts.</p>

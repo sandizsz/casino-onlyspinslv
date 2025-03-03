@@ -1,5 +1,5 @@
 import { client } from "@/sanity/lib/client";
-import CasinoComponent from "@/app/components/CasinoComponent";
+import CasinoComponent2 from "@/app/components/CasinoComponent2";
 import AnimatedSection from "@/app/components/AnimatedSection";
 import { Casino } from '@/app/utils/interface';
 
@@ -28,6 +28,9 @@ async function getCasinosByCategory(slug: string) {
     rating,
     "imageUrl": casinoImage.asset->url,
     termsConditionsUrl,
+    freeSpins,
+    license,
+    minDeposit,
     "categoryUrls": categoryUrls[] {
       "categoryId": category->_id,
       "categorySlug": category->slug.current,
@@ -65,7 +68,8 @@ async function getCategory(slug: string) {
   return data as Category;
 }
 
-export const revalidate = 60;
+// Set to 0 during development to see changes immediately, adjust to higher value in production
+export const revalidate = 0;
 
 export default async function CategoryPage({ params }: PageProps) {
   const parameters = await params;
@@ -96,12 +100,14 @@ export default async function CategoryPage({ params }: PageProps) {
               </p>
             </div>
           )}
-          <div className="space-y-6">
-            <div className="grid md:grid-cols-3 gap-6">
+
+          
+          <div className="space-y-4">
+            <div className="grid md:grid-cols-1">
               {casinos?.map((casino, index) => (
                 <div key={casino._id} className="md:col-span-1">
                   <AnimatedSection>
-                    <CasinoComponent 
+                    <CasinoComponent2 
                       casino={casino} 
                       index={index} 
                       categorySlug={slug}  // Pass the category slug

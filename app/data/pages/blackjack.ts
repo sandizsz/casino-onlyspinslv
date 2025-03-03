@@ -1,6 +1,6 @@
 export const blackjackData = {
   slug: "blackjack",
-  title: "Blackjack Guide",
+  title: "Acīte",
   image: "/images/blackjack.webp",
   description: "Apgūstiet populārāko kazino kāršu spēli, kas apvieno prasmes un veiksmi. Uzziniet pamata stratēģiju, kāršu skaitīšanas tehnikas un to, kā maksimāli palielināt savas izredzes pret dīleri šajā klasiskajā galda spēlē, kas gadsimtiem ilgi ir izklaidējusi spēlētājus.",
   content: `

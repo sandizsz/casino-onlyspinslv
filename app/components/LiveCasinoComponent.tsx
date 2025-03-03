@@ -52,7 +52,6 @@ interface Casino {
   categories: Category[];
   tags: Tag[];
   paymentMethods: PaymentMethod[];
-  orderRank?: number;
   categoryUrls?: CategoryUrl[];
   freeSpins?: number;
   license?: string;
@@ -114,22 +113,9 @@ const getGaugeArcColor = (rating: number): string => {
   }
 };
 
-// Function to get value label color based on rating
-const getValueLabelColor = (rating: number): string => {
-  if (rating >= 9) {
-    return '#2E1065'; // Very dark purple
-  } else if (rating >= 8) {
-    return '#3B0764'; // Dark purple
-  } else if (rating >= 7) {
-    return '#4C1D95'; // Medium dark purple
-  } else if (rating >= 6) {
-    return '#5B21B6'; // Medium purple
-  } else {
-    return '#6D28D9'; // Original purple
-  }
-};
 
-const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }) => {
+
+const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, index, categorySlug }) => {
   // State for payment methods pagination
   const [startIndex, setStartIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -166,15 +152,30 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
   
   const currentMethods = totalMethods > 0 ? getVisibleMethods() : [];
   return (
-    <div className="flex flex-col w-full rounded-lg overflow-hidden shadow-lg mb-4 sm:mb-6 bg-gradient-to-br from-purple-50 to-white border border-purple-100">
-      {/* Main container with light background */}
-      <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm text-black">
+    <div className="group flex flex-col w-full rounded-lg overflow-hidden shadow-lg mb-4 sm:mb-6 bg-gradient-to-br from-[#1D053F]/90 to-[#1D053F] relative">
+      {/* Simple solid border */}
+      <div className="absolute inset-0 rounded-lg z-10">
+        <div className="absolute inset-0 rounded-lg border-2 border-[#8126FF]"></div>
+      </div>
+      
+      {/* Animated glow effect */}
+      <div className="absolute inset-0 bg-[#8126FF]/10 rounded-lg blur-md z-0 opacity-70"></div>
+      
+      {/* Diagonal stripes */}
+      <div className="absolute inset-0 overflow-hidden z-0 opacity-10">
+        <div className="absolute -inset-full w-[200%] h-[200%] bg-[repeating-linear-gradient(45deg,#8126FF,#8126FF_1px,transparent_1px,transparent_10px)]"></div>
+      </div>
+      
+
+      
+      {/* Ensure content is above the glow */}
+      <div className="relative z-10 w-full h-full">
+      {/* Main container with dark background */}
+      <div className="flex flex-col md:flex-row backdrop-blur-sm text-[#F9F5FF]">
         {/* Left column with logo */}
         <div className="w-full h-40 sm:h-48 md:h-auto md:w-1/4 bg-black relative">
           {/* Rank indicator */}
-          <div className={`absolute top-2 left-2 z-10 w-8 h-8 sm:w-10 sm:h-10 ${getRankStyle(casino.orderRank ? casino.orderRank - 1 : index)} rounded-xl flex items-center justify-center`}>
-            <span className="text-white text-base sm:text-lg font-bold">#{casino.orderRank || index + 1}</span>
-          </div>
+       
           <Image
             src={casino.imageUrl}
             alt={casino.offerTitle}
@@ -186,12 +187,12 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
         </div>
 
         {/* Middle column with offer text */}
-        <div className="flex-1 p-4 sm:p-6 bg-gradient-to-br from-purple-50/50 to-transparent">
+        <div className="flex-1 p-4 sm:p-6 bg-gradient-to-br from-[#1D053F]/80 to-[#1D053F]/95">
           {/* Casino title */}
-          <h2 className="text-lg sm:text-xl font-bold text-purple-900 mb-2 sm:mb-3">{casino.offerTitle}</h2>
+          <h2 className="text-lg sm:text-xl font-bold text-[#F9F5FF] mb-2 sm:mb-3">{casino.offerTitle}</h2>
           
           {/* Custom bullet points as bubbles */}
-          <div className="text-purple-950">
+          <div className="text-[#F9F5FF]">
             {casino.offerText && (
               <div className="flex flex-wrap gap-2 mt-2">
                 {casino.offerText.map((block: any, blockIndex: number) => {
@@ -200,7 +201,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                     return (
                       <div 
                         key={blockIndex} 
-                        className="inline-flex items-center bg-purple-100/70 px-3 py-1.5 rounded-full text-sm text-purple-900 border border-purple-200"
+                        className="inline-flex items-center bg-[#8126FF]/20 px-3 py-1.5 rounded-full text-sm text-[#F9F5FF] border border-[#8126FF]/30"
                       >
                         {block.children.map((child: any, childIndex: number) => (
                           <span key={childIndex}>{child.text}</span>
@@ -236,12 +237,12 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                     <Sparkles className="w-4 h-4 mr-1.5 text-[#8126FF]" />
                     <div className="flex flex-col">
                       <span className="text-xs font-bold">{casino.freeSpins}</span>
-                      <span className="text-[10px] text-gray-600">Bezriska griezieni</span>
+                      <span className="text-[10px] text-[#F9F5FF]/70">Bezriska griezieni</span>
                     </div>
                   </div>
                   
                   {/* Separator */}
-                  <div className="h-8 border-r border-gray-300 mx-2"></div>
+                  <div className="h-8 border-r border-[#8126FF]/30 mx-2"></div>
                 </>
               )}
               
@@ -252,12 +253,12 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                     <Wallet className="w-4 h-4 mr-1.5 text-[#8126FF]" />
                     <div className="flex flex-col">
                       <span className="text-xs font-bold">{casino.minDeposit}€</span>
-                      <span className="text-[10px] text-gray-600">Min. iemaksa</span>
+                      <span className="text-[10px] text-[#F9F5FF]/70">Min. iemaksa</span>
                     </div>
                   </div>
                   
                   {/* Separator */}
-                  <div className="h-8 border-r border-gray-300 mx-2"></div>
+                  <div className="h-8 border-r border-[#8126FF]/30 mx-2"></div>
                 </>
               )}
               
@@ -268,12 +269,12 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                     <Shield className="w-4 h-4 mr-1.5 text-[#8126FF]" />
                     <div className="flex flex-col">
                       <span className="text-xs font-bold">{casino.license}</span>
-                      <span className="text-[10px] text-gray-600">Licence</span>
+                      <span className="text-[10px] text-[#F9F5FF]/70">Licence</span>
                     </div>
                   </div>
                   
                   {/* Separator - hidden on mobile */}
-                  <div className="hidden sm:block h-8 border-r border-gray-300 mx-2"></div>
+                  <div className="hidden sm:block h-8 border-r border-[#8126FF]/30 mx-2"></div>
                 </>
               )}
               
@@ -283,7 +284,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                   {/* Previous button */}
                   <button 
                     onClick={prevMethod}
-                    className="w-7 h-7 sm:w-5 sm:h-5 flex items-center justify-center bg-purple-100 hover:bg-purple-200 rounded-full transition-colors"
+                    className="w-7 h-7 sm:w-5 sm:h-5 flex items-center justify-center bg-[#8126FF]/20 hover:bg-[#8126FF]/30 rounded-full transition-colors text-[#F9F5FF]"
                     aria-label="Previous payment method"
                   >
                     <ChevronLeft className="w-4 h-4 sm:w-3 sm:h-3" />
@@ -294,7 +295,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                     {currentMethods.map((method) => (
                       <div 
                         key={method._id}
-                        className="w-10 h-10 sm:w-8 sm:h-8 bg-white/90 backdrop-blur-sm rounded flex items-center justify-center border border-purple-200 shadow-sm transition-all duration-300 ease-in-out"
+                        className="w-10 h-10 sm:w-8 sm:h-8 bg-[#1D053F]/60 backdrop-blur-sm rounded flex items-center justify-center border border-[#8126FF]/30 shadow-sm transition-all duration-300 ease-in-out hover:border-[#8126FF]/60"
                       >
                         {method.image?.asset?.url && (
                           <div className="relative w-full h-full">
@@ -313,7 +314,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                   {/* Next button */}
                   <button 
                     onClick={nextMethod}
-                    className="w-7 h-7 sm:w-5 sm:h-5 flex items-center justify-center bg-purple-100 hover:bg-purple-200 rounded-full transition-colors"
+                    className="w-7 h-7 sm:w-5 sm:h-5 flex items-center justify-center bg-[#8126FF]/20 hover:bg-[#8126FF]/30 rounded-full transition-colors text-[#F9F5FF]"
                     aria-label="Next payment method"
                   >
                     <ChevronRight className="w-4 h-4 sm:w-3 sm:h-3" />
@@ -325,9 +326,9 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
         </div>
 
         {/* Right column with CTA */}
-        <div className="w-full md:w-1/4 p-4 sm:p-6 flex flex-col items-center justify-center bg-gradient-to-br from-purple-100/30 to-transparent backdrop-blur-sm">
-          <div className="bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-md w-full text-center mb-3 sm:mb-4 border border-purple-100">
-            <div className="text-sm sm:text-md font-bold mb-1 sm:mb-2 text-purple-900">{casino.offerDescription}</div>
+        <div className="w-full md:w-1/4 p-4 sm:p-6 flex flex-col items-center justify-center bg-gradient-to-br from-[#8126FF]/10 to-[#1D053F]/90 backdrop-blur-sm">
+          <div className="bg-[#1D053F]/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-md w-full text-center mb-3 sm:mb-4 border border-[#8126FF]/30">
+            <div className="text-sm sm:text-md font-bold mb-1 sm:mb-2 text-[#F9F5FF]">{casino.offerDescription}</div>
           </div>
           
           {/* RTP gauge using the rating */}
@@ -350,7 +351,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                 }}
                 pointer={{
                   type: "arrow",
-                  color: '#000',
+                  color: '#F9F5FF',
                   length: 10,
                   width: 40,
                   elastic: true
@@ -364,7 +365,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                     style: { 
                       fontSize: "60px",
                       fontWeight: "bold",
-                      fill: getValueLabelColor(casino.rating)
+                      fill: '#F9F5FF'
                     }
                   },
                   tickLabels: {
@@ -390,7 +391,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
               offerTitle={casino.offerTitle}
               categorySlug={categorySlug}
               categoryUrls={casino.categoryUrls}
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 shadow-md hover:shadow-lg"
+              className="w-full bg-gradient-to-r from-[#8126FF] to-[#8126FF]/80 hover:from-[#8126FF]/90 hover:to-[#8126FF]/70 shadow-md hover:shadow-lg"
             />
           </div>
           
@@ -407,7 +408,8 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
         </div>
       </div>
     </div>
+    </div>
   );
 };
 
-export default CasinoComponent2;
+export default LiveCasinoComponent;

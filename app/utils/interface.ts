@@ -47,6 +47,9 @@ export interface Casino {
   tags: Tag[];
   paymentMethods: PaymentMethod[];
   categoryUrls?: CategoryUrl[];
+  freeSpins?: number;
+  license?: string;
+  minDeposit?: number;
 }
 
 export interface PageProps {
