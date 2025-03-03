@@ -10,6 +10,7 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {},
       keyframes: {
         shine: {
           '0%': { transform: 'translateX(-100%)' },

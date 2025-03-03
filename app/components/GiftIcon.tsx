@@ -105,7 +105,7 @@ export function GiftIcon({ casinos = [] }: GiftIconProps) {
               </div>
 
               <div className="flex-grow border-t-2 md:border-t-0 md:border-l-2 border-[#8126FF]/20 pt-4 md:pt-0 md:pl-8 space-y-4 w-full md:w-auto text-center md:text-left">
-                <h3 className="text-lg md:text-xl text-[#F9F5FF] font-bold">
+                <h3 className="text-lg md:text-xl text-[#F9F5FF] font-light">
                   {randomCasino.offerTitle}
                 </h3>
                 <p className="text-[#F9F5FF]/70 text-sm">

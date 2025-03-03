@@ -147,7 +147,7 @@ export default async function Home() {
               <div className="relative text-center w-full max-w-4xl mx-auto space-y-4 mb-4 sm:mb-6 md:mb-8 px-4 sm:px-6">
               
                 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-light leading-tight bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
                   TAVS ONLINE CASINO
                 </h1>
                 <p className="text-lg sm:text-xl text-[#F9F5FF]/70 max-w-2xl mx-auto leading-relaxed mb-2 sm:mb-4">
@@ -160,7 +160,7 @@ export default async function Home() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 w-full max-w-xl mx-auto px-4 sm:px-0">
                 <Link 
                   href="/category/all-bonuses"
-                  className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[#8126FF] text-[#F9F5FF] font-bold text-base sm:text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 w-full sm:flex-1 text-center whitespace-nowrap"
+                  className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[#8126FF] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 w-full sm:flex-1 text-center whitespace-nowrap"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                   <span className="relative flex items-center justify-center">
@@ -170,7 +170,7 @@ export default async function Home() {
                 </Link>
                 <Link 
                   href="/game-guides"
-                  className="group px-5 sm:px-6 py-2 sm:py-3 bg-[#F9F5FF]/5 backdrop-blur-md border border-[#F9F5FF]/20 hover:border-[#8126FF]/40 text-[#F9F5FF] font-bold text-base sm:text-lg rounded-xl transition-all hover:bg-[#F9F5FF]/10 w-full sm:flex-1 text-center whitespace-nowrap"
+                  className="group px-5 sm:px-6 py-2 sm:py-3 bg-[#F9F5FF]/5 backdrop-blur-md border border-[#F9F5FF]/20 hover:border-[#8126FF]/40 text-[#F9F5FF] text-base sm:text-lg rounded-xl transition-all hover:bg-[#F9F5FF]/10 w-full sm:flex-1 text-center whitespace-nowrap"
                 >
                   <span className="flex items-center justify-center">
                       Spēļu pamācības
@@ -248,7 +248,7 @@ export default async function Home() {
                       <span className="text-sm font-medium text-white ml-2">Šobrīd tiek spēlēts</span>
                     </div>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+                  <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
                     Tiešraides kazino
                   </h2>
                   <p className="text-[#F9F5FF]/70 max-w-2xl mx-auto text-lg leading-relaxed">
@@ -283,7 +283,7 @@ export default async function Home() {
           
                 </div>
                 
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+                <h2 className="text-2xl md:text-3xl font-light mb-6 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
                   Labākie kazino no BALTIC SLOTS
                 </h2>
                 
@@ -305,7 +305,7 @@ export default async function Home() {
             <div className="flex justify-center mt-12">
               <Link 
                 href="/category/all-casinos" 
-                className="group relative px-6 py-3 bg-[#8126FF] text-[#F9F5FF] font-bold text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 max-w-xs w-full text-center whitespace-nowrap"
+                className="group relative px-6 py-3 bg-[#8126FF] text-[#F9F5FF] text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 max-w-xs w-full text-center whitespace-nowrap text-normal"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 <span className="relative flex items-center justify-center">
@@ -331,8 +331,8 @@ export default async function Home() {
         <AnimatedSection className="w-full py-20 bg-[#0D0D0D]">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF] mb-4">
-                Noderīgas kazino pamācības, lai tu uzvarētu biežāk
+              <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+                Noderīgas kazino pamācības
               </h2>
               <p className="text-[#F9F5FF]/70 max-w-2xl mx-auto text-lg leading-relaxed">
               Mēs rūpējamies par jums un jūsu pieredzi mūsu piedāvātajos kazino, tāpēc esam sagatavojuši populārākās kazino spēļu pamācības.
@@ -344,10 +344,10 @@ export default async function Home() {
                   <AnimatedSection key={index} delay={index * 0.2}>
                     <Link href={`/${guide.slug}`}>
                       <div className="bg-[#1D053F]/80 backdrop-blur-sm border border-[#8126FF]/20 rounded-xl p-8 hover:border-[#8126FF]/40 hover:shadow-[0_0_15px_rgba(129,38,255,0.2)] transition-all duration-300 h-full">
-                        <p className="text-md uppercase tracking-wider text-[#F9F5FF]/60 game-guide-label">Spēļu pamācības</p>
-                        <h2 className="text-2xl font-bold mb-4 text-[#F9F5FF]">{guide.title}</h2>
+                        <p className="text-sm uppercase tracking-wider text-[#F9F5FF]/60 game-guide-label">Spēļu pamācības</p>
+                        <h2 className="text-lg font-light mb-2 text-[#F9F5FF]">{guide.title}</h2>
                         <div className="w-24 h-1 bg-[#8126FF] mb-6"></div>
-                        <p className="text-[#F9F5FF]/70 mb-4">{guide.description}</p>
+                        <p className="text-[#F9F5FF]/70 mb-4 text-sm">{guide.description}</p>
                       </div>
                     </Link>
                   </AnimatedSection>
@@ -356,7 +356,7 @@ export default async function Home() {
               <div className="flex justify-center">
                 <Link 
                   href={`/${casinoGuidesData.slug}`} 
-                  className="group relative px-6 py-3 bg-[#8126FF] text-[#F9F5FF] font-bold text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 inline-flex items-center"
+                  className="group relative px-6 py-3 bg-[#8126FF] text-[#F9F5FF] font-normal text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 inline-flex items-center"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                   <span className="relative flex items-center">

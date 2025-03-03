@@ -188,7 +188,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
         {/* Middle column with offer text */}
         <div className="flex-1 p-4 sm:p-6 bg-gradient-to-br from-purple-50/50 to-transparent">
           {/* Casino title */}
-          <h2 className="text-lg sm:text-xl font-bold text-purple-900 mb-2 sm:mb-3">{casino.offerTitle}</h2>
+          <h2 className="text-lg font-light text-purple-900 mb-2 sm:mb-3">{casino.offerTitle}</h2>
           
           {/* Custom bullet points as bubbles */}
           <div className="text-purple-950">
@@ -327,7 +327,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
         {/* Right column with CTA */}
         <div className="w-full md:w-1/4 p-4 sm:p-6 flex flex-col items-center justify-center bg-gradient-to-br from-purple-100/30 to-transparent backdrop-blur-sm">
           <div className="bg-white/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-md w-full text-center mb-3 sm:mb-4 border border-purple-100">
-            <div className="text-sm sm:text-md font-bold mb-1 sm:mb-2 text-purple-900">{casino.offerDescription}</div>
+            <div className="text-sm sm:text-md font-bold  text-purple-900">{casino.offerDescription}</div>
           </div>
           
           {/* RTP gauge using the rating */}

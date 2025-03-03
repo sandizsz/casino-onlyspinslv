@@ -41,7 +41,7 @@ export default function CasinoFeatures() {
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="relative text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+          <h2 className="text-2xl md:text-3xl font-light mb-4 sm:mb-6 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
             Kazino Funkcijas
           </h2>
 
@@ -68,10 +68,10 @@ export default function CasinoFeatures() {
                   flex items-center justify-center mb-4 sm:mb-6 border border-[#8126FF]/30 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#F9F5FF]" />
                 </div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#F9F5FF] mb-2 sm:mb-3 group-hover:text-[#8126FF] transition-colors">
+                <h3 className="text-md font-light text-[#F9F5FF] mb-2 sm:mb-3 group-hover:text-[#8126FF] transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-sm sm:text-base text-[#F9F5FF]/70 flex-grow">{feature.description}</p>
+                <p className="text-sm text-[#F9F5FF]/70 flex-grow">{feature.description}</p>
               </div>
             </div>
           ))}

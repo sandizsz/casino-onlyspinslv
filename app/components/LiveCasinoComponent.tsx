@@ -65,18 +65,6 @@ interface CasinoProps {
 }
 
 // Function to determine rank style based on index
-const getRankStyle = (index: number): string => {
-  switch(index) {
-    case 0: // Gold - 1st place
-      return 'bg-yellow-500 border border-yellow-300/60 shadow-[0_0_10px_rgba(234,179,8,0.3)]';
-    case 1: // Silver - 2nd place
-      return 'bg-gray-400 border border-gray-300/60 shadow-[0_0_10px_rgba(156,163,175,0.3)]';
-    case 2: // Bronze - 3rd place
-      return 'bg-amber-700 border border-amber-500/60 shadow-[0_0_10px_rgba(180,83,9,0.3)]';
-    default: // Original purple style for all others
-      return 'bg-[#1D053F] border border-[#8126FF]/60 shadow-[0_0_10px_rgba(129,38,255,0.3)]';
-  }
-};
 
 // Function to get gauge colors based on rating
 const getGaugeColors = (rating: number): string[] => {
@@ -328,7 +316,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, index, categorySlu
         {/* Right column with CTA */}
         <div className="w-full md:w-1/4 p-4 sm:p-6 flex flex-col items-center justify-center bg-gradient-to-br from-[#8126FF]/10 to-[#1D053F]/90 backdrop-blur-sm">
           <div className="bg-[#1D053F]/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-md w-full text-center mb-3 sm:mb-4 border border-[#8126FF]/30">
-            <div className="text-sm sm:text-md font-bold mb-1 sm:mb-2 text-[#F9F5FF]">{casino.offerDescription}</div>
+            <div className="text-sm sm:text-md font-bold text-[#F9F5FF]">{casino.offerDescription}</div>
           </div>
           
           {/* RTP gauge using the rating */}

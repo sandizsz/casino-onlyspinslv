@@ -57,7 +57,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
               className="relative z-50 flex items-center space-x-3 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#1D053F] to-[#2D0B5A] hover:from-[#8126FF] hover:to-[#8126FF] backdrop-blur-sm border border-[#8126FF]/20 group transition-all duration-300"
               aria-label="Toggle menu"
             >
-              <span className="text-[#F9F5FF]/70 group-hover:text-[#F9F5FF] font-medium tracking-wide transition-colors duration-300">Izvēlne</span>
+              <span className="text-[#F9F5FF]/70 group-hover:text-[#F9F5FF] font-light tracking-wide transition-colors duration-300">Izvēlne</span>
               <div className="w-5 h-5 relative flex items-center justify-center">
                 <span className={`absolute h-[2px] bg-current transition-all duration-300 ${
                   isMenuOpen 
@@ -87,8 +87,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                   <Link
                     key={category._id}
                     href={`/category/${category.slug.current}`}
-                    className={`whitespace-nowrap px-2.5 lg:px-3 py-1.5 rounded-full text-sm lg:text-base font-['Rajdhani'] font-semibold transition-all duration-300 ${
-                      pathname === `/category/${category.slug.current}`
+                    className={`whitespace-nowrap px-2.5 lg:px-3 py-1.5 rounded-full text-sm lg:text-base font-light transition-all duration-300 ${     pathname === `/category/${category.slug.current}`
                         ? "bg-[#8126FF] text-[#F9F5FF] shadow-[0_0_20px_rgba(129,38,255,0.4)]"
                         : "text-[#F9F5FF]/70 hover:text-[#F9F5FF] hover:bg-[#8126FF]/20"
                     }`}
@@ -126,8 +125,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`whitespace-nowrap px-2.5 lg:px-3 py-1.5 rounded-full text-sm lg:text-base font-['Rajdhani'] font-semibold transition-all duration-300 ${
-                      pathname === item.href
+                    className={`whitespace-nowrap px-2.5 lg:px-3 py-1.5 rounded-full text-sm lg:text-base font-light transition-all duration-300 ${     pathname === item.href
                         ? "bg-[#8126FF] text-[#F9F5FF] shadow-[0_0_20px_rgba(129,38,255,0.4)]"
                         : "text-[#F9F5FF]/70 hover:text-[#F9F5FF] hover:bg-[#8126FF]/20"
                     }`}
@@ -155,7 +153,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                 key={category._id}
                 href={`/category/${category.slug.current}`}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-2xl font-['Rajdhani'] font-semibold transition-all duration-300 relative group ${
+                className={`text-2xl font-semibold transition-all duration-300 relative group ${
                   pathname === `/category/${category.slug.current}`
                     ? "text-[#8126FF]"
                     : "text-[#F9F5FF]/70"
@@ -175,7 +173,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-2xl font-['Rajdhani'] font-semibold transition-all duration-300 relative group ${
+                className={`text-2xl font-semibold transition-all duration-300 relative group ${
                   pathname === item.href
                     ? "text-[#8126FF]"
                     : "text-[#F9F5FF]/70"

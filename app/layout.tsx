@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Orbitron, Rajdhani } from 'next/font/google'
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -10,35 +9,23 @@ import LoadingOverlay from './components/LoadingOverlay'
 import { NavigationEvents } from './components/NavigationEvents'
 import { Suspense } from 'react'
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const alexandria = localFont({
+  src: "./fonts/Alexandria-VariableFont.ttf",
+  variable: "--font-alexandria",
   weight: "100 900",
 });
 
-const orbitron = Orbitron({
-  subsets: ['latin'],
-  variable: '--font-orbitron',
+const drukTextWideBold = localFont({
+  src: "./fonts/druknew.otf",
+  variable: "--font-druk-text-wide-bold",
   display: 'swap',
-})
-
-const rajdhani = Rajdhani({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-rajdhani',
-  display: 'swap',
-})
+});
 
 export const metadata: Metadata = {
   title: "Baltic Slots",
   description: "Labākā kazino salīdzināšanas platforma Latvijā",
   icons: {
-    icon: '/images/loco-bonus.ico',
+    icon: '/images/balticslots2.ico',
   },
 };
 
@@ -49,7 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${rajdhani.variable} bg-[#0D1117] text-white min-h-screen`}>
+      <body className={`${alexandria.variable} ${drukTextWideBold.variable} bg-[#0D1117] text-white min-h-screen`}>
         <LoadingProvider>
           <Suspense>
             <NavigationEvents />
