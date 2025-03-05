@@ -16,6 +16,7 @@ import { baccaratData } from "./data/pages/baccarat";
 import { casinoGuidesData } from "./data/pages/guides";
 import CasinoFeatures from './components/CasinoFeatures';
 import PaymentMethods from './components/PaymentMethods';
+import NewsletterComponent from './components/NewsletterComponent';
 
 
 async function getPosts() {
@@ -231,7 +232,7 @@ export default async function Home() {
         
         {/* Currently Playing Casino Section - Only shown if there are casinos with the specific tag */}
         {liveCasinos && liveCasinos.length > 0 && (
-          <AnimatedSection className="w-full pt-20 bg-[#0D0D0D]">
+          <AnimatedSection className="w-full py-20 bg-[#0D0D0D]">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               {/* Special container with distinct background */}
               <div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-[#1D053F] to-[#1D053F]/80 border-2 border-[#8126FF]/30 shadow-[0_0_30px_rgba(129,38,255,0.2)] p-8">
@@ -275,6 +276,13 @@ export default async function Home() {
         )}
     
        
+        {/* Newsletter Section */}
+        <AnimatedSection className="w-full py-10  bg-[#1D053F]">
+          <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <NewsletterComponent />
+          </div>
+        </AnimatedSection>
+        
         {/* Casino List Section */}
          <AnimatedSection className="w-full py-20 bg-[#0D0D0D]">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
