@@ -43,19 +43,19 @@ const gameGuides: GameGuide[] = [
 ];
 
 export const casinoGuidesData = {
-  slug: "game-guides",
-  title: "Game guides",
+  slug: "spelu-pamacibas",
+  title: "Spēļu pamācības",
   image: "",
   description: "Learn how to play popular casino games with our comprehensive guides.",
   content: `
     <div class="space-y-12 py-12">
       ${gameGuides.map(guide => `
-        <div class="bg-[#1A1F2C] border border-[#C1FF72]/20 rounded-2xl p-8 hover:border-[#C1FF72]/40 transition-colors">
-          <p class="text-md uppercase tracking-wider text-gray-400 game-guide-label">Game guides</p>
-          <h2 class="text-5xl font-bold mb-4">${guide.title}</h2>
-          <div class="w-24 h-1 bg-[#C1FF72] mb-6"></div>
-          <p class="text-gray-300 mb-8">${guide.description}</p>
-          <a href="/${guide.slug}" class="inline-block bg-[#C1FF72] text-black px-8 py-3 font-bold hover:bg-[#C1FF72]/80 transition-colors rounded-lg">READ MORE</a>
+        <div class="bg-[#1D053F]/50 border border-[#8126FF]/20 rounded-2xl p-8 hover:border-[#8126FF]/40 transition-colors shadow-[0_0_20px_rgba(129,38,255,0.1)]">
+          <p class="text-md uppercase tracking-wider text-[#F9F5FF]/70 game-guide-label">Game guides</p>
+          <h2 class="text-5xl font-bold mb-4 text-[#8126FF] !important" style="color: #8126FF !important;">${guide.title}</h2>
+          <div class="w-24 h-1 bg-[#8126FF] mb-6"></div>
+          <p class="text-[#F9F5FF]/70 mb-8">${guide.description}</p>
+          <a href="/${guide.slug}" class="inline-block bg-[#8126FF] text-[#F9F5FF] px-8 py-3 font-bold hover:bg-[#8126FF]/80 transition-colors rounded-lg shadow-[0_0_15px_rgba(129,38,255,0.3)]">READ MORE</a>
         </div>
       `).join('')}
     </div>

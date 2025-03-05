@@ -63,7 +63,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                     alt="Baltic slots logo"
                     width={160}
                     height={80}
-                    className="object-contain w-full h-full"
+                    className="object-contain w-full h-full cursor-pointer"
                     priority
                   />
                 </div>
@@ -131,7 +131,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                     alt="Baltic slots logo"
                     width={100}
                     height={100}
-                    className="object-contain w-full h-full"
+                    className="object-contain w-full h-full cursor-pointer"
                     priority
                   />
                 </div>
@@ -142,7 +142,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
             <div className="flex-1 flex justify-end items-center">
               <div className="flex space-x-1 bg-[#1D053F]/50 backdrop-blur-sm rounded-full border border-[#8126FF]/20 p-1">
                 {[
-                  { href: "/game-guides", label: "Spēļu pamācības" },
+                  { href: "/spelu-pamacibas", label: "Spēļu pamācības" },
                   { href: "/gambling-advice", label: "Padomi" },
                   { href: "/payment-methods", label: "Maksājumu metodes" }
                 ].map((item) => (

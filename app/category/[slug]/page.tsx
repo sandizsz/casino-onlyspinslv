@@ -87,14 +87,12 @@ export default async function CategoryPage({ params }: PageProps) {
   const casinos: Casino[] = await getCasinosByCategory(slug);
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1D053F] to-[#110226]">
-      <AnimatedSection className="w-full relative overflow-hidden">
+    <div className="min-h-screen">
+      <AnimatedSection className="bg-gradient-to-b from-[#1D053F] to-[#110226] w-full relative overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute w-[300px] h-[300px] rounded-full bg-[#8126FF] blur-[150px] -top-48 -left-24"></div>
-            <div className="absolute w-[300px] h-[300px] rounded-full bg-[#8126FF] blur-[150px] opacity-50 top-48 -right-24"></div>
-          </div>
+          <div className="absolute w-[400px] h-[400px] rounded-full bg-[#8126FF] blur-[150px] opacity-20 -top-48 -left-24"></div>
+          <div className="absolute w-[400px] h-[400px] rounded-full bg-[#8126FF] blur-[150px] opacity-10 bottom-0 right-0"></div>
         </div>
 
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
