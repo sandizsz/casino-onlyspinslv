@@ -1,5 +1,4 @@
 import { client } from "@/sanity/lib/client";
-import { Category, Casino } from "../utils/interface";
 import { NavbarClient } from "./NavbarClient";
 
 async function getCategories() {

@@ -2,6 +2,17 @@
 
 import Image from "next/image";
 import { TypedObject } from '@portabletext/types'
+
+// Define more specific types for Portable Text blocks
+interface PortableTextBlock extends TypedObject {
+  _type: string;
+  listItem?: string;
+  children?: Array<{
+    _type?: string;
+    text: string;
+    marks?: string[];
+  }>;
+}
 import ClaimButton from './ClaimButton';
 import GaugeComponent from 'react-gauge-component'
 import { useState} from 'react';
@@ -103,7 +114,7 @@ const getGaugeArcColor = (rating: number): string => {
 
 
 
-const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, index, categorySlug }) => {
+const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
   // State for payment methods pagination
   const [startIndex, setStartIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -183,7 +194,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, index, categorySlu
           <div className="text-[#F9F5FF]">
             {casino.offerText && (
               <div className="flex flex-wrap gap-2 mt-2">
-                {casino.offerText.map((block: any, blockIndex: number) => {
+                {casino.offerText.map((block: PortableTextBlock, blockIndex: number) => {
                   // Only process bullet list blocks
                   if (block._type === 'block' && block.listItem === 'bullet') {
                     return (
@@ -191,7 +202,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, index, categorySlu
                         key={blockIndex} 
                         className="inline-flex items-center bg-[#8126FF]/20 px-3 py-1.5 rounded-full text-sm text-[#F9F5FF] border border-[#8126FF]/30"
                       >
-                        {block.children.map((child: any, childIndex: number) => (
+                        {block.children?.map((child: { text: string }, childIndex: number) => (
                           <span key={childIndex}>{child.text}</span>
                         ))}
                       </div>
@@ -201,7 +212,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, index, categorySlu
                   if (block._type === 'block' && !block.listItem) {
                     return (
                       <div key={blockIndex} className="mb-2">
-                        {block.children.map((child: any, childIndex: number) => (
+                        {block.children?.map((child: { text: string }, childIndex: number) => (
                           <span key={childIndex}>{child.text}</span>
                         ))}
                       </div>

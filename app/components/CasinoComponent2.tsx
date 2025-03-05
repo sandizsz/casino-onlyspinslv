@@ -2,6 +2,17 @@
 
 import Image from "next/image";
 import { TypedObject } from '@portabletext/types'
+
+// Define more specific types for Portable Text blocks
+interface PortableTextBlock extends TypedObject {
+  _type: string;
+  listItem?: string;
+  children?: Array<{
+    _type?: string;
+    text: string;
+    marks?: string[];
+  }>;
+}
 import ClaimButton from './ClaimButton';
 import GaugeComponent from 'react-gauge-component'
 import { useState} from 'react';
@@ -194,7 +205,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
           <div className="text-purple-950">
             {casino.offerText && (
               <div className="flex flex-wrap gap-2 mt-2">
-                {casino.offerText.map((block: any, blockIndex: number) => {
+                {casino.offerText.map((block: PortableTextBlock, blockIndex: number) => {
                   // Only process bullet list blocks
                   if (block._type === 'block' && block.listItem === 'bullet') {
                     return (
@@ -202,7 +213,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                         key={blockIndex} 
                         className="inline-flex items-center bg-purple-100/70 px-3 py-1.5 rounded-full text-sm text-purple-900 border border-purple-200"
                       >
-                        {block.children.map((child: any, childIndex: number) => (
+                        {block.children?.map((child: { text: string }, childIndex: number) => (
                           <span key={childIndex}>{child.text}</span>
                         ))}
                       </div>
@@ -212,7 +223,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }
                   if (block._type === 'block' && !block.listItem) {
                     return (
                       <div key={blockIndex} className="mb-2">
-                        {block.children.map((child: any, childIndex: number) => (
+                        {block.children?.map((child: { text: string }, childIndex: number) => (
                           <span key={childIndex}>{child.text}</span>
                         ))}
                       </div>
