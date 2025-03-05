@@ -29,7 +29,7 @@ export default function LoadingOverlay() {
               className="relative w-32 h-32 drop-shadow-[0_0_15px_rgba(129,38,255,0.5)]"
             >
               <Image
-                src="/images/Union.png"
+                src="/images/BalticSlots.png"
                 alt="Baltic Slots logo"
                 fill
                 className="object-contain filter brightness-110"

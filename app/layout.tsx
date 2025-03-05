@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import CookieConsentBanner from "./components/CookieConsent";
+
 import { LoadingProvider } from './context/LoadingContext'
 import LoadingOverlay from './components/LoadingOverlay'
 import { NavigationEvents } from './components/NavigationEvents'
@@ -45,7 +45,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
-          <CookieConsentBanner />
+         
         </LoadingProvider>
       </body>
     </html>
