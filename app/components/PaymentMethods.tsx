@@ -29,7 +29,7 @@ export default function PaymentMethods({ paymentMethods }: PaymentMethodsProps) 
     <div className="py-16 bg-[#0D0D0D]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+          <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">
             Populārākās maksājumu metodes
           </h2>
           <p className="text-[#F9F5FF]/70 max-w-2xl mx-auto text-lg leading-relaxed">

@@ -87,19 +87,30 @@ export default async function CategoryPage({ params }: PageProps) {
   const casinos: Casino[] = await getCasinosByCategory(slug);
   
   return (
-    <div className="min-h-screen from-[#1A1A1A] to-[#0D0D0D]">
-      <AnimatedSection className="w-full py-20 bg-gradient-to-b from-[#1A1A1A] to-[#0D0D0D] relative overflow-hidden">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl font-['Orbitron'] font-bold text-center text-[#FF1745] [text-shadow:_0_0_30px_#FF1745] mb-12">
-            {category.title}
-          </h1>
-          {category.description && (
-            <div className="max-w-4xl mx-auto mb-12">
-              <p className="text-[#C0C0C0] text-lg text-center font-['Rajdhani'] leading-relaxed">
-                {category.description}
-              </p>
+    <div className="min-h-screen bg-gradient-to-b from-[#1D053F] to-[#110226]">
+      <AnimatedSection className="w-full relative overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute w-[300px] h-[300px] rounded-full bg-[#8126FF] blur-[150px] -top-48 -left-24"></div>
+            <div className="absolute w-[300px] h-[300px] rounded-full bg-[#8126FF] blur-[150px] opacity-50 top-48 -right-24"></div>
+          </div>
+        </div>
+
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="w-full py-8 md:py-12 flex flex-col justify-center items-center">
+            {/* Main Content */}
+            <div className="relative text-center w-full max-w-4xl mx-auto space-y-4 mb-4 sm:mb-6 md:mb-8 px-4 sm:px-6">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-light leading-tight text-[#F9F5FF]">
+                <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">{category.title}</span>
+              </h1>
+              {category.description && (
+                <p className="text-lg text-[#F9F5FF]/70 max-w-4xl mx-auto leading-relaxed mb-2 sm:mb-4">
+                  {category.description}
+                </p>
+              )}
             </div>
-          )}
+          </div>
 
           
           <div className="space-y-4">
@@ -117,8 +128,8 @@ export default async function CategoryPage({ params }: PageProps) {
               ))}
             </div>
             {(!casinos || casinos.length === 0) && (
-              <div className="text-center p-12 bg-[#1E2A44]/50 rounded-lg border border-[#00A3FF] shadow-[0_0_20px_rgba(0,163,255,0.3)]">
-                <p className="text-xl font-['Rajdhani'] text-[#C0C0C0]">
+              <div className="text-center p-12 rounded-xl border border-[#8126FF]/20 bg-gradient-to-r from-[#1D053F] to-[#2D0B5A] shadow-[0_0_20px_rgba(129,38,255,0.3)]">
+                <p className="text-xl text-[#F9F5FF]/70">
                   No casinos found in this category yet.
                 </p>
               </div>

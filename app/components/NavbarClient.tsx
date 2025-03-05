@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Category, Casino } from "../utils/interface"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { GiftIcon } from "./GiftIcon"
 
 interface NavbarClientProps {
@@ -15,6 +15,30 @@ interface NavbarClientProps {
 export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) { // lg breakpoint
+        setIsMenuOpen(false)
+        document.body.style.overflow = 'unset'
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    if (isMenuOpen && window.innerWidth < 1024) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
 
   return (
     <nav className="w-full bg-gradient-to-b from-[#1D053F] to-[#110226] relative">
@@ -144,45 +168,52 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden fixed inset-0 z-40 bg-[#110226]/95 backdrop-blur-lg transform transition-transform duration-300 ${
+        <div className={`lg:hidden fixed top-24 left-0 right-0 bottom-0 z-40 bg-gradient-to-b from-[#1D053F]/95 to-[#110226]/95 backdrop-blur-lg transform transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}>
-          <div className="flex flex-col items-center justify-center min-h-screen space-y-8 p-8">
+          <div className="relative">
+            {/* Background effects */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute w-[300px] h-[300px] rounded-full bg-[#8126FF] blur-[150px] opacity-20 -top-24 right-0"></div>
+              <div className="absolute w-[300px] h-[300px] rounded-full bg-[#8126FF] blur-[150px] opacity-10 bottom-0 -left-24"></div>
+            </div>
+            <div className="flex flex-col items-center pt-8 space-y-6 p-8 overflow-y-auto h-screen relative">
+              <div className="w-full max-w-md space-y-6">
             {categories.map((category) => (
-              <Link
-                key={category._id}
-                href={`/category/${category.slug.current}`}
-                onClick={() => setIsMenuOpen(false)}
-                className={`text-2xl font-semibold transition-all duration-300 relative group ${
-                  pathname === `/category/${category.slug.current}`
-                    ? "text-[#8126FF]"
-                    : "text-[#F9F5FF]/70"
-                }`}
-              >
-                {category.title}
-                <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#8126FF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-              </Link>
-            ))}
+                <Link
+                  key={category._id}
+                  href={`/category/${category.slug.current}`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block w-full px-6 py-3 rounded-xl text-lg font-light transition-all duration-300 ${     
+                    pathname === `/category/${category.slug.current}`
+                      ? "bg-[#8126FF] text-[#F9F5FF] shadow-[0_0_20px_rgba(129,38,255,0.4)]"
+                      : "text-[#F9F5FF]/70 hover:text-[#F9F5FF] hover:bg-[#8126FF]/20"
+                  }`}
+                >
+                  {category.title}
+                </Link>
+              ))}
             
             {[
-               { href: "/game-guides", label: "Spēļu pamācības" },
-               { href: "/gambling-advice", label: "Padomi" },
-               { href: "/payment-methods", label: "Maksājumu metodes" }
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`text-2xl font-semibold transition-all duration-300 relative group ${
-                  pathname === item.href
-                    ? "text-[#8126FF]"
-                    : "text-[#F9F5FF]/70"
-                }`}
-              >
-                {item.label}
-                <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-[#8126FF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-              </Link>
-            ))}
+                { href: "/game-guides", label: "Spēļu pamācības" },
+                { href: "/gambling-advice", label: "Padomi" },
+                { href: "/payment-methods", label: "Maksājumu metodes" }
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block w-full px-6 py-3 rounded-xl text-lg font-light transition-all duration-300 ${     
+                    pathname === item.href
+                      ? "bg-[#8126FF] text-[#F9F5FF] shadow-[0_0_20px_rgba(129,38,255,0.4)]"
+                      : "text-[#F9F5FF]/70 hover:text-[#F9F5FF] hover:bg-[#8126FF]/20"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

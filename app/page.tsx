@@ -147,8 +147,8 @@ export default async function Home() {
               <div className="relative text-center w-full max-w-4xl mx-auto space-y-4 mb-4 sm:mb-6 md:mb-8 px-4 sm:px-6">
               
                 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-light leading-tight bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
-                  TAVS ONLINE CASINO
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-light leading-tight text-[#F9F5FF]">
+                  TAVS ONLINE <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-4xl sm:text-5xl md:text-6xl font-light leading-tight">CASINO</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-[#F9F5FF]/70 max-w-2xl mx-auto leading-relaxed mb-2 sm:mb-4">
                   Discover a world of premium casino entertainment and master winning strategies crafted by experts
@@ -184,28 +184,28 @@ export default async function Home() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
                   <div className="relative backdrop-blur-sm border border-[#F9F5FF]/5 rounded-2xl p-3 sm:p-4 md:p-6 text-center">
-                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF] mb-1 sm:mb-2">10+</div>
+                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] mb-1 sm:mb-2">10+</div>
                     <div className="text-xs sm:text-sm font-medium text-[#F9F5FF]/80">Spēļu kategorijas</div>
                   </div>
                 </div>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
                   <div className="relative backdrop-blur-sm border border-[#F9F5FF]/5 rounded-2xl p-3 sm:p-4 md:p-6 text-center">
-                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF] mb-1 sm:mb-2">100%</div>
+                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] mb-1 sm:mb-2">100%</div>
                     <div className="text-xs sm:text-sm font-medium text-[#F9F5FF]/80">Droši kazino</div>
                   </div>
                 </div>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
                   <div className="relative backdrop-blur-sm border border-[#F9F5FF]/5 rounded-2xl p-3 sm:p-4 md:p-6 text-center">
-                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF] mb-1 sm:mb-2">24/7</div>
+                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] mb-1 sm:mb-2">24/7</div>
                     <div className="text-xs sm:text-sm font-medium text-[#F9F5FF]/80">Atbalsts</div>
                   </div>
                 </div>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
                   <div className="relative backdrop-blur-sm border border-[#F9F5FF]/5 rounded-2xl p-3 sm:p-4 md:p-6 text-center">
-                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#F9F5FF] to-[#8126FF] mb-1 sm:mb-2">50+</div>
+                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] mb-1 sm:mb-2">50+</div>
                     <div className="text-xs sm:text-sm font-medium text-[#F9F5FF]/80">Spēļu pamācības</div>
                   </div>
                 </div>
@@ -221,7 +221,7 @@ export default async function Home() {
           </div>
         </AnimatedSection>
 
-        {/* Decorative divider */}
+      
        
         
         {/* Currently Playing Casino Section - Only shown if there are casinos with the specific tag */}
@@ -240,7 +240,7 @@ export default async function Home() {
                 {/* Section title */}
                 <div className="relative text-center max-w-4xl mx-auto mb-8">
                   <div className="flex items-center justify-center gap-2 mb-6">
-                    <div className="inline-flex items-center px-4 py-2 bg-[#8126FF] rounded-full shadow-lg">
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] shadow-[0_0_20px_rgba(108,59,255,0.5)] transition-shadow duration-200 ease-in-out cursor-pointer hover:shadow-[0_0_30px_rgba(108,59,255,0.6)]">
                       <div className="relative flex">
                         <div className="h-2.5 w-2.5 rounded-full bg-red-500"></div>
                         <div className="absolute h-2.5 w-2.5 rounded-full bg-red-500 animate-ping opacity-75"></div>
@@ -248,11 +248,11 @@ export default async function Home() {
                       <span className="text-sm font-medium text-white ml-2">Šobrīd tiek spēlēts</span>
                     </div>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+                  <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">
                     Tiešraides kazino
                   </h2>
                   <p className="text-[#F9F5FF]/70 max-w-2xl mx-auto text-lg leading-relaxed">
-                    Pievienojieties simtiem spēlētāju, kuri šobrīd bauda šo populāro kazino
+                    Pievienojieties simtiem spēlāju, kuri šobrīd bauda šo populāro kazino
                   </p>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default async function Home() {
           
                 </div>
                 
-                <h2 className="text-2xl md:text-3xl font-light mb-6 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+                <h2 className="text-2xl md:text-3xl font-light mb-6 bg-clip-text text-transparent uppercase bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">
                   Labākie kazino no BALTIC SLOTS
                 </h2>
                 
@@ -331,7 +331,7 @@ export default async function Home() {
         <AnimatedSection className="w-full py-20 bg-[#0D0D0D]">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+              <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">
                 Noderīgas kazino pamācības
               </h2>
               <p className="text-[#F9F5FF]/70 max-w-2xl mx-auto text-lg leading-relaxed">

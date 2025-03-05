@@ -41,7 +41,7 @@ export default function CasinoFeatures() {
       
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="relative text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <h2 className="text-2xl md:text-3xl font-light mb-4 sm:mb-6 bg-clip-text text-transparent uppercase bg-gradient-to-br from-[#F9F5FF] to-[#8126FF]">
+          <h2 className="text-2xl md:text-3xl font-light mb-4 sm:mb-6 bg-clip-text text-transparent uppercase bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">
             Kazino Funkcijas
           </h2>
 
