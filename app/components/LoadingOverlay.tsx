@@ -3,13 +3,30 @@
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLoading } from '../context/LoadingContext'
+import { useState, useEffect } from 'react'
 
 export default function LoadingOverlay() {
   const { isLoading } = useLoading()
+  
+  // Force loading state on initial render
+  const [initialLoad, setInitialLoad] = useState(true)
+  
+  useEffect(() => {
+    // After component mounts, check if we're refreshing
+    const isRefreshing = typeof window !== 'undefined' && window.sessionStorage.getItem('is_refreshing') === 'true'
+    
+    // If not a refresh and not already loading, set initial load to false
+    if (!isRefreshing && !isLoading) {
+      const timer = setTimeout(() => setInitialLoad(false), 1000)
+      return () => clearTimeout(timer)
+    }
+    
+    return () => {}
+  }, [isLoading])
 
   return (
     <AnimatePresence>
-      {isLoading && (
+      {(isLoading || initialLoad) && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

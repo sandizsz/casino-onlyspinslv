@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Preloader styles */
+html.loading-active body {
+  overflow: hidden;
+}
+
+/* Hide all content initially when loading */
+html.loading-active body > * {
+  visibility: hidden;
+}
+
+/* But show the loading provider */
+html.loading-active body > div:first-child {
+  visibility: visible !important;
+}
+
+/* Ensure loading overlay has highest priority */
+.loading-overlay {
+  z-index: 9999999 !important;
+}
+
 :root {
   --primary-black: #1D053F;
   --accent-red: #8126FF;
@@ -520,7 +540,7 @@ body {
     font-family: var(--font-alexandria);
   }
   /* Set DrukTextWideBold as the font for all headings */
-  h1, h2, h3, h4, h5, h6, h1 span {
+  h1, h2, h3, h4, h5, h6, h1 span, h2 span {
     font-family: var(--font-druk-text-wide-bold);
   }
 }

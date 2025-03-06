@@ -36,6 +36,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            // Set a flag in sessionStorage to detect page refresh
+            if (!sessionStorage.getItem('app_loaded')) {
+              sessionStorage.setItem('is_refreshing', 'true');
+            }
+            window.onload = function() {
+              sessionStorage.setItem('app_loaded', 'true');
+              setTimeout(function() {
+                sessionStorage.removeItem('is_refreshing');
+              }, 2000);
+            };
+          `,
+        }} />
+      </head>
       <body className={`${alexandria.variable} ${drukTextWideBold.variable} bg-[#0D1117] text-white min-h-screen`}>
         <LoadingProvider>
           <Suspense>

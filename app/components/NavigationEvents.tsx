@@ -10,19 +10,38 @@ export function NavigationEvents() {
   const { setIsLoading } = useLoading()
 
   useEffect(() => {
+    // Check if this is a page refresh
+    const isRefreshing = typeof window !== 'undefined' && window.sessionStorage.getItem('is_refreshing') === 'true'
+    
+    // Set loading to true immediately when component mounts (page loads)
+    setIsLoading(true)
+    
     const handleStart = () => {
       setIsLoading(true)
     }
+    
     const handleStop = () => {
       setIsLoading(false)
     }
 
+    // Add event listeners for navigation
     window.addEventListener('beforeunload', handleStart)
-    window.addEventListener('load', handleStop)
+    document.addEventListener('DOMContentLoaded', () => {
+      // This ensures we catch the initial page load
+      setIsLoading(true)
+      
+      // Delay turning off loading to ensure content is fully rendered
+      setTimeout(handleStop, 1000)
+    })
+    
+    // Use a timeout to ensure the loading overlay appears on initial page load
+    const initialLoadTimeout = setTimeout(() => {
+      setIsLoading(false)
+    }, 1500) // Longer timeout for initial page load
 
     return () => {
       window.removeEventListener('beforeunload', handleStart)
-      window.removeEventListener('load', handleStop)
+      clearTimeout(initialLoadTimeout)
     }
   }, [setIsLoading])
 

@@ -44,7 +44,7 @@ export default function ClaimButton({ offerUrl, offerTitle, categorySlug, catego
       }}
     >
       <Button
-        className={`w-full bg-[#8126FF] hover:bg-[#9126FF] text-white font-bold text-lg px-8 py-4 rounded-lg transition-colors duration-300 relative overflow-hidden ${className || ''}`}
+        className={`w-full bg-[#000025] hover:bg-[#000040] text-white font-bold text-sm px-6 py-3 rounded-lg transition-colors duration-300 relative overflow-hidden ${className || ''}`}
       >
         <span className="relative z-10">Reģistrēties</span>
       </Button>

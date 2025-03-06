@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        'bounce-out': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
@@ -52,6 +55,7 @@ module.exports = {
         'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'shine': 'shine 3s infinite',
         'subtle-pulse': 'subtle-pulse 5s ease-in-out infinite',
+        'bounce-right': 'bounce-right 0.4s ease-in-out',
       },
       keyframes: {
         'subtle-pulse': {
@@ -65,6 +69,11 @@ module.exports = {
         spin: {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
+        },
+        'bounce-right': {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '60%': { transform: 'translateX(6px)' },
+          '80%': { transform: 'translateX(3px)' },
         },
       },
     },
