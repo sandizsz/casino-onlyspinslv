@@ -51,7 +51,6 @@ interface NavbarClientProps {
 }
 
 export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
-  const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 

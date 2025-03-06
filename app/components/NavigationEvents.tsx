@@ -10,8 +10,7 @@ export function NavigationEvents() {
   const { setIsLoading } = useLoading()
 
   useEffect(() => {
-    // Check if this is a page refresh
-    const isRefreshing = typeof window !== 'undefined' && window.sessionStorage.getItem('is_refreshing') === 'true'
+    
     
     // Set loading to true immediately when component mounts (page loads)
     setIsLoading(true)

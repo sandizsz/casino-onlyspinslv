@@ -128,7 +128,7 @@ const getValueLabelColor = (rating: number): string => {
   }
 };
 
-const CasinoComponent2: React.FC<CasinoProps> = ({ casino, index, categorySlug }) => {
+const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
   // State for payment methods pagination
   const [startIndex, setStartIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
