@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
+
 import { Category, Casino } from "../utils/interface"
 import { useState, useEffect } from "react"
 import { GiftIcon } from "./GiftIcon"
