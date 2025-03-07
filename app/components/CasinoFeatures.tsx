@@ -57,7 +57,7 @@ export default function CasinoFeatures() {
                   flex items-center justify-center mb-4 sm:mb-6 border border-[#8126FF]/30 ">
                   <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#F9F5FF]" />
                 </div>
-                <h3 className="text-md font-light text-[#F9F5FF] mb-2 sm:mb-3 ">
+                <h3 className=" uppercase text-md font-light text-[#F9F5FF] mb-2 sm:mb-3 ">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-[#F9F5FF]/70 flex-grow">{feature.description}</p>
