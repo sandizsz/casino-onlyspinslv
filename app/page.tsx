@@ -123,7 +123,7 @@ export default async function Home() {
             <div className="absolute top-[35%] left-[15%] w-[40%] h-[60%] bg-[#3930ff]/40 blur-[70px] animate-blob-flame FancyBlob_animateOpacity__6GgAA"></div>
             {/* Second flame blob - positioned top right */}
             <div className="absolute top-[5%] right-[10%] w-[35%] h-[50%] bg-[#3930ff]/45 blur-[80px] animate-blob-flame-delayed"></div>
-          
+       
           </div>
 
           {/* Content */}
