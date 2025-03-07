@@ -123,8 +123,7 @@ export default async function Home() {
             <div className="absolute top-[35%] left-[15%] w-[40%] h-[60%] bg-[#3930ff]/40 blur-[70px] animate-blob-flame FancyBlob_animateOpacity__6GgAA"></div>
             {/* Second flame blob - positioned top right */}
             <div className="absolute top-[5%] right-[10%] w-[35%] h-[50%] bg-[#3930ff]/45 blur-[80px] animate-blob-flame-delayed"></div>
-            {/* Third flame blob */}
-            <div className="absolute bottom-[20%] right-[25%] w-[30%] h-[45%] bg-[#3930ff]/35 blur-[60px] animate-blob-flame" style={{animationDelay: '1.5s'}}></div>
+          
           </div>
 
           {/* Content */}
@@ -170,29 +169,29 @@ export default async function Home() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
                   <div className="relative backdrop-blur-sm border border-[#F9F5FF]/5 rounded-2xl p-3 sm:p-4 md:p-6 text-center">
-                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] mb-1 sm:mb-2">10+</div>
-                    <div className="text-xs sm:text-sm font-medium text-[#F9F5FF]/80">Spēļu kategorijas</div>
+                    <div className="text-3xl sm:text-4xl font-bold text-[#F9F5FF] mb-1 sm:mb-2">10+</div>
+                    <div className="text-xs sm:text-sm font-medium text-[#9b98df]">Spēļu kategorijas</div>
                   </div>
                 </div>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
                   <div className="relative backdrop-blur-sm border border-[#F9F5FF]/5 rounded-2xl p-3 sm:p-4 md:p-6 text-center">
-                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] mb-1 sm:mb-2">100%</div>
-                    <div className="text-xs sm:text-sm font-medium text-[#F9F5FF]/80">Droši kazino</div>
+                    <div className="text-3xl sm:text-4xl font-bold text-[#F9F5FF] mb-1 sm:mb-2">100%</div>
+                    <div className="text-xs sm:text-sm font-medium text-[#9b98df]">Droši kazino</div>
                   </div>
                 </div>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
                   <div className="relative backdrop-blur-sm border border-[#F9F5FF]/5 rounded-2xl p-3 sm:p-4 md:p-6 text-center">
-                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] mb-1 sm:mb-2">24/7</div>
-                    <div className="text-xs sm:text-sm font-medium text-[#F9F5FF]/80">Atbalsts</div>
+                    <div className="text-3xl sm:text-4xl font-bold text-[#F9F5FF] mb-1 sm:mb-2">24/7</div>
+                    <div className="text-xs sm:text-sm font-medium text-[#9b98df]">Atbalsts</div>
                   </div>
                 </div>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
                   <div className="relative backdrop-blur-sm border border-[#F9F5FF]/5 rounded-2xl p-3 sm:p-4 md:p-6 text-center">
-                    <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] mb-1 sm:mb-2">50+</div>
-                    <div className="text-xs sm:text-sm font-medium text-[#F9F5FF]/80">Spēļu pamācības</div>
+                    <div className="text-3xl sm:text-4xl font-bold text-[#F9F5FF] mb-1 sm:mb-2">50+</div>
+                    <div className="text-xs sm:text-sm font-medium text-[#9b98df]">Spēļu pamācības</div>
                   </div>
                 </div>
               </div>
