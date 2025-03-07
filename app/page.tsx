@@ -305,14 +305,14 @@ export default async function Home() {
 
             <div className="flex justify-center mt-12">
             <Link 
-                  href="/category/all-bonuses"
-                  className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:flex-1 text-center whitespace-nowrap"
-                >
-                  <span className="relative flex items-center justify-center">
-                    Visi kazino
-                    <ArrowRight className="ml-2 h-5 w-5 transform transition-all duration-300 ease-bounce-out group-hover:translate-x-1.5 group-hover:duration-200" />
-                  </span>
-                </Link>
+  href="/category/all-bonuses"
+  className="group relative px-8 sm:px-6 py-4 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:w-auto sm:max-w-xs text-center whitespace-nowrap"
+>
+  <span className="relative flex items-center justify-center">
+    Visi kazino
+    <ArrowRight className="ml-2 h-5 w-5 transform transition-all duration-300 ease-bounce-out group-hover:translate-x-1.5 group-hover:duration-200" />
+  </span>
+</Link>
             </div>
           </div>
         </AnimatedSection>
@@ -362,15 +362,17 @@ export default async function Home() {
                 )) : <p className="text-center col-span-3 text-[#F9F5FF]/70">No guides available</p>}
               </div>
               <div className="flex justify-center">
-              <Link 
-                  href={`/${casinoGuidesData.slug}`} 
-                  className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:flex-1 text-center whitespace-nowrap"
-                >
-                  <span className="relative flex items-center justify-center">
-                    Lasīt vairāk
-                    <ArrowRight className="ml-2 h-5 w-5 transform transition-all duration-300 ease-bounce-out group-hover:translate-x-1.5 group-hover:duration-200" />
-                  </span>
-                </Link>
+            
+
+                <Link 
+  href={`/${casinoGuidesData.slug}`} 
+  className="group relative px-8 sm:px-6 py-4 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:w-auto sm:max-w-xs text-center whitespace-nowrap"
+>
+  <span className="relative flex items-center justify-center">
+  Lasīt vairāk
+    <ArrowRight className="ml-2 h-5 w-5 transform transition-all duration-300 ease-bounce-out group-hover:translate-x-1.5 group-hover:duration-200" />
+  </span>
+</Link>
               </div>
             </div>
           </div>
