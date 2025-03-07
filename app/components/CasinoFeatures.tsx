@@ -60,7 +60,7 @@ export default function CasinoFeatures() {
                 <h3 className=" uppercase text-md font-light text-[#F9F5FF] mb-2 sm:mb-3 ">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-[#F9F5FF]/70 flex-grow">{feature.description}</p>
+                <p className="text-sm text-[#9b98df] flex-grow">{feature.description}</p>
               </div>
             </div>
           ))}
