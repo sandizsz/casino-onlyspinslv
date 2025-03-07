@@ -34,9 +34,15 @@ export function NavigationEvents() {
     })
     
     // Use a timeout to ensure the loading overlay appears on initial page load
-    const initialLoadTimeout = setTimeout(() => {
-      setIsLoading(false)
-    }, 1500) // Longer timeout for initial page load
+  // Remove or modify these lines that set loading to true on initial load
+// Line 15: Remove or comment out
+setIsLoading(true)
+
+// And modify the initial load timeout to be shorter
+// Line 33-35: Change the timeout from 1500ms to something shorter like 500ms
+const initialLoadTimeout = setTimeout(() => {
+  setIsLoading(false)
+}, 500) // Shorter timeout for initial page load
 
     return () => {
       window.removeEventListener('beforeunload', handleStart)

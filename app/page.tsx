@@ -144,7 +144,7 @@ export default async function Home() {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 md:mb-12 w-full max-w-xl mx-auto px-3 sm:px-2 md:px-0">
-                <Link 
+              <Link 
                   href="/category/all-bonuses"
                   className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:flex-1 text-center whitespace-nowrap"
                 >
@@ -304,16 +304,15 @@ export default async function Home() {
             </div>
 
             <div className="flex justify-center mt-12">
-              <Link 
-                href="/category/all-casinos" 
-                className="group relative px-6 py-3 bg-[#8126FF] text-[#F9F5FF] text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 max-w-xs w-full text-center whitespace-nowrap text-normal"
-              >
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                <span className="relative flex items-center justify-center">
-                  Visi kazino
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
+            <Link 
+                  href="/category/all-bonuses"
+                  className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:flex-1 text-center whitespace-nowrap"
+                >
+                  <span className="relative flex items-center justify-center">
+                    Visi kazino
+                    <ArrowRight className="ml-2 h-5 w-5 transform transition-all duration-300 ease-bounce-out group-hover:translate-x-1.5 group-hover:duration-200" />
+                  </span>
+                </Link>
             </div>
           </div>
         </AnimatedSection>
@@ -329,13 +328,21 @@ export default async function Home() {
         </AnimatedSection>
 
         {/* Casino Guides */}
-        <AnimatedSection className="w-full py-20 bg-white">
+        <AnimatedSection className="relative overflow-hidden w-full py-20 bg-[#000025] rounded-0 lg:rounded-3xl">
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+            {/* Single top blob - centered behind title */}
+            <div className="absolute top-[5%] left-[30%] w-[40%] h-[35%] bg-[#3930ff]/40 blur-[75px] animate-blob-flame FancyBlob_animateOpacity__6GgAA"></div>
+            {/* Far-middle blob - positioned away from the top */}
+            <div className="absolute top-[60%] right-[15%] w-[35%] h-[45%] bg-[#3930ff]/35 blur-[80px] animate-blob-flame-delayed"></div>
+            {/* Bottom blob - well below the title area */}
+            <div className="absolute bottom-[10%] left-[25%] w-[30%] h-[40%] bg-[#3930ff]/30 blur-[60px] animate-blob-flame" style={{animationDelay: '1.5s'}}></div>
+          </div>
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">
+              <h2 className="text-2xl md:text-3xl font-light mb-4 uppercase text-[#F9F5FF]">
                 Noderīgas kazino pamācības
               </h2>
-              <p className="text-[#1D053F]/70 max-w-2xl mx-auto text-lg leading-relaxed">
+              <p className="text-[#9b98df] max-w-2xl mx-auto text-lg leading-relaxed">
               Mēs rūpējamies par jums un jūsu pieredzi mūsu piedāvātajos kazino, tāpēc esam sagatavojuši populārākās kazino spēļu pamācības.
               </p>
             </div>
@@ -346,38 +353,40 @@ export default async function Home() {
                     <Link href={`/${guide.slug}`}>
                       <div className="bg-[#1D053F]/80 backdrop-blur-sm border border-[#8126FF]/20 rounded-xl p-8 hover:border-[#8126FF]/40 hover:shadow-[0_0_15px_rgba(129,38,255,0.2)] transition-all duration-300 h-full">
                         <p className="text-sm uppercase tracking-wider text-[#F9F5FF]/60 game-guide-label">Spēļu pamācības</p>
-                        <h2 className="text-lg font-light mb-2 text-[#F9F5FF]">{guide.title}</h2>
+                        <h2 className="uppercase text-lg font-light mb-2 text-[#F9F5FF]">{guide.title}</h2>
                         <div className="w-24 h-1 bg-[#8126FF] mb-6"></div>
-                        <p className="text-[#F9F5FF]/70 mb-4 text-sm">{guide.description}</p>
+                        <p className="text-[#9b98df] mb-4 text-sm">{guide.description}</p>
                       </div>
                     </Link>
                   </AnimatedSection>
                 )) : <p className="text-center col-span-3 text-[#F9F5FF]/70">No guides available</p>}
               </div>
               <div className="flex justify-center">
-                <Link 
+              <Link 
                   href={`/${casinoGuidesData.slug}`} 
-                  className="group relative px-6 py-3 bg-[#8126FF] text-[#F9F5FF] font-normal text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 inline-flex items-center"
+                  className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:flex-1 text-center whitespace-nowrap"
                 >
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                  <span className="relative flex items-center">
+                  <span className="relative flex items-center justify-center">
                     Lasīt vairāk
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-5 w-5 transform transition-all duration-300 ease-bounce-out group-hover:translate-x-1.5 group-hover:duration-200" />
                   </span>
                 </Link>
               </div>
             </div>
           </div>
-        </AnimatedSection>
 
-       
-
-       
-
-        {/* Payment Methods */}
-        <AnimatedSection className="w-full bg-white">
+            {/* Payment Methods */}
+        <AnimatedSection className="w-full">
           <PaymentMethods paymentMethods={uniquePaymentMethods} />
         </AnimatedSection>
+
+        </AnimatedSection>
+
+       
+
+       
+
+      
 
       </main>
     </div>

@@ -98,16 +98,22 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
     <>
       <style jsx global>{glowStyles}</style>
       <nav className="w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-transparent">
-        <div className={` mx-auto relative ${isScrolled ? 'px-2 sm:px-4 md:px-6 py-1 sm:py-2' : 'px-6 sm:px-8 md:px-10 mt-2 sm:mt-4'} transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]`}>
-          <div 
-            className={`flex items-center ${isScrolled ? 'mx-1 sm:mx-2 md:mx-4 px-3 sm:px-5 md:px-8 py-3 sm:py-4 md:py-5 backdrop-blur-lg' : 'h-16 sm:h-18 md:h-20'} transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] relative rounded-xl sm:rounded-2xl`}
-            style={isScrolled ? { 
-              minHeight: '3.5rem',
-              position: 'relative',
-              outline: '1px solid rgba(255, 255, 255, 0.15)',
-              outlineOffset: '-1px'
-            } : {}}
-          >
+      <div className={`mx-auto relative ${isScrolled ? 
+  'md:px-6  sm:py-2 px-0' : 
+  'md:px-10 mt-2 sm:mt-4 px-3 sm:px-5'  // Keep some padding when not scrolled
+} transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]`}>
+  <div 
+    className={`flex items-center ${isScrolled ? 
+      'md:px-8 py-3 sm:py-4 md:py-5 backdrop-blur-lg mx-0 px-3 sm:px-5' : 
+      'h-16 sm:h-18 md:h-20'
+    } transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] relative md:rounded-xl sm:rounded-2xl rounded-none w-full`}
+      style={isScrolled ? { 
+        minHeight: '3.5rem',
+        position: 'relative',
+        outline: '1px solid rgba(255, 255, 255, 0.15)',
+        outlineOffset: '-1px'
+      } : {}}
+    >
             {isScrolled && (
               <>
                 <div className="navbar-sticky-gradient"></div>

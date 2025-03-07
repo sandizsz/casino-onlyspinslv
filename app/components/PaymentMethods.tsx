@@ -26,13 +26,13 @@ export default function PaymentMethods({ paymentMethods }: PaymentMethodsProps) 
   }
 
   return (
-    <div className="py-16 bg-[#0D0D0D]">
+    <div className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-light mb-4 bg-clip-text text-transparent uppercase bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">
+          <h2 className="text-2xl md:text-3xl font-light mb-4 text-[#F9F5FF] uppercase">
             Populārākās maksājumu metodes
           </h2>
-          <p className="text-[#F9F5FF]/70 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-[#9b98df] max-w-2xl mx-auto text-lg leading-relaxed">
           Ātras un drošas maksājumu iespējas iemaksām un izmaksām
           </p>
         </div>

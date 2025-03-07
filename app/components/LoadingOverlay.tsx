@@ -9,7 +9,7 @@ export default function LoadingOverlay() {
   const { isLoading } = useLoading()
   
   // Force loading state on initial render
-  const [initialLoad, setInitialLoad] = useState(true)
+  const [initialLoad, setInitialLoad] = useState(false)
   
   useEffect(() => {
     // After component mounts, check if we're refreshing

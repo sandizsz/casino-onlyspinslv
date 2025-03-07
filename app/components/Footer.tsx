@@ -1,13 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import AnimatedSection from "./AnimatedSection";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#1D053F]/80 text-[#F9F5FF] border-t border-[#8126FF]/20 backdrop-blur-sm">
+
+    
+    <footer className="w-full bg-[#000025] text-[#F9F5FF] border-t border-[#8126FF]/20 backdrop-blur-sm rounded-t-3xl">
       {/* Legal Links */}
       <div className="border-b border-[#8126FF]/20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-[#F9F5FF]/70">
+          <div className="flex flex-wrap justify-center gap-8 text-sm text-[#9b98df]">
             <Link href="/privacy-policy" className="hover:text-[#8126FF] transition-colors duration-300">
               Privātuma politika
             </Link>
@@ -78,7 +81,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="border-t border-[#8126FF]/20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-          <p className="text-center text-sm text-[#F9F5FF]/70">
+          <p className="text-center text-sm text-[#9b98df]">
 {new Date().getFullYear()} © Baltic Slots. Visas tiesības paturētas.
           </p>
         </div>
