@@ -113,20 +113,7 @@ const getGaugeArcColor = (rating: number): string => {
   }
 };
 
-// Function to get value label color based on rating
-const getValueLabelColor = (rating: number): string => {
-  if (rating >= 9) {
-    return '#2E1065'; // Very dark purple
-  } else if (rating >= 8) {
-    return '#3B0764'; // Dark purple
-  } else if (rating >= 7) {
-    return '#4C1D95'; // Medium dark purple
-  } else if (rating >= 6) {
-    return '#5B21B6'; // Medium purple
-  } else {
-    return '#6D28D9'; // Original purple
-  }
-};
+
 
 const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
   // State for payment methods pagination

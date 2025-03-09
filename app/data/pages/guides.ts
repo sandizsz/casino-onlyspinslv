@@ -21,9 +21,9 @@ const gameGuides: GameGuide[] = [
     description: "Bakara ir viena no Eiropas teritorijā senākajām kāršu spēlēm. Mūsdienās tā, kopā ar pokeru un blekdžeku, tiek dēvēta par kazino klasiku. Bakaru jeb baccarat ir iemīļojuši cilvēki visā pasaulē, tāpēc ka šo kāršu spēli ir viegli apgūt un tai ir aizraujošs ritējums..."
   },
   {
-    title: "SLOTS",
-    slug: "online-slots",
-    description: "Dive into the world of online slots, where cutting-edge technology meets classic casino excitement. Learn about RTP rates, volatility levels, and how to choose the right games that match your playing style and budget..."
+    title: "Spēļu automāti",
+    slug: "spelu-automati",
+    description: "Iegremdējieties tiešsaistes spēļu automātu pasaulē, kur vismodernākās tehnoloģijas satiekas ar klasisko kazino azartu. Uzziniet vairāk par RTP likmēm, svārstīguma līmeņiem un to, kā izvēlēties pareizās spēles, kas atbilst jūsu spēles stilam un budžetam..."
   },
   {
     title: "SIC BO",

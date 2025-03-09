@@ -1,8 +1,8 @@
 export const slotsData = {
-    slug: "online-slots",
-    title: "Online Slots Guide",
+    slug: "spelu-automati",
+    title: "Tiešsaistes spēļu automāti",
     image: "/images/slots.webp",
-    description: "From the first Liberty Bell to modern video slots, discover the evolution and strategies of slot machines in both physical and online casinos.",
+    description: "Sākot ar pirmo mehānisko spēļu automātu 1894.gadā Liberty Bell un beidzot ar mūsdienīgiem videospēļu automātiem, atklājiet spēļu automātu evolūciju un stratēģijas gan fiziskajos, gan tiešsaistes kazino.",
     content: `
       <div class="prose">
         <h2>Early History</h2>
