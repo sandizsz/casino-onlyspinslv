@@ -1,39 +1,38 @@
 export const privacyPolicyData = {
-  slug: "privacy-policy",
-  title: "Privacy Policy",
+  slug: "privatuma-politika",
+  title: "Privātuma politika",
   image: "",
-  description: "Our commitment to protecting your privacy and personal information",
+  description: "Mūsu apņemšanās aizsargāt jūsu konfidencialitāti un personisko informāciju",
   content: `
-    <h2>1. General</h2>
-    <p>1.1 The Terms and Conditions defined in this text (hereinafter referred to as "Terms and Conditions") regulate the usage of the games provided through Bangerslots</p>
-    <p>1.2 Bangerslots, turpmāk, “Bangerslots”, “Mēs”, “Mēs” vai “Mūsu”, un Spēlētājs un reģistrētais Konta turētājs tiek saukts par “Jums”, “Jūsu”, “Lietotāju” vai “Spēlētāju” atkarībā no situācijas.</p>
-    <p>1.3 Bangerslots patur tiesības laiku pa laikam veikt izmaiņas Noteikumos un nosacījumos dažādu iemeslu dēļ, tostarp, lai ievērotu piemērojamos likumus un noteikumus, kā arī citas normatīvās prasības, līdz ar to mēs jebkurā laikā varam grozīt šo līgumu starp Jums un Bangerslots. Pilns Noteikumu un nosacījumu teksts vienmēr ir pieejams tīmekļa vietnes pirmajā lapā. Ieteicams laiku pa laikam pārbaudīt Noteikumus un nosacījumus, lai pārliecinātos, ka Jūs tiem piekrītat.</p>
-    <p>1.4 These Terms and Conditions may be published in a number of languages and shall reflect the same principles. This is done for information purposes and to help players. It is however only the English version that is the legal basis of the relationship between you and Bangerslots. In case of any discrepancy between the English version and the non-English version of these Terms and Conditions, the English version shall always prevail.</p>
+    <h2>1. Vispārīga informācija</h2>
+    <p>1.1 Šajā tekstā definētie noteikumi un nosacījumi (turpmāk tekstā - “Noteikumi un nosacījumi”) reglamentē Baltic Slots piedāvāto spēļu izmantošanu</p>
+    <p>1.2 Baltic Slots, turpmāk tekstā - “Baltic Slots”, “Mēs”, “Mēs” vai “Mūsu”, un spēlētājs un reģistrētā Konta turētājs tiek saukti attiecīgi “Jūs”, “Jūsu”, “Lietotājs” vai “Spēlētājs”.</p>
+    <p>1.3 Baltic Slots patur tiesības laiku pa laikam veikt izmaiņas Noteikumos un nosacījumos dažādu iemeslu dēļ, tostarp, lai ievērotu piemērojamos likumus un noteikumus un citas normatīvās prasības, un attiecīgi mēs jebkurā laikā varam grozīt šo līgumu starp Jums un Baltic Slots. Pilns Noteikumu un nosacījumu teksts vienmēr ir pieejams tīmekļa vietnes pirmajā lapā. Mēs iesakām laiku pa laikam pārbaudīt Noteikumus un nosacījumus, lai pārliecinātos, ka Jūs tiem piekrītat.</p>
 
-    <h2>2. Intellectual Property</h2>
-    <p>2.1 Additionally, you agree not to do anything that will harm or potentially harm the rights, including the intellectual property rights, held by Bangerslots.</p>
-    <p>2.2 You warrant that any names or images used by you in connection with the any site you can visit through our page (for example, your user name) shall not infringe the intellectual property, privacy or other rights of any third party. You hereby grant Bangerslots a worldwide, irrevocable, transferable, royalty free, sublicensable licence to use such names and images for any purpose connected with the Sites or Service, subject to the terms of our Privacy Policy.</p>
+    <h2>2. Intelektuālais īpašums</h2>
+ <p>2.1Jūs piekrītat nedarīt neko tādu, kas kaitētu vai potenciāli kaitētu Baltic Slots piederošajām tiesībām, tostarp intelektuālā īpašuma tiesībām.</p>
+    <p>2.2 Jūs garantējat, ka jebkādi vārdi vai attēli, ko Jūs izmantojat saistībā ar jebkuru vietni, kuru Jūs varat apmeklēt, izmantojot mūsu lapu (piemēram, Jūsu lietotājvārds), nepārkāpj nevienas trešās personas intelektuālā īpašuma, privātuma vai citas tiesības. Ar šo Jūs piešķirat Baltic Slots neatsaucamu, neatsaucamu, nododamu, bezmaksas, apakšlicencējamu licenci izmantot šādus vārdus un attēlus jebkādiem mērķiem, kas saistīti ar Vietnēm vai Pakalpojumu, saskaņā ar mūsu Privātuma politikas noteikumiem.</p>
 
-    <h2>3. Breaches, Penalties and Termination</h2>
-    <p>3.1 If you breach any provision of these Terms and Conditions or should we have a reasonable ground to suspect that you have breached them, any casino you visit through our page reserves the right to not open, to suspend, or to close your Account, or withhold the payment of your winnings and apply such funds on account for any damages due by you.</p>
-    <p>3.2 Should we delay or fail to enforce our rights under these Terms and Conditions, this does not mean that we are losing or waiving the rights afforded by them where set timelines have not been set out. The same shall also apply to you.</p>
-    <p>3.3 We will not be liable to you for any breach of these Terms and Conditions which arises because of any circumstances that we cannot reasonably expected to control.</p>
-    <p>3.4 These Terms and Conditions constitute the entire understanding between you and us with respect to the use of our Websites and, save in the case of fraud, they shall supersede all prior or contemporaneous communications, proposals and agreements, whether electronic, oral or written, between you and us with respect to the Websites.</p>
+    <h2>3. Pārkāpumi, sodi un līguma izbeigšana</h2>
+    <p>3.1 Ja Jūs pārkāpjat kādu no šo Noteikumu un nosacījumu noteikumiem vai mums ir pamatots iemesls aizdomām, ka Jūs tos pārkāpjat, jebkurš kazino, kuru Jūs apmeklējat, izmantojot mūsu lapu, patur tiesības neatvērt, apturēt vai slēgt Jūsu Kontu vai aizturēt Jūsu laimestu izmaksu un izmantot šos līdzekļus Jūsu nodarīto zaudējumu atlīdzināšanai.</p>
+    <p>3.2 Ja mēs kavējamies vai neizpildām savas tiesības saskaņā ar šiem Noteikumiem un nosacījumiem, tas nenozīmē, ka mēs zaudējam vai atsakāmies no tajos paredzētajām tiesībām, ja nav noteikti termiņi. Tas pats attiecas arī uz jums.</p>
+    <p>3.3 Mēs nebūsim atbildīgi pret jums par jebkādiem šo Noteikumu un nosacījumu pārkāpumiem, kas radušies tādu apstākļu dēļ, kurus mēs nevaram kontrolēt.</p>
+    <p>3.4. Šie Noteikumi un nosacījumi veido pilnīgu vienošanos starp jums un mums attiecībā uz mūsu Vietņu izmantošanu un, izņemot krāpšanas gadījumus, tie aizstāj visus iepriekšējos vai līdzšinējos paziņojumus, priekšlikumus un vienošanās - elektroniskus, mutiskus vai rakstiskus - starp jums un mums attiecībā uz Vietnēm.</p>
 
-    <h2>4. Complaints & Dispute Resolution Procedure</h2>
-    <p>4.1 You may contact our customer support service according to the instructions located at the Websites should you wish to make any complaints regarding our services. This can be found under the "Contact Us" section. Alternatively, you may send us an email to support@Bangerslots.com</p>
-    <p>4.2 Complaints are handled in the support department and escalated in the organisation of Bangerslots in cases where the support personnel do not solve the case immediately. The player shall be reasonably informed about the state of their complaint. We always endeavour to resolve complaints in the least time possible.</p>
+    <h2>4. Sūdzību un strīdu izšķiršanas procedūra</h2>
+    <p>4.1 Ja vēlaties iesniegt sūdzības par mūsu pakalpojumiem, varat sazināties ar mūsu klientu atbalsta dienestu saskaņā ar norādījumiem, kas atrodami tīmekļa vietnēs. To var atrast sadaļā “Sazinieties ar mums”. Vai arī varat nosūtīt mums e-pastu uz adresi support@balticslots.com</p>
+    <p>4.2 Sūdzības tiek izskatītas atbalsta nodaļā un eskalētas Baltic Slots organizācijā gadījumos, kad atbalsta personāls neatrisina lietu nekavējoties. Spēlētājs tiek pamatoti informēts par viņa sūdzības stāvokli. Mēs vienmēr cenšamies atrisināt sūdzības pēc iespējas īsākā laikā.</p>
 
-    <h2>5. Responsible Gambling</h2>
-    <p>5.1 Bangerslots offers a range of services to assist you if you feel that you are developing a dependency towards gambling. We have in place a series of measures, which will help you play in a safe environment. You understand that when you are playing games of chance that involve money, the outcome can never be sure. We have developed tools that will make your gaming experience safer. This service is available to you on a 24-hour basis. We encourage you to consider these measures when playing on any site you can visit through our site.</p>
-    <p>5.2 Bangerslots does not allow anyone under 18 years of age to open an account on any Websites that we promote. Should you be under 18 years of age and attempt to open an account with any Website that we promote or should you assist an underage person in opening an account with any Website that we promote, you are in breach of the law.</p>
-    <p>5.3 Bangerslots is committed in providing an outstanding service to its customers. As part of this commitment we endeavour to assist our customers in gambling responsibly with the tools listed under this section. Bangerslots shall always strive to reasonably enforce its social responsibility, however, we trust you understand that human error cannot be completely ruled out and we therefore solicit your full collaboration at all times. We shall take no responsibility and exclude all form of liability should you continue gambling or persist in using the Website, with the intent of avoiding the relevant measures in place.</p>
+  <h2>5. Atbildīgas azartspēles</h2>
+    <p>5.1 Baltic Slots piedāvā virkni pakalpojumu, lai palīdzētu Jums, ja jūtat, ka Jums rodas atkarība no azartspēlēm. Mēs esam ieviesuši virkni pasākumu, kas palīdzēs Jums spēlēt drošā vidē. Jūs saprotat, ka, spēlējot azartspēles, kurās ir iesaistīta nauda, iznākums nekad nevar būt drošs. Mēs esam izstrādājuši rīkus, kas padarīs jūsu spēlēšanu drošāku. Šis pakalpojums jums ir pieejams 24 stundas diennaktī. Mēs aicinām Jūs apsvērt šos pasākumus, spēlējot jebkurā vietnē, kuru varat apmeklēt, izmantojot mūsu vietni.</p>
+    <p>5.2 Baltic Slots neļauj nevienai personai, kas jaunāka par 18 gadiem, atvērt kontu nevienā no mūsu reklamētajām vietnēm. Ja Jūs esat jaunāks par 18 gadiem un mēģināt atvērt kontu kādā no mūsu reklamētajām vietnēm vai palīdzat nepilngadīgai personai atvērt kontu kādā no mūsu reklamētajām vietnēm, Jūs pārkāpjat likumu.</p>
+    <p>5.3 Baltic Slots ir apņēmusies saviem klientiem nodrošināt izcilu servisu. Šīs apņemšanās ietvaros mēs cenšamies palīdzēt saviem klientiem spēlēt atbildīgi, izmantojot šajā sadaļā uzskaitītos rīkus. Baltic Slots vienmēr centīsies saprātīgi īstenot savu sociālo atbildību, tomēr mēs ticam, ka jūs saprotat, ka cilvēciskas kļūdas nevar pilnībā izslēgt, un tāpēc mēs lūdzam jūs vienmēr pilnībā sadarboties. Mēs neuzņemamies nekādu atbildību un izslēdzam jebkāda veida atbildību, ja Jūs turpināsiet spēlēt vai turpināsiet izmantot tīmekļa vietni ar nolūku izvairīties no attiecīgajiem ieviestajiem pasākumiem.</p>
 
-    <h2>6. Privacy and Cookie Policy</h2>
-    <p>6.1 The information any casino you can visit through our site collect enables them to ensure that you can enjoy safe and user-friendly browsing conditions. Their aim is to offer the best possible services, whilst making sure that gaming on their sites remains fun. You therefore acknowledge that they collect and use your personal data so that you may access their Websites and also to allow your participation in the Games they offer. They will protect your personal information and comply with applicable data protection laws in respect of the documents you supply to them. Your personal information is processed in accordance with their Privacy and Cookies policy, a copy of which is always available on the FrontPage of any casino Website.</p>
-    <p>6.2 You understand that we collect a small piece of information sent from your browser, this is called a "cookie" and it is used to make the website experience better. Our Website makes use of cookies for the purposes outlined in our Privacy and Cookies Policy, and this in order to provide you with a fully functional gaming experience.</p>
+<h2>6. Privātuma un sīkfailu politika</h2>
+    <p>6.1. Informācija, ko apkopo jebkurš kazino, kuru jūs varat apmeklēt mūsu vietnē, ļauj tam nodrošināt jums drošus un lietotājam draudzīgus pārlūkošanas apstākļus. To mērķis ir piedāvāt labākos iespējamos pakalpojumus, vienlaikus nodrošinot, ka spēlēšana to vietnēs joprojām ir jautra. Tāpēc jūs atzīstat, ka tie vāc un izmanto jūsu personas datus, lai jūs varētu piekļūt to vietnēm, kā arī lai jūs varētu piedalīties to piedāvātajās spēlēs. Viņi aizsargās jūsu personas informāciju un ievēros piemērojamos datu aizsardzības likumus attiecībā uz dokumentiem, ko jūs tiem iesniedzat. Jūsu personiskā informācija tiek apstrādāta saskaņā ar to Privātuma un sīkfailu politiku, kuras kopija vienmēr ir pieejama ikvienas kazino vietnes sākumlapā.</p>
+    <p>6.2 Jūs saprotat, ka mēs apkopojam nelielu informācijas fragmentu, ko nosūta jūsu pārlūkprogramma, to sauc par “sīkfailu”, un tas tiek izmantots, lai uzlabotu tīmekļa vietnes lietošanas pieredzi. Mūsu Tīmekļa vietne izmanto sīkfailus mūsu Privātuma un sīkfailu politikā izklāstītajiem mērķiem, un tas tiek darīts, lai nodrošinātu Jums pilnībā funkcionālu spēļu pieredzi </p> <p>.
 
-    <p class="signature">Bangerslots.com Team</p>
+    <p class="signature" style="padding-top: 20px; font-style: italic;">balticslots.com komanda.</p>
   `
 };
 
@@ -50,49 +49,49 @@ export const disclaimerData = {
     
     <p>Online-slots.com ir apņēmies informēt visus, kas interesējas par tiešsaistes spēlēm, par pārmērīgām briesmām, kas potenciāli var rasties šādas darbības rezultātā. Atzīstot, ka ar tiešsaistes spēlēm saistītie likumi un noteikumi visur ir atšķirīgi, lasītājiem tiek ieteikts iepazīties ar savā jurisdikcijā pastāvošajiem likumiem, lai pārliecinātos par tajos ietverto darbību likumību.</p>
 
-    <h3>Accuracy of Information</h3>
-    <p>Any information posted within this website is accurate to the best of our knowledge. All measures are taken to ensure that such information is accurate and up-to-date, but please take note that some of it may become outdated and/or may be subject to change at any time, including descriptions of features at the casinos that are mentioned, at the discretion of said casino.</p>
+    <h3>Informācijas precizitāte</h3>
+<p>Jebkura šajā tīmekļa vietnē ievietotā informācija ir precīza, cik mums zināms. Tiek veikti visi pasākumi, lai nodrošinātu, ka šāda informācija ir precīza un aktuāla, bet, lūdzu, ņemiet vērā, ka daļa no tās var kļūt novecojusi un/vai jebkurā laikā var tikt mainīta, tostarp apraksti par iezīmēm minētajos kazino pēc minētā kazino ieskatiem.</p>
 
-    <h3>Customer Service</h3>
-    <p>Those with any questions regarding the content that is found within the pages of Bangerslots.com are invited to inquire about it at the email addresses provided. However, Bangerslots.com maintains no responsibility for customer service issues that are particular to the casino that are reviewed, nor does it serve as a clearinghouse for specific customer complaints. Players are advised to direct contact the gaming establishments using the contact information that has been provided to them.</p>
+<h3>Klientu serviss</h3>
+<p>Tie, kuriem ir jebkādi jautājumi par balticslots.com lapās atrodamo saturu, tiek aicināti par to interesēties norādītajās e-pasta adresēs. Tomēr balticslots.com neuzņemas nekādu atbildību par klientu apkalpošanas jautājumiem, kas ir īpaši saistīti ar pārskatīto kazino, un tā arī nekalpo par informācijas centru konkrētām klientu sūdzībām. Spēlētājiem tiek ieteikts tieši sazināties ar spēļu iestādēm, izmantojot tiem sniegto kontaktinformāciju.</p>
 
-    <p class="signature">Bangerslots.com Team</p>
+     <p class="signature" style="padding-top: 20px; font-style: italic;">balticslots.com komanda.</p>
   `
 };
 
 export const termsConditionsData = {
-  slug: "terms-conditions",
-  title: "Terms & Conditions",
+  slug: "noteikumi-nosacijumi",
+  title: "Noteikumi & Nosacījumi",
   image: "",
-  description: "Please read these terms and conditions carefully before using our service",
+  description: "Pirms mūsu pakalpojuma lietošanas uzmanīgi izlasiet šos noteikumus un nosacījumus",
   content: `
-    <h2>Terms and Conditions</h2>
-    <p>Welcome to Bangerslots! These terms and conditions outline the rules and regulations for the use of Bangerslots's Website, located at Bangerslots.com. By accessing this website we assume you accept these terms and conditions. Do not continue to use Bangerslots if you do not agree to take all of the terms and conditions stated on this page.</p>
+    <h2>Noteikumi & Nosacījumi</h2>
+    <p>Laipni lūgti Baltic Slots! Šie noteikumi un nosacījumi nosaka Baltic Slots tīmekļa vietnes, kas atrodas balticslots.com, lietošanas noteikumus un normas. Piekļūstot šai vietnei, mēs pieņemam, ka jūs piekrītat šiem noteikumiem un nosacījumiem. Neturpiniet izmantot Baltic Slots, ja nepiekrītat pieņemt visus šajā lapā minētos noteikumus un nosacījumus.</p>
 
-    <h2>Terminology</h2>
-    <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements:</p>
+    <h2>Terminoloģija</h2>
+    <p>Šiem Noteikumiem un nosacījumiem, Paziņojumam par konfidencialitāti un Paziņojumam par atteikšanos no atbildības, kā arī visiem līgumiem ir piemērojama šāda terminoloģija:</p>
     <ul>
-      <li>"Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company's terms and conditions.</li>
-      <li>"The Company", "Ourselves", "We", "Our" and "Us", refers to our Company.</li>
-      <li>"Party", "Parties", or "Us", refers to both the Client and ourselves.</li>
+      <li>“Klients”, “Jūs” un “Jūsu” attiecas uz Jums, persona piesakās šajā tīmekļa vietnē un atbilst uzņēmuma noteikumiem un nosacījumiem.</li>
+      <li>“Uzņēmums”, “mēs paši”, “Mēs”, “mūsu” un “mēs”, attiecas uz mūsu uzņēmumu.</li>
+      <li>“Puse”, “Puses” vai “mēs” attiecas gan uz Klientu, gan uz mums pašiem.</li>
     </ul>
-    <p>All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client's needs in respect of provision of the Company's stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
+    <p>Visi noteikumi attiecas uz piedāvājumu, pieņemšanu un samaksu, kas nepieciešama, lai veiktu mūsu palīdzības procesu Klientam vispiemērotākajā veidā ar skaidru mērķi apmierināt Klienta vajadzības attiecībā uz Sabiedrības norādīto pakalpojumu sniegšanu saskaņā ar Nīderlandē spēkā esošajiem tiesību aktiem un ievērojot tos. Jebkurš iepriekš minētās terminoloģijas vai citu vārdu lietojums vienskaitlī, daudzskaitlī, lielajiem burtiem un/vai viņš/viņa vai viņi tiek uzskatīts par savstarpēji aizvietojamu un tādējādi attiecas uz to pašu.</p>
 
-    <p class="signature">Bangerslots.com Team</p>
+     <p class="signature" style="padding-top: 20px; font-style: italic;">balticslots.com komanda.</p>
   `
 };
 
 export const cookiePolicyData = {
-  slug: "cookie-policy",
-  title: "Cookie Policy",
+  slug: "sikfailu-politika",
+  title: "Sīkfailu politika",
   image: "",
-  description: "Information about how we use cookies on our website",
+  description: "Informācija par sīkfailu izmantošanu mūsu tīmekļa vietnē",
   content: `
-    <h2>Cookie Policy</h2>
-    <p>We employ the use of cookies. By accessing Bangerslots, you agreed to use cookies in agreement with the Bangerslots's Privacy Policy.</p>
-    
-    <p>Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.</p>
+   <h2>Sīkfailu politika</h2>
+<p>Mēs izmantojam cepumus. Piekļūstot Baltijas laika nišām, jūs piekritāt izmantot sīkfailus saskaņā ar Baltijas laika nišas konfidencialitātes politiku.</p>
 
-    <p class="signature">Bangerslots.com Team</p>
+<p>Lielākā daļa interaktīvo tīmekļa vietņu izmanto sīkfailus, lai mēs varētu izgūt lietotāja informāciju par katru apmeklējumu. Sīkfailus izmanto mūsu tīmekļa vietne, lai noteiktu apgabalu funkcionalitāti padarītu vieglāku lietotājiem, kas apmeklē mūsu tīmekļa vietni. Daži mūsu saistītie/reklāmas partneri var izmantot arī sīkfailus.</p>
+
+     <p class="signature" style="padding-top: 20px; font-style: italic;">balticslots.com komanda.</p>
   `
 };

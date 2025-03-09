@@ -53,13 +53,19 @@ interface NavbarClientProps {
 export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobile, setIsMobile] = useState(true)
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) { // lg breakpoint
+      const screenWidth = window.innerWidth;
+      
+      if (screenWidth >= 1024) { // lg breakpoint
         setIsMenuOpen(false)
         document.body.style.overflow = 'unset'
       }
+      
+      // Update mobile state
+      setIsMobile(screenWidth < 640)
       
       // Update navbar height CSS variable
       updateNavbarHeight()
@@ -124,7 +130,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
           }
         }
       `}</style>
-      <nav className="w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-transparent safe-area-padding-top">
+      <nav className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${isMenuOpen ? 'bg-[#000025]' : 'bg-transparent'} safe-area-padding-top`}>
       <div className={`mx-auto relative ${isScrolled ? 
   'md:px-6  sm:py-2 px-0' : 
   'md:px-10 mt-2 sm:mt-4 px-3 sm:px-5'  // Keep some padding when not scrolled
@@ -137,8 +143,15 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
       style={isScrolled ? { 
         minHeight: '3.5rem',
         position: 'relative',
-        outline: '1px solid rgba(255, 255, 255, 0.15)',
-        outlineOffset: '-1px'
+        ...(isMobile ? {
+          borderBottom: '1px solid rgba(255, 255, 255, 0.15)',
+          borderTop: 'none',
+          borderLeft: 'none',
+          borderRight: 'none'
+        } : {
+          outline: '1px solid rgba(255, 255, 255, 0.15)',
+          outlineOffset: '-1px'
+        })
       } : {}}
     >
             {isScrolled && (
@@ -221,7 +234,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                 {categories.map((category) => (
                   <Link
                     key={category._id}
-                    href={`/category/${category.slug.current}`}
+                    href={`/kategorija/${category.slug.current}`}
                     className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
                   >
                     {category.title}
@@ -234,13 +247,13 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                   Spēļu pamācības
                 </Link>
                 <Link
-                  href="/gambling-advice"
+                  href="/padomi"
                   className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
                 >
                   Padomi
                 </Link>
                 <Link
-                  href="/payment-methods"
+                  href="/maksajumu-metodes"
                   className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
                 >
                   Maksājumu metodes
@@ -266,7 +279,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                 {categories.map((category) => (
                   <Link
                     key={category._id}
-                    href={`/category/${category.slug.current}`}
+                    href={`/kategorija/${category.slug.current}`}
                     onClick={() => setIsMenuOpen(false)}
                     className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                   >
@@ -281,14 +294,14 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                   Spēļu pamācības
                 </Link>
                 <Link
-                  href="/gambling-advice"
+                  href="/padomi"
                   onClick={() => setIsMenuOpen(false)}
                   className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                 >
                   Padomi
                 </Link>
                 <Link
-                  href="/payment-methods"
+                  href="/maksajumu-metodes"
                   onClick={() => setIsMenuOpen(false)}
                   className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                 >

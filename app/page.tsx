@@ -134,10 +134,11 @@ export default async function Home() {
               
                 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-[#F9F5FF]">
-                  TAVS ONLINE <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight">CASINO</span>
+                ONLINE CASINO 
+                <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight"> JAUNUMI</span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-[#9b98df] max-w-2xl mx-auto leading-relaxed mb-2 sm:mb-4">
-                  Discover a world of premium casino entertainment and master winning strategies crafted by experts
+                Izbaudi svaigākos un ekskluzīvākos kazino piedāvājumus Latvijā
                 </p>
               
               </div>
@@ -145,7 +146,7 @@ export default async function Home() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 md:mb-12 w-full max-w-xl mx-auto px-3 sm:px-2 md:px-0">
               <Link 
-                  href="/category/all-bonuses"
+                  href="/kategorija/all-bonuses"
                   className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:flex-1 text-center whitespace-nowrap"
                 >
                   <span className="relative flex items-center justify-center">
@@ -305,7 +306,7 @@ export default async function Home() {
 
             <div className="flex justify-center mt-12">
             <Link 
-  href="/category/all-bonuses"
+  href="/kategorija/all-bonuses"
   className="group relative px-8 sm:px-6 py-4 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:w-auto sm:max-w-xs text-center whitespace-nowrap"
 >
   <span className="relative flex items-center justify-center">
@@ -328,7 +329,7 @@ export default async function Home() {
         </AnimatedSection>
 
         {/* Casino Guides */}
-        <AnimatedSection className="relative overflow-hidden w-full py-20 bg-[#000025] rounded-0 lg:rounded-3xl">
+        <AnimatedSection className="relative overflow-hidden w-full py-20 bg-[#000025] rounded-0 rounded-t-3xl lg:rounded-3xl">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
             {/* Single top blob - centered behind title */}
             <div className="absolute top-[5%] left-[30%] w-[40%] h-[35%] bg-[#3930ff]/40 blur-[75px] animate-blob-flame FancyBlob_animateOpacity__6GgAA"></div>
@@ -338,11 +339,11 @@ export default async function Home() {
             <div className="absolute bottom-[10%] left-[25%] w-[30%] h-[40%] bg-[#3930ff]/30 blur-[60px] animate-blob-flame" style={{animationDelay: '1.5s'}}></div>
           </div>
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="text-2xl md:text-3xl font-light mb-4 uppercase text-[#F9F5FF]">
-                Noderīgas kazino pamācības
+            <div className="text-center space-y-4 mb-12 relative z-10">
+              <h2 className="text-2xl md:text-3xl font-light mb-4 uppercase text-[#F9F5FF] relative inline-block">
+                <span className="relative z-10">Noderīgas kazino pamācības</span>
               </h2>
-              <p className="text-[#9b98df] max-w-2xl mx-auto text-lg leading-relaxed">
+              <p className="text-[#9b98df] max-w-2xl mx-auto text-lg leading-relaxed relative z-10">
               Mēs rūpējamies par jums un jūsu pieredzi mūsu piedāvātajos kazino, tāpēc esam sagatavojuši populārākās kazino spēļu pamācības.
               </p>
             </div>

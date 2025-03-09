@@ -170,14 +170,14 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
       {/* Main container with dark background */}
       <div className="flex flex-col md:flex-row backdrop-blur-sm text-[#F9F5FF]">
         {/* Left column with logo */}
-        <div className="w-full h-40 sm:h-48 md:h-auto md:w-1/4 bg-black/40 backdrop-blur-sm relative overflow-hidden rounded-l-3xl">
+        <div className="w-full h-40 sm:h-48 md:h-auto md:w-1/4 bg-white backdrop-blur-sm relative overflow-hidden rounded-l-3xl">
           {/* Rank indicator */}
        
           <Image
             src={casino.imageUrl}
             alt={casino.offerTitle}
             fill
-            className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+            className="object-contain scale-75 "
             sizes="(max-width: 768px) 100vw, 25vw"
             priority
           />

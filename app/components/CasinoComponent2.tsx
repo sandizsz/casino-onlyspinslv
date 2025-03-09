@@ -169,13 +169,13 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
       {/* Main container with light background */}
       <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm text-[#000025]">
         {/* Left column with logo */}
-        <div className="w-full h-40 sm:h-48 md:h-auto md:w-1/4 bg-black relative">
+        <div className="w-full h-40 sm:h-48 md:h-auto md:w-1/4 bg-white relative">
 
           <Image
             src={casino.imageUrl}
             alt={casino.offerTitle}
             fill
-            className="object-cover"
+            className="object-contain scale-75 "
             sizes="(max-width: 768px) 100vw, 25vw"
             priority
           />
@@ -238,7 +238,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
             {/* Left side: Indicators and payment methods (55%) */}
             <div className="md:w-[55%]">
               {/* Indicators section */}
-              <div className="flex justify-between mb-5">
+              <div className="flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start mb-5">
                 {/* Free Spins - Only show if value exists */}
                 {casino.freeSpins && (
                   <div className="flex items-center">
@@ -252,7 +252,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
                 
                 {/* Min. iemaksa with wallet icon - Only show if value exists */}
                 {casino.minDeposit && (
-                  <div className="flex items-center">
+                  <div className="flex items-center ">
                     <Wallet className="w-4 h-4 mr-1.5 text-[#000025]" />
                     <div className="flex flex-col ml-1">
                       <span className="text-[11px] text-gray-600 font-medium">Min. iemaksa</span>
@@ -276,7 +276,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
               {/* Payment methods section */}
               {casino.paymentMethods && casino.paymentMethods.length > 0 && (
                 <div className="mt-5">
-                  <div className="flex items-center justify-center sm:justify-start mb-2">
+                  <div className="flex items-center justify-center lg:justify-start mb-2">
                     <div className="flex items-center">
                       <CreditCard className="w-3.5 h-3.5 mr-1 text-[#000025]" />
                       <span className="text-[11px] text-gray-600 font-medium">Maksājumu metodes</span>
@@ -298,7 +298,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
                       </button>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center sm:justify-start">
+                  <div className="flex items-center justify-center lg:justify-start">
                   {/* Payment method boxes */}
                   <div className="flex items-center justify-between gap-3 overflow-hidden mt-2">
                     {currentMethods.map((method) => (
@@ -329,56 +329,57 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
             {/* Right side: Gauge and claim button (45%) */}
             <div className="md:w-[45%] flex flex-col items-center">
               {/* RTP gauge using the rating */}
-              <div className="flex flex-col items-center mb-3">
-                <div className="w-[110px] h-[80px]">
-                  <GaugeComponent
-                    id={`gauge-${casino._id}`}
-                    type="semicircle"
-                    arc={{
-                      colorArray: getGaugeColors(casino.rating),
-                      subArcs: [{
-                        limit: 10,
-                        color: getGaugeArcColor(casino.rating),
-                        showTick: true
-                      }],
-                      width: 0.20,
-                      padding: 0.03,
-                      cornerRadius: 2,
-                      gradient: true
-                    }}
-                    pointer={{
-                      type: "arrow",
-                      color: '#000',
-                      length: 10,
-                      width: 40,
-                      elastic: true
-                    }}
-                    value={casino.rating}
-                    minValue={0}
-                    maxValue={10}
-                    labels={{
-                      valueLabel: {
-                        formatTextValue: value => value.toFixed(1),
-                        style: { 
-                          fontSize: "52px",
-                          fontWeight: "bold",
-                          fill: getValueLabelColor(casino.rating)
-                        }
-                      },
-                      tickLabels: {
-                        hideMinMax: true,
-                        ticks: [],
-                        defaultTickValueConfig: {
-                          hide: true
-                        },
-                        defaultTickLineConfig: {
-                          hide: true
-                        }
-                      }
-                    }}
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
+          <div className="flex flex-col items-center mb-6">
+            <div className="w-[120px] h-[75px]">
+              <GaugeComponent
+                id={`gauge-${casino._id}`}
+                type="semicircle"
+                arc={{
+                  colorArray: getGaugeColors(casino.rating),
+                  subArcs: [{
+                    limit: 10,
+                    color: getGaugeArcColor(casino.rating),
+                    showTick: true
+                  }],
+                  width: 0.2,
+                  padding: 0.02,
+                  cornerRadius: 1,
+                  gradient: true
+                }}
+                pointer={{
+                  type: "arrow",
+                  color: '#000025',
+                  length: 10,
+                  width: 40,
+                  elastic: true
+                }}
+                value={casino.rating}
+                minValue={0}
+                maxValue={10}
+                labels={{
+                  valueLabel: {
+                    formatTextValue: value => value.toFixed(1),
+                    style: { 
+                      fontSize: "60px",
+                      fontWeight: "bold",
+                      fill: '#000025'
+                    }
+                  },
+                  tickLabels: {
+                    hideMinMax: true,
+                    ticks: [],
+                    defaultTickValueConfig: {
+                      hide: true
+                    },
+                    defaultTickLineConfig: {
+                      hide: true
+                    }
+                  }
+                }}
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+          
               </div>
               
               {/* Claim button */}

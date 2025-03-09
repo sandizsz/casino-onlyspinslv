@@ -11,13 +11,13 @@ export default function Footer() {
       <div className="border-b border-[#8126FF]/20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-wrap justify-center gap-8 text-sm text-[#9b98df]">
-            <Link href="/privacy-policy" className="hover:text-[#8126FF] transition-colors duration-300">
+            <Link href="/privatuma-politika" className="hover:text-[#8126FF] transition-colors duration-300">
               Privātuma politika
             </Link>
-            <Link href="/terms-conditions" className="hover:text-[#8126FF] transition-colors duration-300">
+            <Link href="/noteikumi-nosacijumi" className="hover:text-[#8126FF] transition-colors duration-300">
               Noteikumi & nosacījumi
             </Link>
-            <Link href="/cookie-policy" className="hover:text-[#8126FF] transition-colors duration-300">
+            <Link href="/sikfailu-politika" className="hover:text-[#8126FF] transition-colors duration-300">
             Sīkfailu politika
             </Link>
             <Link href="/atruna" className="hover:text-[#8126FF] transition-colors duration-300">
@@ -30,51 +30,66 @@ export default function Footer() {
       {/* Gambling Awareness Logos */}
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 bg-white/10 p-6 rounded-xl backdrop-blur-sm">
-          <Link href="https://www.gamblingtherapy.org" className="transform hover:scale-110 hover:rotate-2 transition-all duration-300">
-            <Image 
-              src="/images/GAMBLING_THERAPY-logo.png" 
-              alt="Gambling Therapy Logo"
-              width={100}
-              height={50}
-              className="h-8 w-auto object-contain opacity-100 brightness-125 transition-all duration-300"
-            />
-          </Link>
-          <Link href="" className="transform hover:scale-110 hover:rotate-2 transition-all duration-300">
-            <Image 
-              src="/images/Image1.png" 
-              alt="Gambling Awareness Logo 1"
-              width={100}
-              height={50}
-              className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
-            />
-          </Link>
-          <Link href="https://www.gambleaware.org/" className="transform hover:scale-110 hover:rotate-2 transition-all duration-300">
-            <Image 
-              src="/images/Image2.png"
-              alt="Gambling Awareness Logo 2"
-              width={100}
-              height={50}
-              className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
-            />
-          </Link>
-          <Link href="https://www.gamcare.org.uk/" className="transform hover:scale-110 hover:rotate-2 transition-all duration-300">
-            <Image 
-              src="/images/Image3.png"
-              alt="Gambling Awareness Logo 3"
-              width={100}
-              height={50}
-              className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
-            />
-          </Link>
-          <Link href="https://www.gamstop.co.uk" className="transform hover:scale-110 hover:rotate-2 transition-all duration-300">
-            <Image 
-              src="/images/Image4.png"
-              alt="Gambling Awareness Logo 4"
-              width={100}
-              height={50}
-              className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
-            />
-          </Link>
+          <div className="relative p-4">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
+            <Link href="https://www.gamblingtherapy.org" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
+              <Image 
+                src="/images/GAMBLING_THERAPY-logo.png" 
+                alt="Gambling Therapy Logo"
+                width={100}
+                height={50}
+                className="h-8 w-auto object-contain opacity-100 brightness-125 transition-all duration-300"
+              />
+            </Link>
+          </div>
+          <div className="relative p-4">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
+            <Link href="" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
+              <Image 
+                src="/images/Image1.png" 
+                alt="Gambling Awareness Logo 1"
+                width={100}
+                height={50}
+                className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
+              />
+            </Link>
+          </div>
+          <div className="relative p-4">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
+            <Link href="https://www.gambleaware.org/" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
+              <Image 
+                src="/images/Image2.png"
+                alt="Gambling Awareness Logo 2"
+                width={100}
+                height={50}
+                className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
+              />
+            </Link>
+          </div>
+          <div className="relative p-4">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
+            <Link href="https://www.gamcare.org.uk/" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
+              <Image 
+                src="/images/Image3.png"
+                alt="Gambling Awareness Logo 3"
+                width={100}
+                height={50}
+                className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
+              />
+            </Link>
+          </div>
+          <div className="relative p-4">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
+            <Link href="https://www.gamstop.co.uk" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
+              <Image 
+                src="/images/Image4.png"
+                alt="Gambling Awareness Logo 4"
+                width={100}
+                height={50}
+                className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
+              />
+            </Link>
+          </div>
         </div>
       </div>
 

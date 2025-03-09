@@ -10,6 +10,18 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  redirects: async () => [
+    {
+      source: '/category',
+      destination: '/kategorija',
+      permanent: true,
+    },
+    {
+      source: '/category/:slug*',
+      destination: '/kategorija/:slug*',
+      permanent: true,
+    },
+  ],
 };
 
 export default nextConfig;

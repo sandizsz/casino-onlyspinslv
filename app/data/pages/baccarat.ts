@@ -1,5 +1,5 @@
 export const baccaratData = {
-  slug: "baccarat",
+  slug: "bakara",
   title: "Bakara",
   image: "/images/baccarat.webp",
   description: "Bakara ir viena no Eiropas teritorijā senākajām kāršu spēlēm. Mūsdienās tā, kopā ar pokeru un blekdžeku, tiek dēvēta par kazino klasiku. Bakaru jeb baccarat ir iemīļojuši cilvēki visā pasaulē, tāpēc ka šo kāršu spēli ir viegli apgūt un tai ir aizraujošs ritējums. ",

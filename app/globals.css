@@ -454,35 +454,38 @@ main {
 @layer base {
   /* Legal content styles */
   .legal-content {
+
+    padding-bottom: 2rem;
+
     h2 {
-      @apply text-2xl font-bold text-[#8126FF] mb-6 mt-8 border-b border-[#8126FF]/20 pb-2;
+      @apply uppercase text-2xl font-bold text-[#000025] mb-6 mt-8 border-b border-[#8126FF]/20 pb-2;
     }
     h3 {
-      @apply text-xl font-bold text-[#8126FF] mb-4 mt-6;
+      @apply uppercase text-xl font-bold text-[#000025] mb-4 mt-6;
     }
     h4 {
-      @apply text-[#8126FF] text-sm font-thin mt-6 mb-4;
+      @apply uppercase text-[#000025] text-sm font-thin mt-6 mb-4;
     }
     p:not(.game-guide-label) {
-      @apply text-[#F9F5FF]/70 leading-relaxed;
+      @apply text-[#000025] leading-relaxed;
     }
     ul {
-      @apply mb-6 text-[#F9F5FF]/70 space-y-3;
+      @apply mb-6 text-[#000025] space-y-3;
     }
     li {
-      @apply ml-4 pl-4 border-l-2 border-[#8126FF]/20;
+      @apply ml-4 pl-4 border-l-2 border-[#000025]/20;
     }
     li::marker {
-      @apply text-[#8126FF];
+      @apply text-[#000025];
     }
     blockquote {
-      @apply pl-4 border-l-4 border-[#8126FF] italic text-[#F9F5FF]/70 my-6;
+      @apply pl-4 border-l-4 border-[#000025] italic text-[#000025]/70 my-6;
     }
     dt {
-      @apply text-white font-semibold mt-4;
+      @apply text-[#000025] font-semibold mt-4;
     }
     dd {
-      @apply text-gray-400 ml-6 mb-2;
+      @apply text-[#000025]/70 ml-6 mb-2;
     }
     /* Grid styles */
     [class*='grid-cols'] {
@@ -505,11 +508,11 @@ main {
     }
 
     table th {
-      @apply bg-[#1D053F]/50 text-[#8126FF] p-3 text-left border border-[#8126FF]/20;
+      @apply bg-[#1D053F]/50 text-[#000025] p-3 text-left border border-[#000025]/20;
     }
 
     table td {
-      @apply p-3 text-[#F9F5FF]/70 border border-[#8126FF]/20;
+      @apply p-3 text-[#000025]/70 border border-[#000025]/20;
     }
 
     div > div {

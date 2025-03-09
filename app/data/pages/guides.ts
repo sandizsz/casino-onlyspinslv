@@ -6,19 +6,19 @@ interface GameGuide {
 
 const gameGuides: GameGuide[] = [
   {
-    title: "BLACKJACK",
-    slug: "blackjack",
+    title: "Acīte",
+    slug: "acite",
     description: "Apgūstiet populārāko kazino kāršu spēli, kas apvieno prasmes un veiksmi. Uzziniet pamata stratēģiju, kāršu skaitīšanas tehnikas un to, kā maksimāli palielināt savas izredzes pret dīleri šajā klasiskajā galda spēlē, kas gadsimtiem ilgi ir izklaidējusi spēlētājus..."
   },
   {
-    title: "ROULETTE",
-    slug: "roulette",
-    description: "Roulette is thought to be an extremely prominent gambling club diversion everywhere throughout the world. Its nearness is consistent crosswise over fringes as one can play roulette whether in Las Vegas or numerous zones in Europe. The diversion is extremely straightforward and straightforward and to be enjoyed by anybody crosswise over fluctuated social standings, age..."
+    title: "RULETE",
+    slug: "rulete",
+    description: "Rulete (no franču: roulette — 'rats') ir viena no populārākajām kazino galda spēlēm, kuras pamatā ir likmju veikšana, ruletes rats, numuri un bumbiņa. Ruletes pirmsākumi meklējami 17. gadsimta Francijā, kur matemātiķis Blēzs Paskāls, mēģinādams radīt mūžīgo dzinēju, izveidoja primitīvu ruletes veida mehānismu..."
   },
   {
-    title: "BACCARAT",
-    slug: "baccarat",
-    description: "From French nobility to modern casinos, discover the rich history and gameplay of Baccarat. This elegant card game offers simple rules but sophisticated betting options, making it a favorite among high-rollers and casual players alike..."
+    title: "BAKARA",
+    slug: "bakara",
+    description: "Bakara ir viena no Eiropas teritorijā senākajām kāršu spēlēm. Mūsdienās tā, kopā ar pokeru un blekdžeku, tiek dēvēta par kazino klasiku. Bakaru jeb baccarat ir iemīļojuši cilvēki visā pasaulē, tāpēc ka šo kāršu spēli ir viegli apgūt un tai ir aizraujošs ritējums..."
   },
   {
     title: "SLOTS",
@@ -45,17 +45,17 @@ const gameGuides: GameGuide[] = [
 export const casinoGuidesData = {
   slug: "spelu-pamacibas",
   title: "Spēļu pamācības",
-  image: "",
-  description: "Learn how to play popular casino games with our comprehensive guides.",
+  image: "/images/roulette.webp",
+  description: "Uzziniet, kā spēlēt populāras kazino spēles, izmantojot mūsu visaptverošās spēļu pamācības.",
   content: `
     <div class="space-y-12 py-12">
       ${gameGuides.map(guide => `
-        <div class="bg-[#1D053F]/50 border border-[#8126FF]/20 rounded-2xl p-8 hover:border-[#8126FF]/40 transition-colors shadow-[0_0_20px_rgba(129,38,255,0.1)]">
-          <p class="text-md uppercase tracking-wider text-[#F9F5FF]/70 game-guide-label">Game guides</p>
-          <h2 class="text-5xl font-bold mb-4 text-[#8126FF] !important" style="color: #8126FF !important;">${guide.title}</h2>
+        <div class="bg-[#000025] border border-[#8126FF]/20 rounded-2xl p-8 hover:border-[#8126FF]/40 transition-colors shadow-[0_0_20px_rgba(129,38,255,0.1)]">
+          <p class="text-md uppercase tracking-wider text-[#F9F5FF]/60 game-guide-label">Spēļu pamācības</p>
+          <h2 class="text-5xl font-bold mb-4 mt-0 !important" style="color: #F9F5FF !important; margin-top: 0 !important;">${guide.title}</h2>
           <div class="w-24 h-1 bg-[#8126FF] mb-6"></div>
-          <p class="text-[#F9F5FF]/70 mb-8">${guide.description}</p>
-          <a href="/${guide.slug}" class="inline-block bg-[#8126FF] text-[#F9F5FF] px-8 py-3 font-bold hover:bg-[#8126FF]/80 transition-colors rounded-lg shadow-[0_0_15px_rgba(129,38,255,0.3)]">READ MORE</a>
+          <p class="text-[#9b98df] mb-8" style="color: #9b98df !important;">${guide.description}</p>
+          <a href="/${guide.slug}" class="uppercase inline-block bg-[#8126FF] text-[#F9F5FF] px-8 py-3 font-bold hover:bg-[#8126FF]/80 transition-colors rounded-lg ">Lasīt vairāk</a>
         </div>
       `).join('')}
     </div>
@@ -63,9 +63,9 @@ export const casinoGuidesData = {
 };
 
 export const paymentMethodsData = {
-  slug: "payment-methods",
-  title: "Payment Methods",
-  image: "",
+  slug: "maksajumu-metodes",
+  title: "Maksājumu metodes",
+  image: "/images/gambling-advice.webp",
   description: "Learn about various payment methods available for online gambling, including e-wallets, bank transfers, credit cards, and cryptocurrencies.",
   content: `
     <div class="prose prose-lg prose-invert max-w-none">
@@ -269,8 +269,8 @@ export const paymentMethodsData = {
 };
 
 export const gamblingAdviceData = {
-  slug: "gambling-advice",
-  title: "Gambling Advice",
+  slug: "padomi",
+  title: "Padomi",
   image: "/images/gambling-advice.webp",
   description: "A comprehensive guide to popular casino games, their rules, and strategies to improve your gameplay experience.",
   content: `
