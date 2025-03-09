@@ -75,7 +75,7 @@ export default async function Page({ params }: PageProps) {
           ) : (
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-light leading-tight mb-8">
               <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]">
-                {page.title}
+                {page.title} 
               </span>
             </h1>
           )}

@@ -32,11 +32,51 @@ html.loading-active body > div:first-child {
   --secondary: #2B2B2B;
   --text: #F9F5FF;
   --cta: #8126FF;
+  --navbar-height: 4rem;
+  --navbar-height-sm: 4.5rem;
+  --navbar-height-md: 5rem;
 }
 
 body {
   background-color: var(--primary-black);
   color: var(--text);
+}
+
+/* Ensure content doesn't get hidden under the navbar */
+main {
+  padding-top: var(--navbar-height);
+}
+
+/* Responsive adjustments for navbar spacing */
+@media (min-width: 640px) {
+  main {
+    padding-top: var(--navbar-height-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-top: var(--navbar-height-md);
+  }
+}
+
+/* Add extra padding for browsers with top UI elements */
+@supports (padding-top: env(safe-area-inset-top)) {
+  main {
+    padding-top: calc(var(--navbar-height) + env(safe-area-inset-top, 0px));
+  }
+  
+  @media (min-width: 640px) {
+    main {
+      padding-top: calc(var(--navbar-height-sm) + env(safe-area-inset-top, 0px));
+    }
+  }
+  
+  @media (min-width: 768px) {
+    main {
+      padding-top: calc(var(--navbar-height-md) + env(safe-area-inset-top, 0px));
+    }
+  }
 }
 
 /* Custom Animations */

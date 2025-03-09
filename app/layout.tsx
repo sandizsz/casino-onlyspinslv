@@ -10,13 +10,13 @@ import { NavigationEvents } from './components/NavigationEvents'
 import { Suspense } from 'react'
 
 const alexandria = localFont({
-  src: "./fonts/Alexandria-VariableFont.ttf",
+  src: "./fonts/SofiaProSemiBold.otf",
   variable: "--font-alexandria",
-  weight: "100 900",
+  weight: "700",
 });
 
 const drukTextWideBold = localFont({
-  src: "./fonts/druknew.otf",
+  src: "./fonts/DrukWideMedium.ttf",
   variable: "--font-druk-text-wide-bold",
   display: 'swap',
 });

@@ -60,6 +60,9 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
         setIsMenuOpen(false)
         document.body.style.overflow = 'unset'
       }
+      
+      // Update navbar height CSS variable
+      updateNavbarHeight()
     }
 
     const handleScroll = () => {
@@ -68,13 +71,28 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
       } else {
         setIsScrolled(false)
       }
+      
+      // Update navbar height after scroll state changes
+      setTimeout(updateNavbarHeight, 300) // Wait for transition to complete
+    }
+    
+    // Function to update the navbar height CSS variable
+    const updateNavbarHeight = () => {
+      const navbarElement = document.querySelector('nav')
+      if (navbarElement) {
+        const height = navbarElement.offsetHeight
+        document.documentElement.style.setProperty('--navbar-height', `${height}px`)
+      }
     }
 
     window.addEventListener('resize', handleResize)
     window.addEventListener('scroll', handleScroll)
     
-    // Initial check
+    // Initial setup
     handleScroll()
+    
+    // Set initial navbar height after component mounts
+    setTimeout(updateNavbarHeight, 100)
     
     return () => {
       window.removeEventListener('resize', handleResize)
@@ -96,8 +114,17 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
 
   return (
     <>
-      <style jsx global>{glowStyles}</style>
-      <nav className="w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-transparent">
+      <style jsx global>{`
+        ${glowStyles}
+        
+        /* Add safe area inset padding for iOS devices */
+        @supports (padding-top: env(safe-area-inset-top)) {
+          .safe-area-padding-top {
+            padding-top: env(safe-area-inset-top);
+          }
+        }
+      `}</style>
+      <nav className="w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] bg-transparent safe-area-padding-top">
       <div className={`mx-auto relative ${isScrolled ? 
   'md:px-6  sm:py-2 px-0' : 
   'md:px-10 mt-2 sm:mt-4 px-3 sm:px-5'  // Keep some padding when not scrolled
@@ -126,7 +153,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
               {/* Left - Logo */}
               <div className="flex-1">
                 <Link href="/" className="flex items-center group">
-                  <div className="h-8 sm:h-10 md:h-12 w-auto aspect-[2/1] transition-transform duration-300 group-hover:scale-105">
+                  <div className="h-10 sm:h-10 md:h-12 w-auto aspect-[2/1] transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src="/images/BalticSlots.png"
                       alt="Baltic slots logo"
@@ -139,8 +166,8 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                 </Link>
               </div>
 
-              {/* Gift Icon */}
-              <div className="mr-3">
+              {/* Gift Icon - Hidden on mobile */}
+              <div className="hidden">
                 <GiftIcon casinos={casinos} />
               </div>
             
@@ -229,7 +256,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden fixed top-20 sm:top-24 left-0 right-0 bottom-0 z-40 bg-[rgb(0_0_37)] backdrop-blur-lg border-t border-[#8126FF]/20 transform transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
+        <div className={`lg:hidden fixed top-[var(--navbar-height,4rem)] left-0 right-0 bottom-0 z-40 bg-[rgb(0_0_37)] backdrop-blur-lg border-t border-[#8126FF]/20 transform transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
           isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
         }`}>
           <div className="relative w-full h-full">
