@@ -34,7 +34,7 @@ export default function Footer() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
             <Link href="https://www.gamblingtherapy.org" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
               <Image 
-                src="/images/GAMBLING_THERAPY-logo.png" 
+                src="/images/gambling_therapy.png" 
                 alt="Gambling Therapy Logo"
                 width={100}
                 height={50}
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
           <div className="relative p-4">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
-            <Link href="" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
+            <Link href="https://www.gamblingcommission.gov.uk/public-and-players/safer-gambling" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
               <Image 
                 src="/images/Image1.png" 
                 alt="Gambling Awareness Logo 1"
@@ -58,11 +58,11 @@ export default function Footer() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
             <Link href="https://www.gambleaware.org/" className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
               <Image 
-                src="/images/Image2.png"
+                src="/images/BGA.png"
                 alt="Gambling Awareness Logo 2"
                 width={100}
                 height={50}
-                className="h-8 w-auto object-contain opacity-100 transition-all duration-300"
+                className="h-4 w-auto object-contain opacity-100 transition-all duration-300"
               />
             </Link>
           </div>
