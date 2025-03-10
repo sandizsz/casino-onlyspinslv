@@ -146,7 +146,7 @@ export default async function Home() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 md:mb-12 w-full max-w-xl mx-auto px-3 sm:px-2 md:px-0">
               <Link 
-                  href="/kategorija/all-bonuses"
+                  href="/kategorija/visi-bonusi"
                   className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:flex-1 text-center whitespace-nowrap"
                 >
                   <span className="relative flex items-center justify-center">
@@ -155,7 +155,7 @@ export default async function Home() {
                   </span>
                 </Link>
                 <Link 
-                  href="/game-guides"
+                  href="/spelu-pamacibas"
                   className="group px-5 sm:px-6 py-2 sm:py-3 bg-[#F9F5FF]/5 backdrop-blur-md border border-[#F9F5FF]/20 hover:border-[#8126FF]/40 text-[#F9F5FF] text-base sm:text-lg rounded-xl transition-all hover:bg-[#F9F5FF]/10 w-full sm:flex-1 text-center whitespace-nowrap"
                 >
                   <span className="flex items-center justify-center">
@@ -306,7 +306,7 @@ export default async function Home() {
 
             <div className="flex justify-center mt-12">
             <Link 
-  href="/kategorija/all-bonuses"
+  href="/kategorija/visi-bonusi"
   className="group relative px-8 sm:px-6 py-4 sm:py-3 bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden backdrop-blur-md w-full sm:w-auto sm:max-w-xs text-center whitespace-nowrap"
 >
   <span className="relative flex items-center justify-center">
