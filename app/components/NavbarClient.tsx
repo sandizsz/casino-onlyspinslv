@@ -276,37 +276,49 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
 
             <div className="flex flex-col items-center pt-8 space-y-6 p-8 overflow-y-auto h-screen relative w-full">
               <div className="w-full max-w-md space-y-4">
-                {categories.map((category) => (
+                {/* Casino Categories Section */}
+                <div className="space-y-4">
+                  <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Kazino Kategorijas</h3>
+                  {categories.map((category) => (
+                    <Link
+                      key={category._id}
+                      href={`/kategorija/${category.slug.current}`}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
+                    >
+                      {category.title}
+                    </Link>
+                  ))}
+                </div>
+                
+                {/* Separator */}
+                <div className="h-px bg-gradient-to-r from-transparent via-[#8126FF]/30 to-transparent my-2"></div>
+                
+                {/* Other Links Section */}
+                <div className="space-y-4">
+                  <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Citas Saites</h3>
                   <Link
-                    key={category._id}
-                    href={`/kategorija/${category.slug.current}`}
+                    href="/spelu-pamacibas"
                     onClick={() => setIsMenuOpen(false)}
                     className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                   >
-                    {category.title}
+                    Spēļu pamācības
                   </Link>
-                ))}
-                <Link
-                  href="/spelu-pamacibas"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
-                >
-                  Spēļu pamācības
-                </Link>
-                <Link
-                  href="/padomi"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
-                >
-                  Padomi
-                </Link>
-                <Link
-                  href="/maksajumu-metodes"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
-                >
-                  Maksājumu metodes
-                </Link>
+                  <Link
+                    href="/padomi"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
+                  >
+                    Padomi
+                  </Link>
+                  <Link
+                    href="/maksajumu-metodes"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
+                  >
+                    Maksājumu metodes
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
