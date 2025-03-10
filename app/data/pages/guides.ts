@@ -265,7 +265,7 @@ export const paymentMethodsData = {
             <p style="color: #9b98df !important;">Ja veicat pārrobežu darījumus, jāņem vērā valūtas konvertēšanas iespējas un ar to saistītās maksas.</p>
           </div>
           <div>
-            <h3 class="text-xl font-bold mb-2 uppercase" style="color: #F9F5FF !important;">Klientu atbalts</h3>
+            <h3 class="text-xl font-bold mb-2 uppercase" style="color: #F9F5FF !important;">Klientu atbalsts</h3>
             <p style="color: #9b98df !important;">Risinot ar maksājumiem saistītus jautājumus, ļoti svarīga ir piekļuve uzticamam klientu atbalstam. Meklējiet pakalpojumus, kas piedāvā palīdzību 24/7.</p>
           </div>
         </div>
