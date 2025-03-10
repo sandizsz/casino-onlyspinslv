@@ -5,33 +5,33 @@ export const baccaratData = {
   description: "Bakara ir viena no Eiropas teritorijā senākajām kāršu spēlēm. Mūsdienās tā, kopā ar pokeru un blekdžeku, tiek dēvēta par kazino klasiku. Bakaru jeb baccarat ir iemīļojuši cilvēki visā pasaulē, tāpēc ka šo kāršu spēli ir viegli apgūt un tai ir aizraujošs ritējums. ",
   content: `
     <div class="prose">
-      <h2>Origins and History</h2>
-      <p>The French claim to have developed Baccarat as it is like Chemin de fer, which was transported in from France to England. The Italians likewise assert the amusement as it was imagined by an Italian by the name of Felix Falguierein in the medieval times and played with a deck of Tarot Cards.</p>
+      <h2>Izcelšanās un vēsture</h2>
+      <p>Francūži apgalvo, ka attīstījuši Bakara, jo tas līdzinās Chemin de fer, kas tika atvests no Francijas uz Angliju. Itāļi arī piesaka tiesības uz šo spēli, jo to viduslaikos izdomājis itālis vārdā Fēlikss Falguierins, un tā tika spēlēta ar Taro kāršu kavu.</p>
 
-      <h2>American Introduction</h2>
-      <p>An acclaimed Vegas speculator, Tony Renzoni, conveyed the diversion to the Dunes in the late 1950s and the American rendition was conceived by consolidating the European variant with Chemin de fer. He had imported it from Cuba before the island was assumed control by Castro. Similarly, as with different scenes where the diversion is played, the first baccarat was played just by speculators with vast bankrolls. This was additionally complemented in the States with the films of James Bond as Chemin de fer was played in the motion picture to recommend a diversion for hot shots. The fundamental change in the American rendition is the clubhouse goes about as the bank.</p>
+      <h2>Ieviešana Amerikā</h2>
+      <p>Slavens Vegasas azartspēlmanis, Tonijs Renzoni, ienesa spēli Dunes kazino vēlīnos 1950-os gados, un amerikāņu versija tika radīta, apvienojot Eiropas variantu ar Chemin de fer. Viņš to bija ievedis no Kubas, pirms salu pārņēma Kastro. Tāpat kā citās vietās, kur spēli spēlēja, sākotnēji bakara spēlēja tikai azartspēlētāji ar lieliem naudas uzkrājumiem. To vēl vairāk uzsvēra ASV ar Džeimsa Bonda filmām, kurās tika spēlēts Chemin de fer, lai parādītu spēli bagātniekiem. Galvenā izmaiņa amerikāņu versijā ir tā, ka kazino darbojas kā banka.</p>
 
-      <h2>Casino Environment</h2>
-      <p>In the Baccarat rooms in most favor land gambling clubs, the diversion is restricted, and the base wager can be very high. The croupiers are exquisitely dressed, and the stakes are all the more in the thousand of dollars for every hand. Clubhouse has additionally found that the overall population enjoys the diversion as well, so they give it as a table amusement in the fundamental gambling clubs. The points of confinement are much lower. However, the amusement is played the same except the merchant does the majority of the managing. In the room, the shoe goes to every player after the present player-merchant loses the shoe because the bank lost.</p>
+      <h2>Kazino vide</h2>
+      <p>Bakara zālēs vairumā prestižo sauszemes kazino spēle ir ierobežota, un minimālās likmes var būt ļoti augstas. Krupjē ir eleganti ģērbti, un likmes bieži sasniedz tūkstošiem dolāru par partiju. Kazino arī ir atklājuši, ka spēli novērtē plašāka publika, tāpēc to piedāvā kā galda spēli galvenajās kazino telpās. Limiti ir daudz zemāki, taču spēle tiek spēlēta tāpat, izņemot to, ka dīleris veic lielāko daļu izdalīšanas.</p>
 
-      <h2>Basic Gameplay</h2>
-      <p>The diversion is a basic session of a few cards to the player's hand and the merchant's hand. The cards are managed, and if either hand is a characteristic nine or eight, the hand is over. On the off chance that the hand's tie, there is no losing hand by either the bank or the player. Every player at the table can wager one of three wagers. They can wager the tie, the player hand or the bank hand. The attach wager pays eight to one, and the other two conceivable wagers pay even cash with the triumphant bank hand charged a commission of five percent.</p>
+    <h2>Pamata spēle</h2>
+      <p>Spēle ir vienkārša dažu kāršu izspēle spēlētāja un dīlera rokās. Kārtis tiek izdalītas, un ja kādā rokā ir dabiskais deviņnieks vai astoņnieks, partija beidzas. Ja partija beidzas ar neizšķirtu, ne banka, ne spēlētājs nezaudē. Katrs spēlētājs pie galda var likt vienu no trim likmēm. Viņi var likt uz neizšķirtu, spēlētāja roku vai bankas roku. Neizšķirta likme maksā astoņi pret vienu, un pārējās divas iespējamās likmes maksā līdzvērtīgu naudu, ar uzvarošo bankas roku iekasējot piecu procentu komisiju.</p>
 
-      <h2>Strategy and Patterns</h2>
-      <p>The key to winning Baccarat play is to keep running on either side of the shoe. Consequently, most players monitor the triumphant hands on a scorecard given by the house. A keep running of four or five wins on one side or the other is normal. Keeps running of more than ten or twenty hands are likewise observed from time to time and are a shoe taking after better dream work out as expected.</p>
+    <h2>Stratēģija un modeļi</h2>
+<p>Atslēga uzvarai Bakara spēlē ir sekot uzvaras tendencēm. Tāpēc vairums spēlētāju pieraksta uzvarošās kombinācijas uz rezultātu kartes, ko nodrošina kazino. Četru vai piecu uzvaru sērija vienā vai otrā pusē ir ierasta parādība. Dažkārt var novērot arī vairāk nekā desmit vai divdesmit partiju sērijas, kas ir kā sapņa piepildījums spēlētājam, kurš seko šīm tendencēm.</p>
 
-      <p>A superior who takes after the shoe is one that wagers the side that last won the hand. Players who attempt to buck an inclining shoe can lose a lot of cash rapidly by continually being on the losing side of the hand. A player could likewise play a keep running of flip slumping wagers if the shoe is backpedaling and forward between the player and the bank. These are abundant motivations to make a player monitor how the shoe is playing.</p>
+    <p>Labākais spēlētājs ir tas, kurš liek likmi uz to pusi, kas uzvarēja iepriekšējā partijā. Spēlētāji, kuri mēģina pretoties tendencei, var ātri zaudēt daudz naudas, pastāvīgi atrodoties zaudētāju pusē. Spēlētājs var arī mainīt likmes starp spēlētāju un banku, ja rezultāti regulāri mainās. Šie ir svarīgi iemesli, kāpēc spēlētājam jāseko tam, kā attīstās spēle.</p>
 
-      <h2>Handling Tie Hands</h2>
-      <p>Tie hands can introduce an alternate sort of issue for the player. A shoe could have not very many ties, and another shoe could detonate with tie hands. One govern to take after is to not wager a tie hand until the primary tie is managed. One plan that has worked in the past is to check the hands from the tie and on the off chance that they are products of three a tie wager might be justified. A little increment in the wager can be utilized as a part of this situation.</p>
+     <h2>Neizšķirta partija</h2>
+      <p>Neizšķirtas partijas var radīt spēlētājam citāda veida problēmu. Vienā spēlē var būt ļoti maz neizšķirtu, bet citā var būt pārsteidzoši daudz neizšķirtu. Viens no pamatnoteikumiem ir nelikt uz neizšķirtu, pirms nav bijusi pirmā neizšķirtā partija. Stratēģija, kas ir darbojusies agrāk, ir skaitīt partijas kopš neizšķirta, un ja tās ir trīs reizinājumi, likme uz neizšķirtu var būt pamatota. Šādā gadījumā var izmantot nelielu likmes palielinājumu.</p>
 
-      <p>On the off chance that a player catches a couple of tie hands amid the play of the shoe, the benefit from this shoe ought to be more than the misfortunes. In the Baccarat room, keep note of players who appear to bargain a tie when they get the shoe, it may not occur on the primary arrangement, but rather if they have demonstrated this propensity, it could well be justified regardless of a little expanding wager. This creator did that one night and was compensated reliably by one player-merchant.</p>
+     <p>Ja spēlētājam izdodas trāpīt dažas neizšķirtas partijas spēles laikā, ieguvumam no šīs spēles vajadzētu būt lielākam nekā zaudējumiem. Bakara zālē pievērsiet uzmanību spēlētājiem, kuri šķietami dala neizšķirtas, kad viņi saņem kāršu turētāju. Tas var nenotikt pirmajā izdalē, bet ja viņi ir parādījuši šādu tendenci, varētu būt vērts nedaudz palielināt likmi. Šī teksta autors tā darīja kādu vakaru un regulāri guva ieguvumu no viena spēlētāja-dīlera.</p>
 
-      <h2>High-Limit Room Play</h2>
-      <p>Try not to be hesitant to play in the room if the stakes are inside your wagering spending plan. Baccarat players are well dealt with when playing in the room. The play is more enjoyable, and you can play off different players' fortunes when they bargain from the shoe.</p>
+  <h2>Spēle augstas likmes zālē</h2>
+<p>Nebaidieties spēlēt speciālajā zālē, ja likmes iekļaujas jūsu budžetā. Par bakara spēlētājiem labi rūpējas, kad viņi spēlē šajā zālē. Spēle ir aizraujošāka, un jūs varat izmantot citu spēlētāju veiksmi, kad viņi dala kārtis.</p>
 
-      <h2>Player Patterns</h2>
-      <p>A few players are useful for a few bank wins consecutively while others can't appear to move beyond the first or second hand. Observe how the cards are functioning when every player is given their turn at managing the shoe. Betting is only a progression of patterns that rhythmic movement. Like life, a few times things go well and a few times they don't. Baccarat is an exceptionally slanting amusement, and a player can exploit the shoe propensities.</p>
+    <h2>Spēlētāju modeļi</h2>
+      <p>Daži spēlētāji var nodrošināt vairākas lielas uzvaras pēc kārtas, kamēr citiem neizdodas tikt tālāk par pirmo vai otro partiju. Pievērsiet uzmanību tam, kā kārtis darbojas, kad katram spēlētājam pienāk kārta dalīt kārtis. Azartspēles ir tikai tendences, kas mainās ritmiski. Tāpat kā dzīvē - dažreiz veicas, dažreiz ne. Bakara ir spēle ar izteiktām tendencēm, un spēlētājs var izmantot kāršu dalīšanas īpatnības.</p>
     </div>
   `
 };

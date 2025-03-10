@@ -1,45 +1,44 @@
 export const crapsData = {
     slug: "craps",
-    title: "Craps Guide",
+    title: "Craps pamācība",
     image: "/images/craps.webp",
-    description: "Learn the exciting dice game of craps, from its rich history dating back to the 12th century to modern online variations and strategy tips.",
+    description: "Iepazīstiet aizraujošo kauliņu spēli kraps, sākot no tās bagātās vēstures, kas aizsākās 12. gadsimtā, līdz mūsdienu tiešsaistes variācijām un stratēģijas padomiem.",
     content: `
-      <h2>History of Craps</h2>
-      <p>Craps has been played since the 12th century, deriving its name from the Arabic word "al-zahr" meaning dice game. Through centuries of evolution, it became the popular casino game we know today.</p>
+     <h2>Craps vēsture</h2>
+      <p>Craps spēlē kopš 12. gadsimta, un tā nosaukums cēlies no arābu vārda "al-zahr", kas nozīmē kauliņu spēli. Gadsimtu gaitā tā attīstījās līdz populārajai kazino spēlei, ko pazīstam šodien.</p>
   
-      <h2>Game Basics</h2>
-      <p>Craps is played with two dice, where the shooter rolls them on a specialized table. The outcome depends on the combined value of both dice, resulting in either a win, loss, or neutral result.</p>
+   <h2>Spēles pamati</h2>
+      <p>Craps spēlē ar diviem kauliņiem, kur metējs tos ripina uz speciāla galda. Rezultāts ir atkarīgs no abu kauliņu kopējās vērtības, kas noved pie uzvaras, zaudējuma vai neitrāla rezultāta.</p>
   
-      <h2>Playing Environments</h2>
+     <h2>Spēles vides</h2>
       <ul>
-        <li>Traditional casino tables with live dealers and physical dice</li>
-        <li>Street craps, particularly popular in North America</li>
-        <li>Online casinos with virtual dice and automated gameplay</li>
-        <li>Downloadable software for practice and entertainment</li>
+        <li>Tradicionālie kazino galdi ar dzīvajiem dīleriem un fiziskiem kauliņiem</li>
+        <li>Ielu craps, īpaši populārs Ziemeļamerikā</li>
+        <li>Tiešsaistes kazino ar virtuāliem kauliņiem un automatizētu spēles gaitu</li>
+        <li>Lejupielādējama programmatūra treniņam un izklaidei</li>
       </ul>
+
+      <h2>Noteikumi un izredzes</h2>
+  <p>Spēle seko konsekventiem noteikumiem visās platformās. Izmaksas nosaka konkrētu skaitļu kombināciju izkritīšanas varbūtība:</p>
+  <ul>
+    <li>Vienkāršām kombinācijām, piemēram, 6 izkritīšanai, ir zemākas izmaksas, jo ir vairākas iespējamās kauliņu kombinācijas</li>
+    <li>Sarežģītām kombinācijām, piemēram, 2 izkritīšanai (kam nepieciešami divi 1), ir augstākas izmaksas</li>
+  </ul>
   
-      <h2>Rules and Odds</h2>
-      <p>The game follows consistent rules across all platforms. Payouts are determined by the probability of rolling specific number combinations:</p>
+     <h2>Tiešsaistes pret dzīvo craps</h2>
       <ul>
-        <li>Easy combinations like rolling a 6 offer lower payouts due to multiple possible dice combinations</li>
-        <li>Difficult combinations like rolling a 2 (which requires two 1s) offer higher payouts</li>
+        <li>Tiešsaistes spēlēs izmanto nejaušu skaitļu ģenerēšanu (RNG) godīgai spēlei</li>
+        <li>Dzīvajās spēlēs īsti spēlētāji met fiziskus kauliņus</li>
+        <li>Tiešsaistes platformas piedāvā treniņa galdus un bezmaksas spēles iespējas</li>
+        <li>Dzīvās spēles nodrošina sociālu atmosfēru un spēlētāju mijiedarbību</li>
       </ul>
-  
-      <h2>Online vs Live Craps</h2>
-      <p>Key differences between online and live versions include:</p>
-      <ul>
-        <li>Online games use Random Number Generation (RNG) for fair play</li>
-        <li>Live games feature physical dice throws by actual players</li>
-        <li>Online platforms offer practice tables and free play options</li>
-        <li>Live games provide social atmosphere and player interaction</li>
-      </ul>
-  
-      <h2>Online Security</h2>
-      <p>Reputable online casinos prioritize player safety through:</p>
-      <ul>
-        <li>Advanced encryption technology for data protection</li>
-        <li>Secure handling of personal and financial information</li>
-        <li>Strict privacy policies preventing third-party data sharing</li>
-      </ul>
+
+      <h2>Tiešsaistes drošība</h2>
+  <ul>
+    <li>Cienījami tiešsaistes kazino par prioritāti izvirza spēlētāju drošību, izmantojot:</li>
+    <li>Modernās šifrēšanas tehnoloģijas datu aizsardzībai</li>
+    <li>Drošu personiskās un finanšu informācijas apstrādi</li>
+    <li>Stingru privātuma politiku, kas novērš datu kopīgošanu ar trešajām pusēm</li>
+  </ul>
     `
   };

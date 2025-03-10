@@ -1,166 +1,164 @@
 export const sicboData = {
     slug: "sic-bo",
-    title: "Sic Bo Guide",
+    title: "Sic Bo pamācība",
     image: "/images/sicbo.webp",
-    description: "Discover Sic Bo, an ancient Chinese dice game offering fast-paced action and diverse betting options with three dice determining your fortune.",
+    description: "Atklājiet Sic Bo, seno ķīniešu kauliņu spēli, kas piedāvā ātru darbību un dažādas derību iespējas, kur trīs kauliņi nosaka jūsu veiksmi.",
     content: `
       <div class="prose prose-slate lg:prose-lg">
         <blockquote>
-          Three dice, countless possibilities. Sic Bo brings the excitement of ancient Chinese gaming to the modern casino floor.
+          Trīs kauliņi, neskaitāmas iespējas. Sic Bo atnes senās ķīniešu spēles azartu uz mūsdienu kazino.
         </blockquote>
   
-        <h2>What is Sic Bo?</h2>
-        <p>Sic Bo stands apart from popular casino games like poker and roulette, offering unique fast-paced gameplay that rewards quick thinking and strategic betting. Players bet on the outcome of three dice rolls, creating a dynamic and engaging experience similar to roulette but with distinct Asian influences.</p>
+       <h2>Kas ir Sic Bo?</h2>
+        <p>Sic Bo atšķiras no populārām kazino spēlēm kā pokers un rulete, piedāvājot unikālu, ātru spēles gaitu, kas atalgo ātru domāšanu un stratēģisku likmju likšanu. Spēlētāji liek likmes uz trīs kauliņu metienu rezultātu, radot dinamisku un aizraujošu pieredzi līdzīgu ruletei, bet ar izteiktām Āzijas iezīmēm.</p>
+
+  <h2>Vēsturiskais ceļojums</h2>
+        <p>Spēle radusies senajā Ķīnā, kur celtnieki azartspēlēs pārtraukumos meta numurētus ķieģeļus. Tā kā tas bija neērts process, viņi galu galā pārgāja uz kauliņiem, izveidojot to, ko mēs tagad pazīstam kā Sic Bo, kas ķīniešu valodā nozīmē "kauliņu pāris".</p>
   
-        <h2>Historical Journey</h2>
-        <p>The game originated in ancient China, where construction workers would gamble during breaks by tossing numbered bricks. Finding this cumbersome, they eventually switched to dice, creating what we now know as Sic Bo, meaning "dice pair" in Chinese.</p>
-  
-        <div>
-          <h3>Global Names</h3>
+       <div>
+          <h3>Globālie nosaukumi</h3>
           <ul>
-            <li>Macau: Known as "big small"</li>
-            <li>Philippines: Called "hi-lo"</li>
-            <li>Western casinos: Commonly called Sic Bo</li>
+            <li>Makao: Pazīstama kā "lielais mazais"</li>
+            <li>Filipīnas: Sauc par "hi-lo"</li>
+            <li>Rietumu kazino: Parasti sauc par Sic Bo</li>
           </ul>
         </div>
   
-        <h2>Game Evolution</h2>
+      <h2>Spēles evolūcija</h2>
         <ul>
-          <li>19th century: Chinese immigrants introduced the game to America</li>
-          <li>European adaptation: Developed a two-dice variant</li>
-          <li>Modern era: Featured in Hollywood films, boosting popularity</li>
-          <li>Digital age: Adapted for online casinos with RNG technology</li>
+          <li>19. gadsimts: Ķīniešu imigranti iepazīstināja ar spēli Ameriku</li>
+          <li>Eiropas adaptācija: Izstrādāja divu kauliņu variantu</li>
+          <li>Mūsdienu ēra: Parādījās Holivudas filmās, veicinot popularitāti</li>
+          <li>Digitālais laikmets: Pielāgota tiešsaistes kazino ar RNG tehnoloģiju</li>
         </ul>
   
-        <h2>Gameplay Mechanics</h2>
-        <p>The game employs three dice and offers two main playing environments:</p>
-        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <h3>Traditional Casino</h3>
-            <ul>
-              <li>Manual dice shaking</li>
-              <li>Physical dice cup or basket</li>
-              <li>Live dealer interaction</li>
-              <li>Social gaming atmosphere</li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3>Online Casino</h3>
-            <ul>
-              <li>Random number generation</li>
-              <li>Automated rolls</li>
-              <li>Quick gameplay</li>
-              <li>24/7 accessibility</li>
-            </ul>
-          </div>
-        </div>
+      <div>
+        <h3>Tradicionālais kazino</h3>
+        <ul>
+          <li>Manuāla kauliņu kratīšana</li>
+          <li>Fiziska kauliņu krūze vai grozs</li>
+          <li>Mijiedarbība ar dzīvo dīleri</li>
+          <li>Sociāla spēles atmosfēra</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Tiešsaistes kazino</h3>
+        <ul>
+          <li>Nejaušu skaitļu ģenerēšana</li>
+          <li>Automātiska metienu veikšana</li>
+          <li>Ātra spēles gaita</li>
+          <li>Pieejamība 24/7</li>
+        </ul>
+      </div>
+    </div>
   
-        <h2>Betting Options</h2>
+       <h2>Derību iespējas</h2>
         <table>
           <thead>
             <tr>
-              <th>Bet Type</th>
-              <th>Description</th>
-              <th>Payout</th>
+              <th>Likmes veids</th>
+              <th>Apraksts</th>
+              <th>Izmaksa</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Single Number</td>
-              <td>Number appears on one die</td>
+              <td>Viens skaitlis</td>
+              <td>Skaitlis parādās uz viena kauliņa</td>
               <td>1:1</td>
             </tr>
             <tr>
-              <td>Double Match</td>
-              <td>Number appears on two dice</td>
+              <td>Dubultā sakritība</td>
+              <td>Skaitlis parādās uz diviem kauliņiem</td>
               <td>2:1</td>
             </tr>
             <tr>
-              <td>Triple Match</td>
-              <td>Number appears on all three dice</td>
+              <td>Trīskāršā sakritība</td>
+              <td>Skaitlis parādās uz visiem trim kauliņiem</td>
               <td>3:1</td>
             </tr>
             <tr>
-              <td>Specific Pair</td>
-              <td>Chosen pair appears</td>
+              <td>Konkrēts pāris</td>
+              <td>Izvēlētais pāris parādās</td>
               <td>5:1</td>
             </tr>
             <tr>
-              <td>Specific Triple</td>
-              <td>All three dice show same number</td>
+              <td>Konkrēts trijnieks</td>
+              <td>Visi trīs kauliņi rāda vienādu skaitli</td>
               <td>180:1</td>
             </tr>
             <tr>
-              <td>Any Triple</td>
-              <td>Any three matching numbers</td>
+              <td>Jebkurš trijnieks</td>
+              <td>Jebkuri trīs vienādi skaitļi</td>
               <td>30:1</td>
             </tr>
             <tr>
-              <td>Small/Big</td>
-              <td>Total between 4-10 or 11-17</td>
+              <td>Mazs/Liels</td>
+              <td>Kopsumma starp 4-10 vai 11-17</td>
               <td>1:1</td>
             </tr>
           </tbody>
         </table>
   
-        <h2>Strategy Guide</h2>
+      <h2>Stratēģijas ceļvedis</h2>
         <div >
-          <h3>Key Tips for Success</h3>
+          <h3>Galvenie padomi veiksmei</h3>
           <ol>
-            <li>Start with simple bets (Big/Small) to learn the game flow</li>
-            <li>Understand probability ratios before placing complex bets</li>
-            <li>Set strict betting limits before starting play</li>
-            <li>Balance high-risk and conservative bets in your strategy</li>
-            <li>Practice with free online versions before wagering real money</li>
+            <li>Sāciet ar vienkāršām likmēm (Liels/Mazs), lai iepazītu spēles gaitu</li>
+            <li>Izprotiet varbūtību attiecības pirms sarežģītu likmju veikšanas</li>
+            <li>Nosakiet stingrus likmju limitus pirms spēles sākšanas</li>
+            <li>Līdzsvarojiet augstas riska un konservatīvas likmes savā stratēģijā</li>
+            <li>Praktizējieties ar bezmaksas tiešsaistes versijām pirms likt īstu naudu</li>
           </ol>
         </div>
-  
-        <h2>Modern Gaming Experience</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <h3>Online Benefits</h3>
-            <ul>
-              <li>Practice mode available</li>
-              <li>Lower minimum bets</li>
-              <li>Convenient access</li>
-              <li>Multiple variants</li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3>Live Casino Features</h3>
-            <ul>
-              <li>Real-time dealing</li>
-              <li>Social interaction</li>
-              <li>Authentic atmosphere</li>
-              <li>Professional dealers</li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3>Mobile Gaming</h3>
-            <ul>
-              <li>Touch controls</li>
-              <li>Optimized interface</li>
-              <li>Quick betting options</li>
-              <li>Portrait/landscape modes</li>
-            </ul>
-          </div>
-        </div>
-  
-        <h2>Responsible Gaming Tips</h2>
+
+
+        <h2>Mūsdienu spēles pieredze</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <h3>Tiešsaistes priekšrocības</h3>
         <ul>
-          <li>Set strict time and money limits</li>
-          <li>Understand all betting options before playing</li>
-          <li>Never chase losses</li>
-          <li>Take regular breaks during play</li>
-          <li>Keep track of your gaming sessions</li>
+          <li>Pieejams treniņa režīms</li>
+          <li>Zemākas minimālās likmes</li>
+          <li>Ērta piekļuve</li>
+          <li>Vairāki varianti</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Tiešā kazino funkcijas</h3>
+        <ul>
+          <li>Reāllaika spēle</li>
+          <li>Sociālā mijiedarbība</li>
+          <li>Autentiska atmosfēra</li>
+          <li>Profesionāli dīleri</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3>Mobilā spēle</h3>
+        <ul>
+          <li>Skārienvadība</li>
+          <li>Optimizēta saskarne</li>
+          <li>Ātras likmju iespējas</li>
+          <li>Portreta/ainavas režīmi</li>
+        </ul>
+      </div>
+    </div>
+
+      <h2>Atbildīgas spēlēšanas padomi</h2>
+        <ul>
+          <li>Nosakiet stingrus laika un naudas limitus</li>
+          <li>Izprotiet visas likmju iespējas pirms spēlēšanas</li>
+          <li>Nekad necentieties atgūt zaudējumus</li>
+          <li>Regulāri atpūtieties spēles laikā</li>
+          <li>Sekojiet līdzi savām spēļu sesijām</li>
         </ul>
   
         <div>
-          <p class="font-semibold">Remember: Sic Bo is a game of chance. While strategy can help manage your bankroll and maximize entertainment value, no betting system can guarantee wins. Always play responsibly and within your means.</p>
+          <p class="font-semibold">Atcerieties: Sic Bo ir veiksmes spēle. Lai gan stratēģija var palīdzēt pārvaldīt jūsu līdzekļus un maksimāli palielināt izklaides vērtību, neviena likmju sistēma nevar garantēt uzvaras. Vienmēr spēlējiet atbildīgi un savu iespēju robežās.</p>
         </div>
       </div>
     `

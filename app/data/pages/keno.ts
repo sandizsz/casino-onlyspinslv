@@ -1,54 +1,52 @@
 export const kenoData = {
     slug: "keno",
-    title: "Keno Guide",
+    title: "Keno pamācība",
     image: "/images/keno.webp",
-    description: "A relaxing casino game that offers simple gameplay with potentially handsome payouts, perfect for casual players looking for entertainment.",
+    description: "Relaksējoša kazino spēle, kas piedāvā vienkāršu spēles gaitu ar potenciāli pievilcīgām izmaksām, ideāli piemērota neregulāriem spēlētājiem, kuri meklē izklaidi.",
     content: `
       <div class="prose">
-        <h2>Introduction</h2>
-        <p>If you need some fun in between playing casino games that require the lot of concentration then online keno is the game you will enjoy playing. Online keno is quite simple and fun to play. You can also make some great profits while having fun as the game pays handsomely.</p>
-  
-        <h2>Historical Background</h2>
-        <p>While keno is fairly new to the casino patterns, the game is actually centuries old. Keno is an ancient game that was developed in China about 2,000 years ago. The game was introduced to the west by Chinese settlers in the beginning of 20th century and the new modern version was created. However, keno is a French word and was named so after the game was adopted by the country and a modern version was created.</p>
-  
-        <h2>Game Basics</h2>
-        <p>The game is quite easy to understand and shares the same game-play to the more famous bingo. Cards similar to bingo cards are used in the game. In keno, there are a total of 80 numbers. The numbers are laid out in eight rows with each row comprising ten numbers. The player then selects up to 20 numbers and marks the selected numbers on the keno card and gets the tickets from the booth.</p>
-  
-        <h2>Gameplay Process</h2>
-        <p>After all the bets are called in, 20 numbers are drawn. Winners are then awarded their prizes. Pay outs are different for different casinos, so it is advised to go through the tables before buying your tickets.</p>
-  
-        <h2>Betting Combinations</h2>
-        <p>Apart from jackpot play, you select other combinations when playing online keno. The player can go for additional plays on the keno card. Every play has its own independent payout and is not related to the jackpot, which makes taking additional plays a very good strategy.</p>
-  
-        <h3>2/3 1/6 Combination</h3>
-        <p>One of the good plays that you can go for is the "2/3 1/6" combination. The play involves marking up your initial numbers on the card and then encircling two groups with three numbers each as additional play. After that you bet three dollars divided to the groups with three numbers. This combination increases chances of getting a payout.</p>
-  
-        <h3>King Combination</h3>
-        <p>Another play that you can make in order to enhance your winning chances in online keno is the combination of king with all the selected numbers. You can use this combination of kings with any or all the numbers you have selected earlier. This immensely increases the chances of getting multiple hits and winning a number of prizes.</p>
-  
-        <h2>Progressive Jackpots</h2>
-        <p>Most of the casinos provide a large amount of progressive jackpot money to keno players. Such progressive jackpots can really provide handsome money and in some cases up to 100% in returns. The different combinations and the chances of winning great prizes make online keno quite an engaging game.</p>
-  
-        <h2>Choosing a Casino</h2>
-        <p>You need to search for the casinos for playing online keno as not every online casino offers this game. So it is advised to go through the menu of the games offered by the casinos in order to find out if they provide keno before joining the one. Furthermore, it is always better to play at reputable casinos that have a fair game policy.</p>
-  
-        <h2>Winning Strategies</h2>
-        <p>Winning at keno suggests selecting the correct winning numbers. This matching of the number with the random numbers picked is quite difficult. Though the strategy of playing keno differs from player to player, one can apply any of the following keno strategy to play and win the game:</p>
-  
-        <h3>Risk Management</h3>
-        <p>Calculate the risk and return: The player has to decide a certain amount of money which he can afford to lose. This will decide the rounds of the game which he can play and will save the player from increased losses.</p>
-  
-        <h3>Pattern Observation</h3>
-        <p>Observe: The player needs to observe the pattern of the numbers withdrawn. Though the computer generates the numbers randomly but still one can bet on the same number so the chances of winning increases.</p>
-  
-        <h3>Online Practice</h3>
-        <p>Play online: The reason for playing online is it involves the virtual money transfer which is risk free. Also as practice makes the man perfect, practicing keno online can help players to understand and play strategically when it comes to real keno games in casinos.</p>
-  
-        <h3>Stay Alert</h3>
-        <p>Stay conscious: Many casinos offer free drinks which can move the player into a relaxing mood and can end up in wrong judgment of numbers.</p>
-  
-        <h3>Seek Guidance</h3>
-        <p>Get guidance from many veteran friends who know how to win at keno. Also, you can seek online help by reading many blogs, websites and books for winning at keno.</p>
+        <h2>Ievads</h2>
+        <p>Ja jums nepieciešama izklaide starp kazino spēlēm, kas prasa daudz koncentrēšanās, tad tiešsaistes keno ir spēle, kuru jums patiks spēlēt. Tiešsaistes keno ir vienkārša un jautra spēle. Jūs varat arī gūt labu peļņu, jo spēle piedāvā pievilcīgas izmaksas.</p>
+
+<h2>Vēsturiskais konteksts</h2>
+    <p>Lai gan keno ir diezgan jauna kazino spēle, tā patiesībā ir gadsimtiem sena. Keno ir sena spēle, kas tika izstrādāta Ķīnā aptuveni pirms 2000 gadiem. Spēli ieviesa rietumos ķīniešu ieceļotāji 20. gadsimta sākumā, kad tika izveidota jaunā modernā versija. Tomēr "keno" ir franču vārds, un spēle tika tā nosaukta pēc tam, kad to pārņēma Francija un izveidoja moderno versiju.</p>
+
+    <h2>Spēles pamati</h2>
+    <p>Spēle ir viegli saprotama un tai ir līdzīga norise kā populārajam bingo. Spēlē izmanto kartītes, kas līdzīgas bingo kartītēm. Keno spēlē ir kopā 80 numuri. Numuri ir izvietoti astoņās rindās, katrā rindā desmit numuri. Spēlētājs izvēlas līdz 20 numuriem un atzīmē izvēlētos numurus uz keno kartītes, un saņem biļetes no kases.</p>
+
+    <h2>Spēles process</h2>
+    <p>Pēc visu likmju pieņemšanas tiek izlozēti 20 numuri. Uzvarētājiem tiek piešķirtas balvas. Izmaksas dažādos kazino atšķiras, tāpēc pirms biļešu iegādes ieteicams iepazīties ar izmaksu tabulām.</p>
+
+    <h2>Likmju kombinācijas</h2>
+    <p>Papildus džekpota likmei jūs varat izvēlēties citas kombinācijas, spēlējot tiešsaistes keno. Spēlētājs var izvēlēties papildu likmes uz keno kartītes. Katrai likmei ir sava neatkarīga izmaksa, un tā nav saistīta ar džekpotu, kas padara papildu likmju veikšanu par ļoti labu stratēģiju.</p>
+
+    <h3>2/3 1/6 kombinācija</h3>
+    <p>Viena no labām likmēm, ko varat izvēlēties, ir "2/3 1/6" kombinācija. Likme ietver sākotnējo numuru atzīmēšanu uz kartītes un pēc tam divu grupu ar trim numuriem katrā aplī kā papildu likmi. Pēc tam jūs lieciet trīs dolārus, sadalot tos grupās pa trim numuriem. Šī kombinācija palielina iespējas saņemt izmaksu.</p>
+
+    <h3>Karaļa kombinācija</h3>
+    <p>Cita likme, ko varat veikt, lai uzlabotu savas uzvaras iespējas tiešsaistes keno, ir karaļa kombinācija ar visiem izvēlētajiem numuriem. Šo karaļu kombināciju varat izmantot ar jebkuru vai visiem iepriekš izvēlētajiem numuriem. Tas ievērojami palielina iespējas gūt vairākus trāpījumus un laimēt vairākas balvas.</p>
+
+    <h2>Progresīvie džekpoti</h2>
+    <p>Lielākā daļa kazino piedāvā keno spēlētājiem lielu progresīvo džekpotu naudu. Šādi progresīvie džekpoti var sniegt pievilcīgas naudas summas un dažos gadījumos līdz pat 100% atdevi. Dažādās kombinācijas un iespējas laimēt lieliskas balvas padara tiešsaistes keno par interesantu spēli.</p>
+
+    <h2>Kazino izvēle</h2>
+    <p>Jums jāmeklē kazino, lai spēlētu tiešsaistes keno, jo ne katrs tiešsaistes kazino piedāvā šo spēli. Tāpēc pirms pievienošanās kazino ieteicams izskatīt to piedāvāto spēļu sarakstu, lai noskaidrotu, vai tie piedāvā keno. Turklāt vienmēr labāk spēlēt cienījamos kazino, kuriem ir godīgas spēles politika.</p>
+
+    <h2>Uzvaras stratēģijas</h2>
+    <p>Lai uzvarētu keno, jāizvēlas pareizi laimējušie numuri. Šāda numuru sakritība ar nejauši izvēlētiem numuriem ir diezgan grūta. Lai gan keno spēlēšanas stratēģija atšķiras atkarībā no spēlētāja, var izmantot kādu no šīm keno stratēģijām, lai spēlētu un uzvarētu:</p>
+
+    <h3>Riska pārvaldība</h3>
+    <p>Aprēķiniet risku un atdevi: Spēlētājam jānosaka noteikta naudas summa, kuru viņš var atļauties zaudēt. Tas noteiks spēles kārtu skaitu, ko viņš var spēlēt, un pasargās spēlētāju no lielākiem zaudējumiem.</p>
+
+    <h3>Modeļu novērošana</h3>
+    <p>Novērojiet: Spēlētājam jānovēro izvilkto numuru raksts. Lai gan dators ģenerē numurus nejauši, tomēr var likt likmes uz vienu un to pašu numuru, tādējādi palielinot uzvaras iespējas.</p>
+
+    <h3>Tiešsaistes prakse</h3>
+    <p>Spēlējiet tiešsaistē: Tiešsaistes spēlēšanas iemesls ir tas, ka tajā iesaistīta virtuālā naudas pārvedums, kas ir bez riska. Tā kā prakse pilnveido, keno spēlēšana tiešsaistē var palīdzēt spēlētājiem izprast un spēlēt stratēģiski, kad runa ir par īstām keno spēlēm kazino.</p>
+
+  </div>
+
+        
       </div>
     `
   };

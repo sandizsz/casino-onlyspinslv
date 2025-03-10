@@ -508,7 +508,7 @@ main {
     }
 
     table th {
-      @apply bg-[#1D053F]/50 text-[#000025] p-3 text-left border border-[#000025]/20;
+      @apply bg-[#1D053F] text-[#FFF] p-3 text-left border border-[#000025]/20;
     }
 
     table td {
