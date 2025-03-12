@@ -210,58 +210,74 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
           {/* Mobile & Tablet: Top section with gauge and payment methods */}
           <div className="md:mt-6 md:border-t md:border-[#000025]/20 md:pt-3 sm:pt-0">
             {/* Mobile & Tablet: Info section with gauge and payment methods */}
-            <div className="flex justify-between items-center md:flex-row md:items-center md:justify-start md:gap-0 md:flex-nowrap md:overflow-x-auto">
-              {/* RTP gauge using the rating - Left side on mobile */}
-              <div className="flex flex-col items-center max-w-[60px] md:mr-2">
-                <div className="w-[105px] h-[60px]">
-                  <GaugeComponent
-                    id={`gauge-${casino._id}`}
-                    type="semicircle"
-                    arc={{
-                      colorArray: getGaugeColors(casino.rating),
-                      subArcs: [{
-                        limit: 10,
-                        color: getGaugeArcColor(casino.rating),
-                        showTick: true
-                      }],
-                      width: 0.2,
-                      padding: 0.02,
-                      cornerRadius: 1,
-                      gradient: true
-                    }}
-                    pointer={{
-                      type: "arrow",
-                      color: '#000025',
-                      length: 10,
-                      width: 20,
-                      elastic: true
-                    }}
-                    value={casino.rating}
-                    minValue={0}
-                    maxValue={10}
-                    labels={{
-                      valueLabel: {
-                        formatTextValue: value => value.toFixed(1),
-                        style: { 
-                          fontSize: "60px",
-                          fontWeight: "bold",
-                          fill: '#000025',
-                          textShadow: 'none'
-                        }
-                      },
-                      tickLabels: {
-                        hideMinMax: true,
-                        ticks: [],
-                        defaultTickValueConfig: {
-                          hide: true
+            <div className="flex items-center md:flex-row md:items-center md:justify-start md:gap-0 md:flex-nowrap md:overflow-x-auto">
+              <div className="flex items-center">
+                {/* RTP gauge using the rating - Left side on mobile */}
+                <div className="flex flex-col items-center max-w-[60px] md:mr-2">
+                  <div className="w-[105px] h-[60px]">
+                    <GaugeComponent
+                      id={`gauge-${casino._id}`}
+                      type="semicircle"
+                      arc={{
+                        colorArray: getGaugeColors(casino.rating),
+                        subArcs: [{
+                          limit: 10,
+                          color: getGaugeArcColor(casino.rating),
+                          showTick: true
+                        }],
+                        width: 0.2,
+                        padding: 0.02,
+                        cornerRadius: 1,
+                        gradient: true
+                      }}
+                      pointer={{
+                        type: "arrow",
+                        color: '#000025',
+                        length: 10,
+                        width: 20,
+                        elastic: true
+                      }}
+                      value={casino.rating}
+                      minValue={0}
+                      maxValue={10}
+                      labels={{
+                        valueLabel: {
+                          formatTextValue: value => value.toFixed(1),
+                          style: { 
+                            fontSize: "60px",
+                            fontWeight: "bold",
+                            fill: '#000025',
+                            textShadow: 'none'
+                          }
                         },
-                        defaultTickLineConfig: {
-                          hide: true
+                        tickLabels: {
+                          hideMinMax: true,
+                          ticks: [],
+                          defaultTickValueConfig: {
+                            hide: true
+                          },
+                          defaultTickLineConfig: {
+                            hide: true
+                          }
                         }
-                      }
-                    }}
-                  />
+                      }}
+                    />
+                  </div>
                 </div>
+                
+                {/* Mobile & Tablet: Min deposit with separator */}
+                {casino.minDeposit && (
+                  <div className="flex items-center md:hidden ml-1">
+                    <div className="h-8 border-r border-[#000025]/20 mx-2"></div>
+                    <div className="flex items-center">
+                      <Wallet className="w-4 h-4 mr-1.5 text-[#8126FF]" />
+                      <div className="flex flex-col">
+                        <span className="text-xs font-bold">{casino.minDeposit}€</span>
+                        <span className="text-[11px] text-[#000025]/70 font-medium">Min. iemaksa</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Desktop indicators container */}
@@ -300,7 +316,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
               
               {/* Payment methods - Right side on mobile */}
               {casino.paymentMethods && casino.paymentMethods.length > 0 && (
-                <div className="flex items-center justify-end space-x-1 md:space-x-2 md:ml-1 md:mt-0 w-auto">
+                <div className="flex items-center ml-auto space-x-1 md:space-x-2 md:ml-1 md:mt-0 w-auto">
                   {/* Previous button */}
                   <button 
                     onClick={prevMethod}
