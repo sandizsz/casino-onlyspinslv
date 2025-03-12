@@ -331,8 +331,8 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                       <Image 
                         src="/images/BS-telegram.svg" 
                         alt="Telegram"
-                        width={48}
-                        height={48}
+                        width={32}
+                        height={32}
                         className="opacity-75 hover:opacity-100"
                       />
                     </a>
@@ -340,17 +340,17 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                       <Image 
                         src="/images/kick.svg" 
                         alt="Kick"
-                        width={38}
-                        height={38}
+                        width={26}
+                        height={26}
                         className="opacity-75 hover:opacity-100"
                       />
                     </a>
                     <a href="https://www.youtube.com/@OnlyWins_Stream" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
                       <Image 
-                        src="/images/youtube.svg" 
+                        src="/images/Youtube.svg" 
                         alt="Youtube"
-                        width={48}
-                        height={48}
+                        width={32}
+                        height={32}
                         className="opacity-75 hover:opacity-100"
                       />
                     </a>
@@ -358,8 +358,8 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                       <Image 
                         src="/images/instagram.svg" 
                         alt="Instagram"
-                        width={48}
-                        height={48}
+                        width={32}
+                        height={32}
                         className="opacity-75 hover:opacity-100"
                       />
                     </a>
