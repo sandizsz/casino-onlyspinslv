@@ -157,7 +157,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
       {/* Main container with light background */}
       <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm text-[#000025]">
         {/* Left column with logo - Visible on all devices, smaller on mobile */}
-        <div className="w-full h-28 sm:h-36 md:h-auto md:w-1/4 bg-white relative min-h-[120px] sm:min-h-[150px] md:min-h-[260px]">
+        <div className="w-full h-28 sm:h-36 md:h-auto md:w-1/4 md:min-w-[150px] bg-white relative min-h-[120px] sm:min-h-[150px] md:min-h-[260px] md:flex-shrink-0">
           <Image
             src={casino.imageUrl}
             alt={casino.offerTitle}
@@ -169,7 +169,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
         </div>
 
         {/* Middle column - Desktop: offer text, Mobile: top section with gauge and payment methods */}
-        <div className="flex-1 p-4 pb-3 pt-2 sm:p-4 md:pr-0 bg-transparent backdrop-blur-md">
+        <div className="flex-1 p-4 pb-3 pt-2 sm:p-4 md:pr-0 bg-transparent backdrop-blur-md md:flex-shrink-1 md:min-w-0 md:overflow-hidden">
           {/* Desktop only: Casino title */}
           <h2 className="hidden md:block text-lg uppercase sm:text-xl font-bold text-[#000025] mb-2 sm:mb-3">{casino.offerTitle}</h2>
           
@@ -210,8 +210,8 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
           {/* Mobile & Tablet: Top section with gauge and payment methods */}
           <div className="md:mt-6 md:border-t md:border-[#000025]/20 md:pt-3 sm:pt-0">
             {/* Mobile & Tablet: Info section with gauge and payment methods */}
-            <div className="flex items-center md:flex-row md:items-center md:justify-start md:gap-0 md:flex-nowrap md:overflow-x-auto">
-              <div className="flex items-center">
+            <div className="flex items-center md:flex-wrap md:gap-y-3">
+              <div className="flex items-center md:flex-grow-0 md:flex-shrink-0">
                 {/* RTP gauge using the rating - Left side on mobile */}
                 <div className="flex flex-col items-center max-w-[60px] md:mr-2">
                   <div className="w-[105px] h-[60px]">
@@ -270,7 +270,6 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
                   <div className="flex items-center md:hidden ml-1">
                     <div className="h-8 border-r border-[#000025]/20 mx-2"></div>
                     <div className="flex items-center">
-                      <Wallet className="w-4 h-4 mr-1.5 text-[#8126FF]" />
                       <div className="flex flex-col">
                         <span className="text-xs font-bold">{casino.minDeposit}€</span>
                         <span className="text-[11px] text-[#000025]/70 font-medium">Min. iemaksa</span>
@@ -281,18 +280,18 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
               </div>
 
               {/* Desktop indicators container */}
-              <div className="hidden md:flex md:items-center md:h-12">
+              <div className="hidden md:flex md:items-center md:h-12 md:flex-shrink-0">
                 {/* First separator */}
-                <div className="h-8 border-r border-[#000025]/20 mx-2"></div>
+                <div className="h-8 border-r border-[#000025]/20 ml-1 mr-2"></div>
 
                 {/* Min. iemaksa with wallet icon */}
                 {casino.minDeposit && (
                   <>
                     <div className="flex items-center px-2">
-                      <Wallet className="w-4 h-4 mr-1.5 text-[#773DFF]" />
+                      <Wallet className="w-4 h-4 mr-1.5 text-[#8126FF]" />
                       <div className="flex flex-col">
                         <span className="text-xs font-bold">{casino.minDeposit}€</span>
-                        <span className="text-[11px] text-gray-600 font-medium">Min. iemaksa</span>
+                        <span className="text-[11px] text-[#000025]/70 font-medium">Min. iemaksa</span>
                       </div>
                     </div>
                     <div className="h-8 border-r border-[#000025]/20 mx-2"></div>
@@ -303,10 +302,10 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
                 {casino.license && (
                   <>
                     <div className="flex items-center px-2">
-                      <Shield className="w-4 h-4 mr-1.5 text-[#773DFF]" />
+                      <Shield className="w-4 h-4 mr-1.5 text-[#8126FF]" />
                       <div className="flex flex-col">
                         <span className="text-xs font-bold">{casino.license}</span>
-                        <span className="text-[11px] text-gray-600 font-medium">Licence</span>
+                        <span className="text-[11px] text-[#000025]/70 font-medium">Licence</span>
                       </div>
                     </div>
                     <div className="h-8 border-r border-[#000025]/20 mx-2"></div>
@@ -314,9 +313,9 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
                 )}
               </div>
               
-              {/* Payment methods - Right side on mobile */}
+              {/* Payment methods - Right side on mobile, left side on tablet/desktop */}
               {casino.paymentMethods && casino.paymentMethods.length > 0 && (
-                <div className="flex items-center ml-auto space-x-1 md:space-x-2 md:ml-1 md:mt-0 w-auto">
+                <div className="flex items-center ml-auto md:ml-0 space-x-1 md:space-x-2 md:mt-0 w-auto md:flex-shrink-0">
                   {/* Previous button */}
                   <button 
                     onClick={prevMethod}
