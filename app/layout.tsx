@@ -22,8 +22,8 @@ const drukTextWideBold = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Baltic Slots",
-  description: "Labākā kazino salīdzināšanas platforma Latvijā",
+  title: "Baltic Slots - ekskluzīvi kazino",
+  description: "Izbaudi svaigākos un ekskluzīvākos kazino piedāvājumus Latvijā",
   icons: {
     icon: '/images/balticslots2.ico',
   },

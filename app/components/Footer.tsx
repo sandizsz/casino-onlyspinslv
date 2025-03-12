@@ -93,8 +93,30 @@ export default function Footer() {
         </div>
       </div>
 
+
+
       {/* Copyright */}
       <div className="border-t border-[#8126FF]/20">
+      <div className="flex justify-center items-center space-x-6 pt-4">
+            <Link href="https://t.me/balticslots" className="transform hover:scale-110 transition-all duration-300">
+              <Image 
+                src="/images/BS-telegram.svg" 
+                alt="Telegram"
+                width={24}
+                height={24}
+                className="opacity-75 hover:opacity-100"
+              />
+            </Link>
+            <Link href="https://t.me/balticslots" className="transform hover:scale-110 transition-all duration-300">
+              <Image 
+                src="/images/BS-telegram.svg" 
+                alt="Telegram"
+                width={24}
+                height={24}
+                className="opacity-75 hover:opacity-100"
+              />
+            </Link>
+          </div>
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
           <p className="text-center text-sm text-[#9b98df]">
 {new Date().getFullYear()} © Baltic Slots. Visas tiesības paturētas.
