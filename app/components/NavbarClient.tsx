@@ -296,7 +296,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                 
                 {/* Other Links Section */}
                 <div className="space-y-4">
-                  <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Citas Saites</h3>
+                  <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Kazino akadēmija</h3>
                   <Link
                     href="/spelu-pamacibas"
                     onClick={() => setIsMenuOpen(false)}
@@ -318,6 +318,52 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                   >
                     Maksājumu metodes
                   </Link>
+                </div>
+
+                {/* Separator */}
+                <div className="h-px bg-gradient-to-r from-transparent via-[#8126FF]/30 to-transparent my-4"></div>
+                
+                {/* Social Media Links */}
+                <div className="space-y-4">
+                  <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Seko Mums</h3>
+                  <div className="flex justify-start items-center space-x-8 p-4">
+                    <a href="https://t.me/onlywinslv" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+                      <Image 
+                        src="/images/BS-telegram.svg" 
+                        alt="Telegram"
+                        width={48}
+                        height={48}
+                        className="opacity-75 hover:opacity-100"
+                      />
+                    </a>
+                    <a href="https://kick.com/onlywinscasino" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+                      <Image 
+                        src="/images/kick.svg" 
+                        alt="Kick"
+                        width={38}
+                        height={38}
+                        className="opacity-75 hover:opacity-100"
+                      />
+                    </a>
+                    <a href="https://www.youtube.com/@OnlyWins_Stream" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+                      <Image 
+                        src="/images/youtube.svg" 
+                        alt="Youtube"
+                        width={48}
+                        height={48}
+                        className="opacity-75 hover:opacity-100"
+                      />
+                    </a>
+                    <a href="https://www.instagram.com/onlywinstream/" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+                      <Image 
+                        src="/images/instagram.svg" 
+                        alt="Instagram"
+                        width={48}
+                        height={48}
+                        className="opacity-75 hover:opacity-100"
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

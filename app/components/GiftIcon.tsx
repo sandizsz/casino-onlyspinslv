@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { Gift } from 'lucide-react';
 import { Casino } from '../utils/interface';
 import Image from 'next/image';
+import ClaimButton from './ClaimButton';
 
 interface GiftIconProps {
   casinos?: Casino[];
@@ -67,14 +68,14 @@ export function GiftIcon({ casinos = [] }: GiftIconProps) {
             {/* Scan lines */}
             <div className="absolute inset-0 overflow-hidden">
               {/* Gradient background */}
-              <div className="absolute inset-0 w-full h-full opacity-10">
-                <div className="absolute w-[300px] h-[300px] rounded-full bg-[#8126FF] blur-[150px] -top-48 -left-24"></div>
+              <div className="absolute inset-0 w-full h-full bg-[#F9F5FF]">
+                <div className="absolute w-[300px] h-[300px] rounded-full bg-[#F9F5FF] blur-[150px] -top-48 -left-24"></div>
               </div>
               
               {[...Array(3)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute bg-gradient-to-r from-transparent via-[#8126FF]/20 to-transparent h-px w-[200%] opacity-30"
+                  className="absolute  h-px w-[200%] "
                   style={{
                     top: `${30 * i}%`,
                     left: '-50%',
@@ -94,38 +95,39 @@ export function GiftIcon({ casinos = [] }: GiftIconProps) {
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8">
               <div className="relative w-40 h-40 md:w-64 md:h-64 flex-shrink-0">
                 <div className="absolute inset-0 bg-[#8126FF]/10 rounded-xl blur-xl animate-pulse"></div>
-                <div className="relative h-full w-full bg-[#1D053F]/40 rounded-xl border border-[#8126FF]/20 p-4">
+                <div className="relative h-full w-full bg-[#F9F5FF] rounded-xl border border-[#1D053F]/20 p-4">
                   <Image
                     src={randomCasino.imageUrl}
                     alt={randomCasino.offerTitle}
                     fill
-                    className="object-contain p-2"
+                    className="object-contain p-6"
                   />
                 </div>
               </div>
 
-              <div className="flex-grow border-t-2 md:border-t-0 md:border-l-2 border-[#8126FF]/20 pt-4 md:pt-0 md:pl-8 space-y-4 w-full md:w-auto text-center md:text-left">
-                <h3 className="text-lg md:text-xl text-[#F9F5FF] font-light">
+              <div className="flex-grow border-t-2 md:border-t-0 md:border-l-2 border-[#002050]/20 pt-4 md:pt-0 md:pl-8 space-y-4 w-full md:w-auto text-center md:text-left">
+                <h3 className="text-lg md:text-xl text-[#002050] uppercase">
                   {randomCasino.offerTitle}
                 </h3>
-                <p className="text-[#F9F5FF]/70 text-sm">
+                <p className="text-[#002050] text-sm">
                   {randomCasino.offerDescription}
                 </p>
                 <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                  <a
-                    href={randomCasino.offerUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto bg-[#8126FF]/20 hover:bg-[#8126FF]/30 text-[#F9F5FF] px-6 py-2 rounded-full transition-all duration-300 text-center"
-                  >
-                    Reģistrēties
-                  </a>
-                  <button
-                    onClick={() => setIsOpen(false)}
-                    className="w-full sm:w-auto border border-[#8126FF]/20 hover:border-[#8126FF]/40 text-[#F9F5FF] px-6 py-2 rounded-full transition-all duration-300 text-center"
-                  >
-                    Vēlāk
-                  </button>
+                    <div className="w-full">
+                      <ClaimButton 
+                        offerUrl={randomCasino.offerUrl}
+                        offerTitle={randomCasino.offerTitle}
+                        className="h-[52px] flex items-center justify-center bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden transition-transform hover:scale-101 backdrop-blur-md bg-opacity-50 w-full whitespace-nowrap shadow-md hover:shadow-lg"
+                      />
+                    </div>
+                    <div className="w-full">
+                      <button
+                        onClick={() => setIsOpen(false)}
+                        className="w-full h-[52px] border border-[#002050]/20 hover:border-[#8126FF]/40 text-[#002050] text-base sm:text-lg rounded-xl overflow-hidden transition-transform hover:scale-101 backdrop-blur-md whitespace-nowrap shadow-md hover:shadow-lg flex items-center justify-center"
+                      >
+                        Vēlāk
+                      </button>
+                    </div>
                 </div>
               </div>
             </div>

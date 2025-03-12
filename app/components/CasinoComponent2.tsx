@@ -155,7 +155,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
   return (
     <div className="flex flex-col w-full rounded-lg overflow-hidden shadow-lg mb-4 sm:mb-6">
       {/* Main container with light background */}
-      <div className="flex flex-col md:flex-row bg-white/80 backdrop-blur-sm text-[#000025]">
+      <div className="flex flex-col md:flex-row bg-[#F9F5FF] backdrop-blur-sm text-[#000025]">
         {/* Left column with logo - Visible on all devices, smaller on mobile */}
         <div className="w-full h-28 sm:h-36 md:h-auto md:w-1/4 md:min-w-[150px] bg-white relative min-h-[120px] sm:min-h-[150px] md:min-h-[260px] md:flex-shrink-0">
           <Image
@@ -169,7 +169,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
         </div>
 
         {/* Middle column - Desktop: offer text, Mobile: top section with gauge and payment methods */}
-        <div className="flex-1 p-4 pb-3 pt-2 sm:p-4 md:pr-0 bg-transparent backdrop-blur-md md:flex-shrink-1 md:min-w-0 md:overflow-hidden">
+        <div className="flex-1 p-4 pb-3 pt-2 sm:p-4 md:pr-0  md:flex-shrink-1 md:min-w-0 md:overflow-hidden">
           {/* Desktop only: Casino title */}
           <h2 className="hidden md:block text-lg uppercase sm:text-xl font-bold text-[#000025] mb-2 sm:mb-3">{casino.offerTitle}</h2>
           
@@ -422,7 +422,7 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
         </div>
 
         {/* Desktop only: Right column with CTA */}
-        <div className="hidden md:flex w-full md:w-[30%] p-4 sm:p-6 flex-col items-center justify-center bg-white/80">
+        <div className="hidden md:flex w-full md:w-[30%] p-4 sm:p-6 flex-col items-center justify-center ">
           <Link
             href={categorySlug && casino.categoryUrls?.length
               ? `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer${casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.urlNumber || ''}`
