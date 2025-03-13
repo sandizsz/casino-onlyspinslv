@@ -151,44 +151,42 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
   
   const currentMethods = totalMethods > 0 ? getVisibleMethods() : [];
   return (
-    <div className="group flex flex-col w-full rounded-lg overflow-hidden shadow-lg mb-4 sm:mb-6 bg-gradient-to-br from-[#1D053F]/90 to-[#1D053F] relative">
-      {/* Simple solid border */}
-      <div className="absolute inset-0 rounded-lg z-10">
-        <div className="absolute inset-0 rounded-lg border-2 border-[#8126FF]"></div>
+    <div className="group flex flex-col w-full rounded-3xl overflow-hidden shadow-lg mb-4 sm:mb-6 bg-[#000025] relative">
+      {/* Animated Blobs */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        {/* First flame blob */}
+        <div className="absolute top-[35%] left-[15%] w-[40%] h-[60%] bg-[#3930ff]/40 blur-[70px] animate-blob-flame"></div>
+        {/* Second flame blob - positioned top right */}
+        <div className="absolute top-[5%] right-[10%] w-[35%] h-[50%] bg-[#3930ff]/45 blur-[80px] animate-blob-flame-delayed"></div>
+        {/* Third flame blob */}
+        <div className="absolute bottom-[20%] right-[25%] w-[30%] h-[45%] bg-[#3930ff]/35 blur-[60px] animate-blob-flame" style={{animationDelay: '1.5s'}}></div>
       </div>
       
-      {/* Animated glow effect */}
-      <div className="absolute inset-0 bg-[#8126FF]/10 rounded-lg blur-md z-0 opacity-70"></div>
-      
-      {/* Diagonal stripes */}
-      <div className="absolute inset-0 overflow-hidden z-0 opacity-10">
-        <div className="absolute -inset-full w-[200%] h-[200%] bg-[repeating-linear-gradient(45deg,#8126FF,#8126FF_1px,transparent_1px,transparent_10px)]"></div>
-      </div>
-      
-
+      {/* Border glow effect */}
+      <div className="absolute inset-0 rounded-3xl z-10 border border-[#F9F5FF]/20 backdrop-blur-sm"></div>
       
       {/* Ensure content is above the glow */}
       <div className="relative z-10 w-full h-full">
       {/* Main container with dark background */}
       <div className="flex flex-col md:flex-row backdrop-blur-sm text-[#F9F5FF]">
         {/* Left column with logo */}
-        <div className="w-full h-40 sm:h-48 md:h-auto md:w-1/4 bg-black relative">
+        <div className="w-full h-40 sm:h-48 md:h-auto md:w-1/4 bg-white backdrop-blur-sm relative overflow-hidden rounded-l-3xl">
           {/* Rank indicator */}
        
           <Image
             src={casino.imageUrl}
             alt={casino.offerTitle}
             fill
-            className="object-cover"
+            className="object-contain scale-75 "
             sizes="(max-width: 768px) 100vw, 25vw"
             priority
           />
         </div>
 
         {/* Middle column with offer text */}
-        <div className="flex-1 p-4 sm:p-6 bg-gradient-to-br from-[#1D053F]/80 to-[#1D053F]/95">
+        <div className="flex-1 p-4 sm:p-6 bg-transparent backdrop-blur-md">
           {/* Casino title */}
-          <h2 className="text-lg sm:text-xl font-bold text-[#F9F5FF] mb-2 sm:mb-3">{casino.offerTitle}</h2>
+          <h2 className="text-lg uppercase sm:text-xl font-bold text-[#F9F5FF] mb-2 sm:mb-3">{casino.offerTitle}</h2>
           
           {/* Custom bullet points as bubbles */}
           <div className="text-[#F9F5FF]">
@@ -200,7 +198,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
                     return (
                       <div 
                         key={blockIndex} 
-                        className="inline-flex items-center bg-[#8126FF]/20 px-3 py-1.5 rounded-full text-sm text-[#F9F5FF] border border-[#8126FF]/30"
+                        className="inline-flex items-center bg-[#F9F5FF]/5 backdrop-blur-md px-3 py-1.5 rounded-full text-sm text-[#F9F5FF] border border-[#F9F5FF]/20 hover:border-[#8126FF]/40 transition-all hover:bg-[#F9F5FF]/10"
                       >
                         {block.children?.map((child: { text: string }, childIndex: number) => (
                           <span key={childIndex}>{child.text}</span>
@@ -225,7 +223,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
           </div>
 
           {/* Payment methods section */}
-          <div className="mt-6 sm:mt-10 border-t pt-3 sm:pt-4">
+          <div className="mt-6 sm:mt-10 border-t border-[#F9F5FF]/10 pt-3 sm:pt-4">
             
             {/* Bottom info section with indicators and payment methods */}
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-y-3 sm:flex-nowrap sm:overflow-x-auto">
@@ -233,7 +231,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
               {casino.freeSpins && (
                 <>
                   <div className="flex items-center pr-3">
-                    <Sparkles className="w-4 h-4 mr-1.5 text-[#8126FF]" />
+                    <Sparkles className="w-4 h-4 mr-1.5 text-[#773DFF]" />
                     <div className="flex flex-col">
                       <span className="text-xs font-bold">{casino.freeSpins}</span>
                       <span className="text-[10px] text-[#F9F5FF]/70">Bezriska griezieni</span>
@@ -241,7 +239,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
                   </div>
                   
                   {/* Separator */}
-                  <div className="h-8 border-r border-[#8126FF]/30 mx-2"></div>
+                  <div className="h-8 border-r border-[#F9F5FF]/20 mx-2"></div>
                 </>
               )}
               
@@ -249,7 +247,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
               {casino.minDeposit && (
                 <>
                   <div className="flex items-center px-3">
-                    <Wallet className="w-4 h-4 mr-1.5 text-[#8126FF]" />
+                    <Wallet className="w-4 h-4 mr-1.5 text-[#773DFF]" />
                     <div className="flex flex-col">
                       <span className="text-xs font-bold">{casino.minDeposit}€</span>
                       <span className="text-[10px] text-[#F9F5FF]/70">Min. iemaksa</span>
@@ -257,7 +255,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
                   </div>
                   
                   {/* Separator */}
-                  <div className="h-8 border-r border-[#8126FF]/30 mx-2"></div>
+                  <div className="h-8 border-r border-[#F9F5FF]/20 mx-2"></div>
                 </>
               )}
               
@@ -265,7 +263,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
               {casino.license && (
                 <>
                   <div className="flex items-center px-3">
-                    <Shield className="w-4 h-4 mr-1.5 text-[#8126FF]" />
+                    <Shield className="w-4 h-4 mr-1.5 text-[#773DFF]" />
                     <div className="flex flex-col">
                       <span className="text-xs font-bold">{casino.license}</span>
                       <span className="text-[10px] text-[#F9F5FF]/70">Licence</span>
@@ -273,7 +271,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
                   </div>
                   
                   {/* Separator - hidden on mobile */}
-                  <div className="hidden sm:block h-8 border-r border-[#8126FF]/30 mx-2"></div>
+                  <div className="hidden sm:block h-8 border-r border-[#F9F5FF]/20 mx-2"></div>
                 </>
               )}
               
@@ -283,7 +281,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
                   {/* Previous button */}
                   <button 
                     onClick={prevMethod}
-                    className="w-7 h-7 sm:w-5 sm:h-5 flex items-center justify-center bg-[#8126FF]/20 hover:bg-[#8126FF]/30 rounded-full transition-colors text-[#F9F5FF]"
+                    className="w-7 h-7 sm:w-5 sm:h-5 flex items-center justify-center bg-[#F9F5FF]/5 hover:bg-[#F9F5FF]/10 rounded-full transition-colors text-[#F9F5FF] border border-[#F9F5FF]/20"
                     aria-label="Previous payment method"
                   >
                     <ChevronLeft className="w-4 h-4 sm:w-3 sm:h-3" />
@@ -294,7 +292,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
                     {currentMethods.map((method) => (
                       <div 
                         key={method._id}
-                        className="w-10 h-10 sm:w-8 sm:h-8 bg-[#1D053F]/60 backdrop-blur-sm rounded flex items-center justify-center border border-[#8126FF]/30 shadow-sm transition-all duration-300 ease-in-out hover:border-[#8126FF]/60"
+                        className="w-10 h-10 sm:w-8 sm:h-8 bg-[#F9F5FF]/5 backdrop-blur-sm rounded-xl flex items-center justify-center border border-[#F9F5FF]/20 shadow-sm transition-all duration-300 ease-in-out hover:border-[#8126FF]/40"
                       >
                         {method.image?.asset?.url && (
                           <div className="relative w-full h-full">
@@ -313,7 +311,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
                   {/* Next button */}
                   <button 
                     onClick={nextMethod}
-                    className="w-7 h-7 sm:w-5 sm:h-5 flex items-center justify-center bg-[#8126FF]/20 hover:bg-[#8126FF]/30 rounded-full transition-colors text-[#F9F5FF]"
+                    className="w-7 h-7 sm:w-5 sm:h-5 flex items-center justify-center bg-[#F9F5FF]/5 hover:bg-[#F9F5FF]/10 rounded-full transition-colors text-[#F9F5FF] border border-[#F9F5FF]/20"
                     aria-label="Next payment method"
                   >
                     <ChevronRight className="w-4 h-4 sm:w-3 sm:h-3" />
@@ -325,9 +323,11 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
         </div>
 
         {/* Right column with CTA */}
-        <div className="w-full md:w-1/4 p-4 sm:p-6 flex flex-col items-center justify-center bg-gradient-to-br from-[#8126FF]/10 to-[#1D053F]/90 backdrop-blur-sm">
-          <div className="bg-[#1D053F]/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg shadow-md w-full text-center mb-3 sm:mb-4 border border-[#8126FF]/30">
-            <div className="text-sm sm:text-md font-bold text-[#F9F5FF]">{casino.offerDescription}</div>
+        <div className="w-full md:w-1/4 p-4 sm:p-6 flex flex-col items-center justify-center bg-transparent backdrop-blur-md rounded-r-3xl">
+          <div className="relative backdrop-blur-sm p-3 sm:p-4 rounded-2xl w-full text-center mb-3 sm:mb-4 border border-[#F9F5FF]/20">
+            {/* Background gradient for the offer description */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#8126FF]/5 to-[#8126FF]/10 rounded-2xl"></div>
+            <div className="relative text-sm sm:text-md font-bold text-[#F9F5FF]/80">{casino.offerDescription}</div>
           </div>
           
           {/* RTP gauge using the rating */}
@@ -390,7 +390,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
               offerTitle={casino.offerTitle}
               categorySlug={categorySlug}
               categoryUrls={casino.categoryUrls}
-              className="w-full bg-gradient-to-r from-[#8126FF] to-[#8126FF]/80 hover:from-[#8126FF]/90 hover:to-[#8126FF]/70 shadow-md hover:shadow-lg"
+              className="group relative px-5 sm:px-6 py-2 sm:py-3 bg-[#8126FF] text-[#F9F5FF] text-base sm:text-lg rounded-xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-md bg-opacity-50 w-full whitespace-nowrap shadow-md hover:shadow-lg"
             />
           </div>
           
@@ -399,7 +399,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
               href={casino.termsConditionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 text-sm text-purple-500 hover:text-purple-700 hover:underline transition-colors duration-300"
+              className="mt-2 text-xs text-[#F9F5FF]/70 hover:text-[#F9F5FF] hover:underline transition-colors duration-300"
             >
               Noteikumi un nosacījumi
             </a>

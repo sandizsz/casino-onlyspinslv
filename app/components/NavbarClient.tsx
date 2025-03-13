@@ -272,19 +272,19 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
         <div className={`lg:hidden fixed top-[var(--navbar-height,4rem)] left-0 right-0 bottom-0 z-40 bg-[rgb(0_0_37)] backdrop-blur-lg border-t border-[#8126FF]/20 transform transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
           isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
         }`}>
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full overflow-y-auto">
 
-            <div className="flex flex-col items-center pt-8 space-y-6 p-8 overflow-y-auto h-screen relative w-full">
+            <div className="flex flex-col items-center pt-6 space-y-4 p-6 relative w-full">
               <div className="w-full max-w-md space-y-4">
                 {/* Casino Categories Section */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Kazino Kategorijas</h3>
                   {categories.map((category) => (
                     <Link
                       key={category._id}
                       href={`/kategorija/${category.slug.current}`}
                       onClick={() => setIsMenuOpen(false)}
-                      className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
+                      className="block w-full px-5 py-2.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                     >
                       {category.title}
                     </Link>
@@ -295,44 +295,44 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                 <div className="h-px bg-gradient-to-r from-transparent via-[#8126FF]/30 to-transparent my-2"></div>
                 
                 {/* Other Links Section */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Kazino akadēmija</h3>
                   <Link
                     href="/spelu-pamacibas"
                     onClick={() => setIsMenuOpen(false)}
-                    className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
+                    className="block w-full px-5 py-2.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                   >
                     Spēļu pamācības
                   </Link>
                   <Link
                     href="/padomi"
                     onClick={() => setIsMenuOpen(false)}
-                    className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
+                    className="block w-full px-5 py-2.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                   >
                     Padomi
                   </Link>
                   <Link
                     href="/maksajumu-metodes"
                     onClick={() => setIsMenuOpen(false)}
-                    className="block w-full px-6 py-3.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
+                    className="block w-full px-5 py-2.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                   >
                     Maksājumu metodes
                   </Link>
                 </div>
 
                 {/* Separator */}
-                <div className="h-px bg-gradient-to-r from-transparent via-[#8126FF]/30 to-transparent my-4"></div>
+                <div className="h-px bg-gradient-to-r from-transparent via-[#8126FF]/30 to-transparent my-3"></div>
                 
                 {/* Social Media Links */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Seko Mums</h3>
-                  <div className="flex justify-start items-center space-x-8 p-4">
+                  <div className="flex justify-start items-center space-x-6 p-3">
                     <a href="https://t.me/onlywinslv" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
                       <Image 
                         src="/images/BS-telegram.svg" 
                         alt="Telegram"
-                        width={32}
-                        height={32}
+                        width={26}
+                        height={26}
                         className="opacity-75 hover:opacity-100"
                       />
                     </a>
@@ -340,8 +340,8 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                       <Image 
                         src="/images/kick.svg" 
                         alt="Kick"
-                        width={26}
-                        height={26}
+                        width={20}
+                        height={20}
                         className="opacity-75 hover:opacity-100"
                       />
                     </a>
@@ -349,8 +349,8 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                       <Image 
                         src="/images/Youtube.svg" 
                         alt="Youtube"
-                        width={32}
-                        height={32}
+                        width={26}
+                        height={26}
                         className="opacity-75 hover:opacity-100"
                       />
                     </a>
@@ -358,8 +358,8 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                       <Image 
                         src="/images/instagram.svg" 
                         alt="Instagram"
-                        width={32}
-                        height={32}
+                        width={26}
+                        height={26}
                         className="opacity-75 hover:opacity-100"
                       />
                     </a>

@@ -17,6 +17,8 @@ export default defineConfig({
   projectId,
   dataset,
   schema,
+  // Keep the default studio components
+
   plugins: [
     structureTool({
       structure: (S, context) => {

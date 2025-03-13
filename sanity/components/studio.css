@@ -1,0 +1,36 @@
+/* Custom styles for Sanity Studio */
+
+/* Set z-index for the Sanity div */
+#sanity {
+  z-index: 100 !important;
+}
+
+/* Hide page headers but preserve Sanity navbar */
+.site-header,
+.main-header,
+.page-header,
+header:not([data-ui]),
+nav:not([data-ui]),
+.header-wrapper {
+  display: none !important;
+}
+
+/* Ensure content is properly positioned below fixed navbar */
+/* This helps prevent content from being hidden under the navbar on mobile devices */
+.sanity-studio-content {
+  padding-top: var(--safe-top-padding, 60px);
+}
+
+/* Adjust for mobile browsers with search bars at the top */
+@media (max-width: 768px) {
+  body {
+    /* Add extra padding on mobile to account for browser UI elements */
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  
+  /* Ensure the Sanity content is visible below fixed elements */
+  .sanity-studio-content,
+  #sanity {
+    margin-top: var(--safe-top-margin, 10px);
+  }
+}

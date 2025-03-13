@@ -116,7 +116,7 @@ const getGaugeArcColor = (rating: number): string => {
 
 
 
-const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
+const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
   // State for payment methods pagination
   const [startIndex, setStartIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -561,4 +561,4 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
   );
 };
 
-export default CasinoComponent2;
+export default LiveCasinoComponent;
