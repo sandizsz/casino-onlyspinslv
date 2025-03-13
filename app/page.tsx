@@ -66,7 +66,7 @@ async function getPosts() {
 }
 
 // Set to 0 during development to see changes immediately, adjust to higher value in production
-export const revalidate = 0;
+export const revalidate = 600;
 
 export default async function Home() {
 
