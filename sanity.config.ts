@@ -19,6 +19,8 @@ export default defineConfig({
   schema,
   // Keep the default studio components
 
+ 
+
   plugins: [
     structureTool({
       structure: (S, context) => {
@@ -74,4 +76,13 @@ export default defineConfig({
     }),
     visionTool({defaultApiVersion: apiVersion}),
   ],
+
+  document: {
+    // Use this instead - it properly returns a Promise
+    productionUrl: async () => {
+      return undefined;
+    },
+    // This reduces the frequency of validation
+    unstable_liveEdit: process.env.NODE_ENV !== 'development',
+  },
 })
