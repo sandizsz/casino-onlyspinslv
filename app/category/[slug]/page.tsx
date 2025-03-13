@@ -101,8 +101,8 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 container mx-auto min-h-[60vh] content-center px-3 sm:px-4 md:px-6">
-            <div className="min-h-[60vh] py-8 sm:py-10 md:py-12 flex flex-col justify-center items-center pt-16 sm:pt-20">
+          <div className="relative z-10 container mx-auto min-h-[70vh] content-center px-3 sm:px-4 md:px-6">
+            <div className="min-h-[70vh] py-8 sm:py-10 md:py-12 flex flex-col justify-center items-center pt-16 sm:pt-20">
               {/* Main Content */}
               <div className="relative text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-3 sm:mb-4 md:mb-8 px-2 sm:px-4 md:px-6">
               <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-light leading-tight text-[#F9F5FF]">
