@@ -41,7 +41,7 @@ export default function CategoryPageClient({ initialCasinos, initialCategory }: 
         </div>
         
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-          <h1 className="text-4xl md:text-6xl font-['Orbitron'] font-bold text-center text-[#8126FF] [text-shadow:_0_0_30px_rgba(129,38,255,0.6)] mb-4">
+          <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-light leading-tight text-[#F9F5FF] uppercase">
             {category.title} 
           </h1>
           {category.description && (

@@ -30,7 +30,7 @@ export default async function CategoryPage() {
     <div className="min-h-screen bg-[#0D1117]">
       <AnimatedSection className="w-full py-20 bg-gradient-to-b from-[#1E2A44] to-[#0D1117] relative overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl font-['Orbitron'] font-bold text-center text-[#C1FF72] [text-shadow:_0_0_30px_#C1FF72] mb-12">
+          <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-light leading-tight text-[#F9F5FF]">
             Kazino kategorijas
           </h1>
           
