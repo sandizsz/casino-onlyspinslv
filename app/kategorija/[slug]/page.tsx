@@ -31,6 +31,7 @@ async function getCasinosByCategory(slug: string) {
     termsConditionsUrl,
     freeSpins,
     license,
+    bonusCode,
     minDeposit,
     "categoryUrls": categoryUrls[] {
       "categoryId": category->_id,
