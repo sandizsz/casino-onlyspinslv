@@ -118,7 +118,7 @@ export default function Footer() {
             </a>
             <a href="https://www.youtube.com/@OnlyWins_Stream" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
               <Image 
-                src="/images/youtube.svg" 
+                src="/images/Youtube.svg" 
                 alt="Youtube"
                 width={24}
                 height={24}
