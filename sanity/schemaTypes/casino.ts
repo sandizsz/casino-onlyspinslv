@@ -36,6 +36,12 @@ export const casinoType = defineType({
       validation: (Rule) => Rule.min(0).max(10),
     },
     {
+      name: 'bonusCode',
+      title: 'Bonus Code',
+      type: 'string',
+      description: 'Promotional bonus code for the casino',
+    },
+    {
       name: 'offerUrl',
       title: 'Default Offer URL',
       type: 'url',
@@ -150,6 +156,7 @@ export const casinoType = defineType({
       title: "Payment Methods",
       type: "array",
       of: [{ type: "reference", to: [{ type: "paymentMethod"}]}],
-    },
+    } 
+ 
   ],
 });

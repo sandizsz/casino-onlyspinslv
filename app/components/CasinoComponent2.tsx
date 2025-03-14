@@ -69,6 +69,7 @@ interface Casino {
   freeSpins?: number;
   license?: string;
   minDeposit?: number;
+  bonusCode?: string;
 }
 
 interface CasinoProps {
@@ -153,11 +154,21 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
   
   const currentMethods = totalMethods > 0 ? getVisibleMethods() : [];
   return (
-    <div className="flex flex-col w-full rounded-lg overflow-hidden shadow-lg mb-4 sm:mb-6">
+    <div className="flex flex-col w-full rounded-lg overflow-hidden shadow-lg mb-4 sm:mb-6 relative">
+
       {/* Main container with light background */}
       <div className="flex flex-col md:flex-row bg-[#F9F5FF] backdrop-blur-sm text-[#000025]">
         {/* Left column with logo - Visible on all devices, smaller on mobile */}
         <div className="w-full h-28 sm:h-36 md:h-auto md:w-1/4 md:min-w-[150px] bg-white relative min-h-[120px] sm:min-h-[150px] md:min-h-[260px] md:flex-shrink-0">
+          {/* Bonus Code Box */}
+          {casino.bonusCode && (
+            <div className="absolute top-[-1px] left-1/2 transform -translate-x-1/2 z-10">
+              <div className="bg-[#1D053F] px-3 pt-[3px] rounded-b-md border flex items-center">
+                <span className="text-[#F9F5FF] text-[12px] leading-tight mr-1">Bonusa kods:</span>
+                <span className="text-[12px] leading-tight uppercase font-bold bg-clip-text text-[#ffda23]">{casino.bonusCode}</span>
+              </div>
+            </div>
+          )}
           <Image
             src={casino.imageUrl}
             alt={casino.offerTitle}
@@ -359,35 +370,37 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
             </div>
           </div>
           
-          {/* Mobile & Tablet: Two boxes layout for offer description and free spins */}
-          <div className=" md:hidden grid gap-3" style={{ gridTemplateColumns: casino.freeSpins ? '1fr 1fr' : '1fr' }}>
-            {/* Offer description box */}
-            <Link
-              href={categorySlug && casino.categoryUrls?.length
-                ? `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer${casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.urlNumber || ''}`
-                : `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer`
-              }
-              onClick={(e) => {
-                e.preventDefault();
-                window.open(
-                  categorySlug && casino.categoryUrls?.length
-                    ? casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url || casino.offerUrl
-                    : casino.offerUrl,
-                  '_blank'
-                );
-              }}
-              className="transition-transform hover:scale-105"
-            >
-              <div className="relative backdrop-blur-sm px-3 py-4 rounded-xl text-center border border-[#F9F5FF]/20 min-h-[80px] flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-300">
-                <div className="absolute inset-0 bg-[#000025] rounded-xl"></div>
-                <div className="relative flex flex-col items-center justify-center w-full h-full">
-                  <div className="text-lg font-bold text-[#F9F5FF]">{casino.offerDescription}</div>
-                  <div className="flex items-center text-sm font-medium text-[#F9F5FF]/80 mt-1">
-                    <span>Bonuss</span>
+          {/* Mobile & Tablet: Layout for offer description and free spins */}
+          <div className="md:hidden grid gap-3" style={{ gridTemplateColumns: (casino.offerDescription && casino.freeSpins) ? '1fr 1fr' : '1fr' }}>
+            {/* Offer description box - only shown if there's an offer description */}
+            {casino.offerDescription && (
+              <Link
+                href={categorySlug && casino.categoryUrls?.length
+                  ? `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer${casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.urlNumber || ''}`
+                  : `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer`
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(
+                    categorySlug && casino.categoryUrls?.length
+                      ? casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url || casino.offerUrl
+                      : casino.offerUrl,
+                    '_blank'
+                  );
+                }}
+                className="transition-transform hover:scale-105"
+              >
+                <div className="relative backdrop-blur-sm px-3 py-4 rounded-xl text-center border border-[#F9F5FF]/20 min-h-[80px] flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-300">
+                  <div className="absolute inset-0 bg-[#000025] rounded-xl"></div>
+                  <div className="relative flex flex-col items-center justify-center w-full h-full">
+                    <div className="text-lg font-bold text-[#F9F5FF]">{casino.offerDescription}</div>
+                    <div className="flex items-center text-sm font-medium text-[#F9F5FF]/80 mt-1">
+                      <span>Bonuss</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            )}
             
             {/* Free spins box */}
             {casino.freeSpins && (
@@ -405,7 +418,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
                     '_blank'
                   );
                 }}
-                className="transition-transform hover:scale-105"
+                className={`transition-transform hover:scale-105 ${!casino.offerDescription ? 'col-span-full' : ''}`}
               >
                 <div className="relative backdrop-blur-sm px-3 py-4 rounded-xl text-center border border-[#F9F5FF]/20 min-h-[80px] flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-300">
                   <div className="absolute inset-0 bg-[#000025] rounded-xl"></div>
@@ -443,14 +456,23 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
               {/* Background gradient for the offer description */}
               <div className="absolute inset-0 bg-[#000025] rounded-2xl"></div>
               <div className="relative text-md sm:text-lg font-bold text-[#F9F5FF] flex flex-col items-center justify-center">
-                {casino.offerDescription}
-                {casino.freeSpins && (
-                  <div className="mt-1 flex items-center justify-center">
-                    <span className="text-xs font-medium text-[#F9F5FF]/80">+</span>
-                    <Sparkles className="w-3 h-3 mx-1 text-[#773DFF]" />
-                    <span className="text-xs font-medium text-[#F9F5FF]/80">{casino.freeSpins} Bezriska griezieni</span>
+                {casino.offerDescription ? (
+                  <>
+                    {casino.offerDescription}
+                    {casino.freeSpins && (
+                      <div className="mt-1 flex items-center justify-center">
+                        <span className="text-xs font-medium text-[#F9F5FF]/80">+</span>
+                        <Sparkles className="w-3 h-3 mx-1 text-[#773DFF]" />
+                        <span className="text-xs font-medium text-[#F9F5FF]/80">{casino.freeSpins} Bezriska griezieni</span>
+                      </div>
+                    )}
+                  </>
+                ) : casino.freeSpins ? (
+                  <div className="flex items-center justify-center">
+                  
+                    <span>{casino.freeSpins} Bezriska griezieni</span>
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
           </Link>

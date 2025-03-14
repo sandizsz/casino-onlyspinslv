@@ -31,6 +31,7 @@ async function getPosts() {
     freeSpins,
     license,
     minDeposit,
+    bonusCode,
     "categoryUrls": categoryUrls[] {
       "categoryId": category->_id,
       "categorySlug": category->slug.current,
@@ -66,7 +67,7 @@ async function getPosts() {
 }
 
 // Set to 0 during development to see changes immediately, adjust to higher value in production
-export const revalidate = 600;
+export const revalidate = 0;
 
 export default async function Home() {
 
