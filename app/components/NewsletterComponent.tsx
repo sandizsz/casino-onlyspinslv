@@ -32,7 +32,7 @@ const NewsletterComponent = () => {
       } else {
         setError(data.error || 'Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz.');
       }
-    } catch (err) {
+    } catch {
       setError('Tīkla kļūda. Lūdzu, mēģiniet vēlāk.');
     } finally {
       setLoading(false);
