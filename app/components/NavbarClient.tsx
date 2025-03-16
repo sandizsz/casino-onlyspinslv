@@ -2,10 +2,14 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { client } from "@/sanity/lib/client";
 
 import { Category, Casino } from "../utils/interface"
 import { useState, useEffect } from "react"
 import { GiftIcon } from "./GiftIcon"
+
+// Basic console log to check if the component is loaded
+console.log("NavbarClient component file is loaded");
 
 // Add CSS for glow and glassmorphism effects
 const glowStyles = `
@@ -39,10 +43,6 @@ const glowStyles = `
     opacity: 0.6;
     z-index: -5;
   }
-  
-
-  
-
 `
 
 interface NavbarClientProps {
@@ -51,9 +51,75 @@ interface NavbarClientProps {
 }
 
 export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
+  // Console log when the component function is called
+  console.log("NavbarClient component function is executing");
+  console.log("Categories count:", categories?.length || 0);
+  console.log("Casinos count:", casinos?.length || 0);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(true)
+  const [giftCasinos, setGiftCasinos] = useState<Casino[]>([])
+
+  // Try a basic useEffect to see if it runs
+  useEffect(() => {
+    console.log("Basic useEffect ran");
+  }, []);
+
+  // Fetch and filter casinos with the gift tag
+  useEffect(() => {
+    console.log("Casino useEffect starting");
+    
+    const fetchGiftCasinos = async () => {
+      console.log("fetchGiftCasinos function called");
+      
+      try {
+        // Force using direct Sanity query for testing
+        console.log("Attempting direct Sanity query");
+        
+        try {
+          // Test if client is available
+          console.log("Sanity client available:", !!client);
+          
+          const query = `*[_type == "casino"] [0...1] { _id, offerTitle }`;
+          console.log("Test query:", query);
+          
+          const testData = await client.fetch(query);
+          console.log("Test query result:", testData);
+        } catch (clientError) {
+          console.error("Error testing Sanity client:", clientError);
+        }
+        
+        const query = `*[
+          _type == "casino" && 
+          count(tags[]->_id[@ == "efe5ddb1-3fdc-4a0b-8bd5-519db4fc6759"]) > 0
+        ] | order(orderRank)[0...5] {
+          _id,
+          offerTitle,
+          offerUrl,
+          offerDescription,
+          "imageUrl": casinoImage.asset->url,
+          tags[]-> {
+            _id,
+            title,
+            slug {
+              current
+            }
+          }
+        }`;
+        
+        console.log("Executing Sanity query");
+        const data = await client.fetch(query);
+        console.log(`Fetched ${data.length} gift casinos directly from Sanity:`, data);
+        setGiftCasinos(data);
+      } catch (error) {
+        console.error("Error in fetchGiftCasinos:", error);
+      }
+    };
+
+    fetchGiftCasinos();
+  }, []);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -179,9 +245,9 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
                 </Link>
               </div>
 
-              {/* Gift Icon - Hidden on mobile */}
-              <div className="hidden">
-                <GiftIcon casinos={casinos} />
+              {/* Gift Icon - Now visible on mobile */}
+              <div className="flex-shrink-0 mr-3">
+                {giftCasinos.length > 0 && <GiftIcon casinos={giftCasinos} />}
               </div>
             
               {/* Right - Burger Menu */}
@@ -262,7 +328,7 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
 
               {/* Right - Gift Icon */}
               <div className="flex-shrink-0">
-                <GiftIcon casinos={casinos} />
+                {giftCasinos.length > 0 && <GiftIcon casinos={giftCasinos} />}
               </div>
             </div>
           </div>

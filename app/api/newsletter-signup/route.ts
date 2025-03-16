@@ -7,10 +7,10 @@ const mailerSend = new MailerSend({
 });
 
 // Admin email to receive notifications
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@yourdomain.com';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'sandissirmais8@gmail.com';
 // Email address to send from (must be verified in MailerSend)
-const FROM_EMAIL = process.env.FROM_EMAIL || 'newsletter@yourdomain.com';
-const FROM_NAME = process.env.FROM_NAME || 'Bonusu Jaunumi';
+const FROM_EMAIL = process.env.FROM_EMAIL || 'jaunumi@balticslots.com';
+const FROM_NAME = process.env.FROM_NAME || 'Balticslots';
 
 export async function POST(request: Request) {
   try {
@@ -67,7 +67,7 @@ async function sendConfirmationEmail(subscriberEmail: string) {
 }
 
 async function sendAdminNotification(subscriberEmail: string) {
-  const sentFrom = new Sender(FROM_EMAIL, 'Bonusu Jaunumu Sistēma');
+  const sentFrom = new Sender(FROM_EMAIL, 'Balticslots.com');
   const recipient = new Recipient(ADMIN_EMAIL);
 
   const emailParams = new EmailParams()

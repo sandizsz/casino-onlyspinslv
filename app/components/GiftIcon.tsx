@@ -93,14 +93,14 @@ export function GiftIcon({ casinos = [] }: GiftIconProps) {
             </button>
             
             <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8">
-              <div className="relative w-40 h-40 md:w-64 md:h-64 flex-shrink-0">
-                <div className="absolute inset-0 bg-[#8126FF]/10 rounded-xl blur-xl animate-pulse"></div>
+              <div className="relative w-40 h-40 md:w-64 md:h-64 flex-shrink-0 bg-[#F9F5FF]">
+                <div className="absolute inset-0 bg-[#F9F5FF]rounded-xl blur-xl animate-pulse"></div>
                 <div className="relative h-full w-full bg-[#F9F5FF] rounded-xl border border-[#1D053F]/20 p-4">
                   <Image
                     src={randomCasino.imageUrl}
                     alt={randomCasino.offerTitle}
                     fill
-                    className="object-contain p-6"
+                    className="object-contain p-6 bg-white rounded-xl"
                   />
                 </div>
               </div>
