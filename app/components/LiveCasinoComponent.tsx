@@ -387,65 +387,68 @@ const CasinoComponent2: React.FC<CasinoProps> = ({ casino, categorySlug }) => {
           
           {/* Mobile & Tablet: Layout for offer description and free spins */}
           <div className="md:hidden grid gap-3" style={{ gridTemplateColumns: (casino.offerDescription && casino.freeSpins) ? '1fr 1fr' : '1fr' }}>
-            {/* Offer description box - only shown if there's an offer description */}
-            {casino.offerDescription && (
-              <Link
-                href={categorySlug && casino.categoryUrls?.length
-                  ? `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer${casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.urlNumber || ''}`
-                  : `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer`
-                }
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.open(
-                    categorySlug && casino.categoryUrls?.length
-                      ? casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url || casino.offerUrl
-                      : casino.offerUrl,
-                    '_blank'
-                  );
-                }}
-                className="transition-transform hover:scale-105"
-              >
-                <div className="relative backdrop-blur-sm px-3 py-4 rounded-xl text-center border border-[#F9F5FF]/20 min-h-[80px] flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-300">
-                  <div className="absolute inset-0 bg-[#000025] rounded-xl"></div>
-                  <div className="relative flex flex-col items-center justify-center w-full h-full">
-                    <div className="text-lg font-bold text-[#F9F5FF]">{casino.offerDescription}</div>
-                    <div className="flex items-center text-sm font-medium text-[#F9F5FF]/80 mt-1">
-                      <span>Bonuss</span>
+            {/* Container to ensure equal height for both boxes */}
+            <div className="contents" id="equal-height-boxes">
+              {/* Offer description box - only shown if there's an offer description */}
+              {casino.offerDescription && (
+                <Link
+                  href={categorySlug && casino.categoryUrls?.length
+                    ? `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer${casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.urlNumber || ''}`
+                    : `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer`
+                  }
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(
+                      categorySlug && casino.categoryUrls?.length
+                        ? casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url || casino.offerUrl
+                        : casino.offerUrl,
+                      '_blank'
+                    );
+                  }}
+                  className="transition-transform hover:scale-105 h-full"
+                >
+                  <div className="relative backdrop-blur-sm px-3 py-4 rounded-xl text-center border border-[#F9F5FF]/20 flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-300 h-full">
+                    <div className="absolute inset-0 bg-[#000025] rounded-xl"></div>
+                    <div className="relative flex flex-col items-center justify-center w-full">
+                      <div className="text-base sm:text-lg font-bold text-[#F9F5FF] leading-tight">{casino.offerDescription}</div>
+                      <div className="flex items-center text-xs sm:text-sm font-medium text-[#F9F5FF]/80 mt-1">
+                        <span>Bonuss</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            )}
-            
-            {/* Free spins box */}
-            {casino.freeSpins && (
-              <Link
-                href={categorySlug && casino.categoryUrls?.length
-                  ? `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer${casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.urlNumber || ''}`
-                  : `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer`
-                }
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.open(
-                    categorySlug && casino.categoryUrls?.length
-                      ? casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url || casino.offerUrl
-                      : casino.offerUrl,
-                    '_blank'
-                  );
-                }}
-                className={`transition-transform hover:scale-105 ${!casino.offerDescription ? 'col-span-full' : ''}`}
-              >
-                <div className="relative backdrop-blur-sm px-3 py-4 rounded-xl text-center border border-[#F9F5FF]/20 min-h-[80px] flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-300">
-                  <div className="absolute inset-0 bg-[#000025] rounded-xl"></div>
-                  <div className="relative flex flex-col items-center justify-center w-full h-full">
-                    <div className="text-lg font-bold text-[#F9F5FF]">{casino.freeSpins}</div>
-                    <div className="flex items-center text-sm font-medium text-[#F9F5FF]/80 mt-1">
-                      <span>Bezriska griezieni</span>
+                </Link>
+              )}
+              
+              {/* Free spins box */}
+              {casino.freeSpins && (
+                <Link
+                  href={categorySlug && casino.categoryUrls?.length
+                    ? `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer${casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.urlNumber || ''}`
+                    : `/${casino.offerTitle.toLowerCase().replace(/\s+/g, '')}-offer`
+                  }
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(
+                      categorySlug && casino.categoryUrls?.length
+                        ? casino.categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url || casino.offerUrl
+                        : casino.offerUrl,
+                      '_blank'
+                    );
+                  }}
+                  className={`transition-transform hover:scale-105 h-full ${!casino.offerDescription ? 'col-span-full' : ''}`}
+                >
+                  <div className="relative backdrop-blur-sm px-3 py-4 rounded-xl text-center border border-[#F9F5FF]/20 flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow duration-300 h-full">
+                    <div className="absolute inset-0 bg-[#000025] rounded-xl"></div>
+                    <div className="relative flex flex-col items-center justify-center w-full">
+                      <div className="text-base sm:text-lg font-bold text-[#F9F5FF] leading-tight">{casino.freeSpins}</div>
+                      <div className="flex items-center text-xs sm:text-sm font-medium text-[#F9F5FF]/80 mt-1">
+                        <span>Bezriska griezieni</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            )}
+                </Link>
+              )}
+            </div>
           </div>
         </div>
 
