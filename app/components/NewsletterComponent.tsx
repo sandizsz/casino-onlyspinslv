@@ -13,7 +13,7 @@ const NewsletterComponent = () => {
             Saņem jaunākos bonusus
           </h3>
           <p className="text-[#9b98df] text-sm leading-relaxed">
-            Piesakies jaunumiem un uzzini pirmais par ekskluzīviem bonusiem.
+          Piesakies jaunumiem un saņem ekskluzīvus bonusu piedāvājumus.
           </p>
         </div>
         
