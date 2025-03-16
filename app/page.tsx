@@ -88,8 +88,8 @@ export default async function Home() {
   // Debug log
   console.log(`Found ${liveCasinos.length} casinos with the live tag`);
   
-  // Regular casinos for the main list (excluding the first 4)
-  const casinos: Casino[] = allCasinos.slice(0, 16);
+
+  const casinos: Casino[] = allCasinos.slice(0, 12);
 
   // Get unique payment methods from all casinos
   const uniquePaymentMethods = Array.from(
