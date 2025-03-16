@@ -3,11 +3,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
 import { LoadingProvider } from './context/LoadingContext'
 import LoadingOverlay from './components/LoadingOverlay'
 import { NavigationEvents } from './components/NavigationEvents'
 import { Suspense } from 'react'
+import Script from 'next/script';
 
 const alexandria = localFont({
   src: "./fonts/SofiaProSemiBold.otf",
@@ -51,6 +51,23 @@ export default function RootLayout({
             };
           `,
         }} />
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-98JEYEN7YR"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-98JEYEN7YR');
+            `,
+          }}
+        />
       </head>
       <body className={`${alexandria.variable} ${drukTextWideBold.variable} bg-[#0D1117] text-white min-h-screen`}>
         <LoadingProvider>
@@ -61,7 +78,6 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
-         
         </LoadingProvider>
       </body>
     </html>
