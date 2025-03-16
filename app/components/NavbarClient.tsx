@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { client } from "@/sanity/lib/client";
 
-import { Category, Casino } from "../utils/interface"
+import { Category } from "../utils/interface"
 import { useState, useEffect } from "react"
 import { GiftIcon } from "./GiftIcon"
 
@@ -46,16 +46,15 @@ const glowStyles = `
 
 interface NavbarClientProps {
   categories: Category[]
-  casinos?: Casino[]
 }
 
-export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
+export function NavbarClient({ categories }: NavbarClientProps) {
  
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(true)
-  const [giftCasinos, setGiftCasinos] = useState<Casino[]>([])
+  const [giftCasinos, setGiftCasinos] = useState([])
 
 
 
@@ -68,19 +67,6 @@ export function NavbarClient({ categories, casinos = [] }: NavbarClientProps) {
       
       try {
         // Force using direct Sanity query for testing
-        
-        
-        try {
-          // Test if client is available
-    
-          const query = `*[_type == "casino"] [0...1] { _id, offerTitle }`;
- 
-          
-          const testData = await client.fetch(query);
-      
-        } catch (clientError) {
-    
-        }
         
         const query = `*[
           _type == "casino" && 
