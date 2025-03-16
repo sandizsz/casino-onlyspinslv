@@ -28,7 +28,7 @@ async function getCasinos() {
 }
 
 const Navbar = async () => {
-  const [categories, casinos] = await Promise.all([
+  const [categories] = await Promise.all([
     getCategories(),
     getCasinos()
   ]);
