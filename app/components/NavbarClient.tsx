@@ -90,8 +90,8 @@ export function NavbarClient({ categories }: NavbarClientProps) {
         const data = await client.fetch(query);
       
         setGiftCasinos(data);
-      } catch (error) {
-
+      } catch {
+        throw new Error('Failed to fetch gift casinos');
       }
     };
 
