@@ -35,7 +35,7 @@ const Navbar = async () => {
   
   return (
     <header className="w-full z-50">
-      <NavbarClient categories={categories} casinos={casinos} />
+      <NavbarClient categories={categories} />
     </header>
   );
 };
