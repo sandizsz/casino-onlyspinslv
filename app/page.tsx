@@ -136,7 +136,7 @@ export default async function Home() {
                 
                 <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-[#F9F5FF]">
                 ONLINE CASINO 
-                <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-light leading-tight"> JAUNUMI</span>
+                <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight"> JAUNUMI</span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-[#9b98df] max-w-2xl mx-auto leading-relaxed mb-2 sm:mb-4">
                 Izbaudi svaigākos un ekskluzīvākos kazino piedāvājumus Latvijā
