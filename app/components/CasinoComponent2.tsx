@@ -163,7 +163,7 @@ const LiveCasinoComponent: React.FC<CasinoProps> = ({ casino, categorySlug }) =>
           {/* Bonus Code Box */}
           {casino.bonusCode && (
             <div className="absolute top-[-1px] left-1/2 transform -translate-x-1/2 z-10">
-              <div className="bg-[#1D053F] px-3 pt-[3px] rounded-b-md border flex items-center">
+              <div className="bg-[#1D053F] px-3 py-[3px] rounded-b-md border flex items-center w-max">
                 <span className="text-[#F9F5FF] text-[12px] leading-tight mr-1">Bonusa kods:</span>
                 <span className="text-[12px] leading-tight uppercase font-bold bg-clip-text text-[#ffda23]">{casino.bonusCode}</span>
               </div>

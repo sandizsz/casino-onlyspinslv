@@ -94,7 +94,6 @@ export default function Footer() {
       </div>
 
 
-
       {/* Copyright */}
       <div className="border-t border-[#8126FF]/20">
       <div className="flex justify-center items-center space-x-6 pt-4">
@@ -135,9 +134,15 @@ export default function Footer() {
               />
             </a>
           </div>
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 pb-2">
           <p className="text-center text-sm text-[#9b98df]">
 {new Date().getFullYear()} © Baltic Slots. Visas tiesības paturētas.
+          </p>
+        </div>
+
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-4">
+          <p className="text-center text-xs text-[#F9F5FF]/70">
+Sazināties ar mums: <a href="mailto:support@balticslots.com" className="hover:text-[#8126FF] transition-colors duration-300 underline">support@balticslots.com</a>
           </p>
         </div>
       </div>

@@ -3,12 +3,11 @@
 import Link from "next/link"
 import Image from "next/image"
 import { client } from "@/sanity/lib/client";
+import { ChevronDown } from "lucide-react";
 
 import { Category } from "../utils/interface"
 import { useState, useEffect } from "react"
 import { GiftIcon } from "./GiftIcon"
-
-
 
 // Add CSS for glow and glassmorphism effects
 const glowStyles = `
@@ -49,25 +48,16 @@ interface NavbarClientProps {
 }
 
 export function NavbarClient({ categories }: NavbarClientProps) {
- 
-
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobile, setIsMobile] = useState(true)
   const [giftCasinos, setGiftCasinos] = useState([])
 
-
-
   // Fetch and filter casinos with the gift tag
   useEffect(() => {
-      
-    
     const fetchGiftCasinos = async () => {
-      
-      
       try {
         // Force using direct Sanity query for testing
-        
         const query = `*[
           _type == "casino" && 
           count(tags[]->_id[@ == "efe5ddb1-3fdc-4a0b-8bd5-519db4fc6759"]) > 0
@@ -86,9 +76,7 @@ export function NavbarClient({ categories }: NavbarClientProps) {
           }
         }`;
         
-
         const data = await client.fetch(query);
-      
         setGiftCasinos(data);
       } catch {
         throw new Error('Failed to fetch gift casinos');
@@ -97,7 +85,6 @@ export function NavbarClient({ categories }: NavbarClientProps) {
 
     fetchGiftCasinos();
   }, []);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -284,28 +271,93 @@ export function NavbarClient({ categories }: NavbarClientProps) {
                     {category.title}
                   </Link>
                 ))}
-                <Link
-                  href="/spelu-pamacibas"
-                  className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
-                >
-                  Spēļu pamācības
-                </Link>
-                <Link
-                  href="/padomi"
-                  className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
-                >
-                  Padomi
-                </Link>
-                <Link
-                  href="/maksajumu-metodes"
-                  className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
-                >
-                  Maksājumu metodes
-                </Link>
+                
+                {/* Desktop dropdown menu */}
+                <div className="relative group">
+                  <button
+                    className="flex items-center whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
+                  >
+                    Kazino akadēmija
+                    <ChevronDown className="ml-1 w-3 h-3 group-hover:text-[#9b98df] transition-all duration-300" />
+                  </button>
+                  
+                  {/* Dropdown content for desktop */}
+                  <div className="absolute left-0 top-full mt-1 w-48 bg-[#1D053F]/90 backdrop-blur-md border border-[#8126FF]/20 rounded-xl shadow-xl invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-50">
+                    <div className="py-2 px-1">
+                      <Link
+                        href="/spelu-pamacibas"
+                        className="block px-4 py-2 text-sm font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in rounded-lg"
+                      >
+                        Spēļu pamācības
+                      </Link>
+                      <Link
+                        href="/padomi"
+                        className="block px-4 py-2 text-sm font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in rounded-lg"
+                      >
+                        Padomi
+                      </Link>
+                      <Link
+                        href="/maksajumu-metodes"
+                        className="block px-4 py-2 text-sm font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in rounded-lg"
+                      >
+                        Maksājumu metodes
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Right - Gift Icon */}
-              <div className="flex-shrink-0">
+              {/* Right - Social Links + Gift Icon */}
+              <div className="flex-shrink-0 flex items-center space-x-4">
+                {/* Social Media Links - Only visible on desktop */}
+                <div className="hidden lg:block rounded-lg px-2 py-1 transition-all duration-300">
+                  {/* Label text above icons */}
+                  <div className="flex flex-col items-center">
+
+                    
+                    {/* Social icons */}
+                    <div className="flex items-center space-x-3">
+                      <a href="https://t.me/onlywinslv" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+                        <Image 
+                          src="/images/BS-telegram_white.svg" 
+                          alt="Telegram"
+                          width={20}
+                          height={20}
+                          className="opacity-75 hover:opacity-100"
+                        />
+                      </a>
+                      <a href="https://kick.com/onlywinscasino" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+                        <Image 
+                          src="/images/kick_white.svg" 
+                          alt="Kick"
+                          width={16}
+                          height={16}
+                          className="opacity-75 hover:opacity-100"
+                        />
+                      </a>
+                      <a href="https://www.youtube.com/@OnlyWins_Stream" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+                        <Image 
+                          src="/images/Youtube_white.svg" 
+                          alt="Youtube"
+                          width={20}
+                          height={20}
+                          className="opacity-75 hover:opacity-100"
+                        />
+                      </a>
+                      <a href="https://www.instagram.com/onlywinstream/" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+                        <Image 
+                          src="/images/instagram_white.svg" 
+                          alt="Instagram"
+                          width={20}
+                          height={20}
+                          className="opacity-75 hover:opacity-100"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Gift Icon */}
                 {giftCasinos.length > 0 && <GiftIcon casinos={giftCasinos} />}
               </div>
             </div>
@@ -338,7 +390,7 @@ export function NavbarClient({ categories }: NavbarClientProps) {
                 {/* Separator */}
                 <div className="h-px bg-gradient-to-r from-transparent via-[#8126FF]/30 to-transparent my-2"></div>
                 
-                {/* Other Links Section */}
+                {/* Other Links Section - Kept as original (not dropdown) */}
                 <div className="space-y-3">
                   <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Kazino akadēmija</h3>
                   <Link
