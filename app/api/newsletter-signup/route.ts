@@ -7,7 +7,7 @@ const mailerSend = new MailerSend({
 });
 
 // Admin email to receive notifications
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'sandissirmais8@gmail.com';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'support@balticslots.com';
 // Email address to send from (must be verified in MailerSend)
 const FROM_EMAIL = process.env.FROM_EMAIL || 'jaunumi@balticslots.com';
 const FROM_NAME = process.env.FROM_NAME || 'Balticslots';
