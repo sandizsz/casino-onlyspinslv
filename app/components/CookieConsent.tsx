@@ -7,11 +7,11 @@ const CookieConsentBanner = () => {
   return (
     <CookieConsent
       location="bottom"
-      buttonText="Accept"
-      declineButtonText="Decline"
+      buttonText="Pieņemt"
+      declineButtonText="Noraidīt"
       cookieName="casino_cookie_consent"
       style={{
-        background: "#1a1a1a",
+        background: "#000025",
         fontFamily: "var(--font-geist-sans)",
         padding: "16px",
         alignItems: "center",
@@ -29,13 +29,13 @@ const CookieConsentBanner = () => {
         flexWrap: "wrap",
         gap: "16px",
         transform: "translateZ(0)",
-        color: "#ffffff",
+        color: "#9b98df",
       }}
       containerClasses="fixed-cookie-banner"
       buttonWrapperClasses="cookie-buttons"
       buttonStyle={{
-        background: "#C1FF72",
-        color: "black",
+        background: "#8126FF",
+        color: "white",
         fontSize: "15px",
         borderRadius: "6px",
         padding: "12px 24px",
@@ -48,8 +48,8 @@ const CookieConsentBanner = () => {
       }}
       declineButtonStyle={{
         background: "transparent",
-        border: "2px solid #C1FF72",
-        color: "white",
+        border: "2px solid #8126FF",
+        color: "#8126FF",
         fontSize: "15px",
         borderRadius: "6px",
         padding: "12px 24px",
@@ -71,17 +71,18 @@ const CookieConsentBanner = () => {
         gap: "16px",
         justifyContent: "center",
       }}>
-        <span>🍪 This website uses cookies to enhance your experience. By continuing to visit this site, you agree to our use of cookies.{" "}</span>
+        <span className="text-sm">🍪 Šajā vietnē tiek izmantoti sīkfaili, lai uzlabotu jūsu pieredzi. Turpinot apmeklēt šo vietni, jūs piekrītat sīkdatņu izmantošanai.{" "}</span>
         <Link 
-          href="/cookie-policy" 
+          href="/privatuma-politika" 
           style={{ 
             textDecoration: "underline",
-            color: "#C1FF72",
+            color: "#8126FF",
             fontWeight: "500",
             whiteSpace: "nowrap",
+            fontSize: "12px",
           }}
         >
-          Learn more
+         Uzzināt vairāk
         </Link>
       </div>
     </CookieConsent>

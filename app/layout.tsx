@@ -8,6 +8,7 @@ import LoadingOverlay from './components/LoadingOverlay'
 import { NavigationEvents } from './components/NavigationEvents'
 import { Suspense } from 'react'
 import Script from 'next/script';
+import CookieConsentBanner from './components/CookieConsent';
 
 const alexandria = localFont({
   src: "./fonts/SofiaProSemiBold.otf",
@@ -78,6 +79,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <CookieConsentBanner />
         </LoadingProvider>
       </body>
     </html>
