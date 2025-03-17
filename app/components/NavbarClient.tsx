@@ -242,10 +242,10 @@ export function NavbarClient({ categories }: NavbarClientProps) {
               </button>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex flex-1 items-center">
+            {/* Desktop Navigation - MODIFIED FOR CENTERING */}
+            <div className="hidden lg:flex items-center justify-between w-full relative">
               {/* Left - Logo */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 w-[200px]">
                 <Link href="/" className="flex items-center group">
                   <div className="h-8 sm:h-10 md:h-12 w-auto aspect-[2/1] transition-transform duration-300 group-hover:scale-105">
                     <Image
@@ -260,8 +260,8 @@ export function NavbarClient({ categories }: NavbarClientProps) {
                 </Link>
               </div>
 
-              {/* Center - Navigation Items */}
-              <div className="flex-1 flex justify-center items-center space-x-2 mx-4">
+              {/* Center - Navigation Items - CENTERED WITH ABSOLUTE POSITIONING */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-2">
                 {categories.map((category) => (
                   <Link
                     key={category._id}
@@ -308,12 +308,11 @@ export function NavbarClient({ categories }: NavbarClientProps) {
               </div>
 
               {/* Right - Social Links + Gift Icon */}
-              <div className="flex-shrink-0 flex items-center space-x-4">
+              <div className="flex-shrink-0 w-[200px] flex justify-end items-center space-x-4">
                 {/* Social Media Links - Only visible on desktop */}
                 <div className="hidden lg:block rounded-lg px-2 py-1 transition-all duration-300">
                   {/* Label text above icons */}
                   <div className="flex flex-col items-center">
-
                     
                     {/* Social icons */}
                     <div className="flex items-center space-x-3">
