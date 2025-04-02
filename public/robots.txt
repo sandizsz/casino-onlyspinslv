@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow Sanity Studio admin area
+Disallow: /studio/
+
+# Sitemap
+Sitemap: https://balticslots.lv/sitemap.xml
