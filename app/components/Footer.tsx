@@ -115,7 +115,7 @@ export default function Footer() {
                 className="opacity-75 hover:opacity-100"
               />
             </a>
-            <a href="https://www.youtube.com/@OnlyWins_Stream" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
+            <a href="https://www.youtube.com/@OW_Stream" target="_blank" rel="noopener noreferrer" className="transform hover:scale-110 transition-all duration-300">
               <Image 
                 src="/images/Youtube.svg" 
                 alt="Youtube"
