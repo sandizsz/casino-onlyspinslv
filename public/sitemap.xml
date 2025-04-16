@@ -1,117 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://balticslots.lv</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/kategorija</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.com/kategorija/labakie-bonusi</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.com/kategorija/visi-bonusi</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-   <url>
-    <loc>https://balticslots.com/kategorija/jaunakie-kazino</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/acite</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/rulete</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/bakara</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/sic-bo</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/keno</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/craps</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/spelu-automati</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/privatuma-politika</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/noteikumi-nosacijumi</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/atruna</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/sikfailu-politika</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/casino-guides</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/padomi</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://balticslots.lv/maksajumu-metodes</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--
+ created with Free Online Sitemap Generator www.xml-sitemaps.com 
+-->
+<url>
+<loc>https://balticslots.com/</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://balticslots.com/kategorija/labakie-bonusi</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/kategorija/visi-bonusi</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/kategorija/jaunakie-kazino</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/spelu-pamacibas</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/padomi</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/maksajumu-metodes</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/acite</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/rulete</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/bakara</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/privatuma-politika</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/noteikumi-nosacijumi</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/sikfailu-politika</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/atruna</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://balticslots.com/spelu-automati</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://balticslots.com/sic-bo</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://balticslots.com/keno</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://balticslots.com/craps</loc>
+<lastmod>2025-04-16T17:39:10+00:00</lastmod>
+<priority>0.64</priority>
+</url>
 </urlset>
