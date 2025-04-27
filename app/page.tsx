@@ -3,7 +3,7 @@ import Link from "next/link";
 import { client } from "../sanity/lib/client";
 import { Casino } from "./utils/interface";
 import CasinoComponent2 from "./components/CasinoComponent2";
-import AnimatedSection from "./components/AnimatedSection";
+// AnimatedSection removed for performance
 import LiveCasinoComponent from "./components/LiveCasinoComponent";
 import { blackjackData } from "./data/pages/blackjack";
 import { sicboData } from "./data/pages/sicbo";
@@ -66,12 +66,22 @@ async function getPosts() {
   return data;
 }
 
-// Set to 0 during development to see changes immediately, adjust to higher value in production
+// Revalidate every minute to keep content fresh while maintaining good caching
 export const revalidate = 60;
 
 export default async function Home() {
-
-  // Get all casinos
+  // Define guides early - this is static data that doesn't depend on API calls
+  const guides = [
+    blackjackData,
+    rouletteData,
+    baccaratData,
+    crapsData,
+    kenoData,
+    sicboData,
+    slotsData
+  ];
+  
+  // Get all casinos - we need to await this for the page to work properly
   const allCasinos: Casino[] = await getPosts();
   
   // Filter casinos with the specific tag ID for the live section
@@ -88,7 +98,7 @@ export default async function Home() {
   // Debug log
   console.log(`Found ${liveCasinos.length} casinos with the live tag`);
   
-
+  // Get first 12 casinos
   const casinos: Casino[] = allCasinos.slice(0, 12);
 
   // Get unique payment methods from all casinos
@@ -99,44 +109,27 @@ export default async function Home() {
     ).values()
   );
 
-
-
-  const guides = [
-    blackjackData,
-    rouletteData,
-    baccaratData,
-    crapsData,
-    kenoData,
-    sicboData,
-    slotsData
-  ];
-
- 
-
   return (
     <div className="bg-white text-[#9b98df] p-0 lg:p-4">
       <main className="relative pt-0">
-        {/* Hero Section */}
-        <AnimatedSection className="relative overflow-hidden bg-[#000025] rounded-t-0 lg:rounded-t-3xl rounded-b-3xl">
-          {/* Animated Blobs */}
-          <div className="absolute inset-0 w-full h-full overflow-hidden">
+        {/* Hero Section - Optimized for LCP */}
+        <div className="relative overflow-hidden bg-[#000025] rounded-t-0 lg:rounded-t-3xl rounded-b-3xl">
+          {/* Animated Blobs - Positioned for visual effect but with pointer-events-none for better performance */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
             {/* First flame blob */}
             <div className="absolute top-[35%] left-[15%] w-[40%] h-[60%] bg-[#3930ff]/40 blur-[70px] animate-blob-flame FancyBlob_animateOpacity__6GgAA"></div>
             {/* Second flame blob - positioned top right */}
             <div className="absolute top-[5%] right-[10%] w-[35%] h-[50%] bg-[#3930ff]/45 blur-[80px] animate-blob-flame-delayed"></div>
-       
           </div>
 
-          {/* Content */}
+          {/* Content - Prioritized for faster LCP */}
           <div className="relative z-10 container mx-auto min-h-[100vh] sm:min-h-[100vh] lg:min-h-[96vh] content-center px-3 sm:px-4 md:px-6">
             <div className="min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] py-12 sm:py-16 md:py-20 flex flex-col justify-center items-center">
-              {/* Main Content */}
+              {/* Main Content - This is the LCP element */}
               <div className="relative text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-3 sm:mb-4 md:mb-8 px-2 sm:px-4 md:px-6">
-              
-                
-                <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-[#F9F5FF]">
+                <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-[#F9F5FF] font-display">
                 ONLINE CASINO 
-                <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)] text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight"> JAUNUMI</span>
+                <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]"> JAUNUMI</span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-[#9b98df] max-w-2xl mx-auto leading-relaxed mb-2 sm:mb-4">
                 Izbaudi svaigākos un ekskluzīvākos kazino piedāvājumus Latvijā
@@ -211,18 +204,18 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
       
        
         
         {/* Currently Playing Casino Section - Only shown if there are casinos with the specific tag */}
         {liveCasinos && liveCasinos.length > 0 && (
-          <AnimatedSection className="relative overflow-hidden bg-[#000025] rounded-3xl mt-12 py-12 sm:py-16 md:py-20">
-            {/* Animated Blobs */}
-            <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <div className="relative overflow-hidden bg-[#000025] rounded-3xl mt-12 py-12 sm:py-16 md:py-20">
+            {/* Animated Blobs - Moved after main content in the DOM for better LCP */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
               {/* First flame blob */}
-              <div className="absolute top-[35%] left-[15%] w-[40%] h-[60%] bg-[#3930ff]/40 blur-[70px] animate-blob-flame"></div>
+              <div className="absolute top-[35%] left-[15%] w-[40%] h-[60%] bg-[#3930ff]/40 blur-[70px] animate-blob-flame FancyBlob_animateOpacity__6GgAA"></div>
               {/* Second flame blob - positioned top right */}
               <div className="absolute top-[5%] right-[10%] w-[35%] h-[50%] bg-[#3930ff]/45 blur-[80px] animate-blob-flame-delayed"></div>
               {/* Third flame blob */}
@@ -255,19 +248,19 @@ export default async function Home() {
                 )}
               </div>
             </div>
-          </AnimatedSection>
+          </div>
         )}
     
        
         {/* Newsletter Section */}
-        <AnimatedSection className="w-full py-10 bg-white">
+        <div className="w-full py-10 bg-white">
           <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <NewsletterComponent />
           </div>
-        </AnimatedSection>
+        </div>
         
         {/* Casino List Section */}
-         <AnimatedSection className="relative overflow-hidden w-full py-20 bg-[#000025] rounded-3xl">
+         <div className="relative overflow-hidden w-full py-20 bg-[#000025] rounded-3xl">
           {/* Animated Blobs for Casino List */}
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             {/* Single top blob - centered behind title */}
@@ -300,7 +293,7 @@ export default async function Home() {
             </div>
 
             <div className="space-y-4">
-              {casinos?.length > 0 && casinos.slice(0, 15).map((casino, index) => (
+              {casinos && casinos.slice(0, 15).map((casino, index) => (
                 <CasinoComponent2 key={casino._id} casino={casino} index={index} />
               ))}
             </div>
@@ -317,20 +310,18 @@ export default async function Home() {
 </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
 
         {/* Features */}
-        <AnimatedSection className="w-full bg-white">
+        <div className="w-full bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-       
              {/* Features Section */}
-         <CasinoFeatures />
-            
+             <CasinoFeatures />
           </div>
-        </AnimatedSection>
+        </div>
 
         {/* Casino Guides */}
-        <AnimatedSection className="relative overflow-hidden w-full py-20 bg-[#000025] rounded-0 rounded-t-3xl lg:rounded-3xl">
+        <div className="relative overflow-hidden w-full py-20 bg-[#000025] rounded-0 rounded-t-3xl lg:rounded-3xl">
         <div className="absolute inset-0 w-full h-full overflow-hidden">
             {/* Single top blob - centered behind title */}
             <div className="absolute top-[5%] left-[30%] w-[40%] h-[35%] bg-[#3930ff]/40 blur-[75px] animate-blob-flame FancyBlob_animateOpacity__6GgAA"></div>
@@ -351,7 +342,7 @@ export default async function Home() {
             <div className="space-y-8">
               <div className="grid md:grid-cols-3 gap-8">
               {guides && guides.length > 0 ? guides.slice(0, 3).map((guide, index) => (
-                  <AnimatedSection key={index} delay={index * 0.2}>
+                  <div key={index}>
                     <Link href={`/${guide.slug}`}>
                       <div className="bg-[#1D053F]/80 backdrop-blur-sm border border-[#8126FF]/20 rounded-xl p-8 hover:border-[#8126FF]/40 hover:shadow-[0_0_15px_rgba(129,38,255,0.2)] transition-all duration-300 h-full">
                         <p className="text-sm uppercase tracking-wider text-[#F9F5FF]/60 game-guide-label">Spēļu pamācības</p>
@@ -360,7 +351,7 @@ export default async function Home() {
                         <p className="text-[#9b98df] mb-4 text-sm">{guide.description}</p>
                       </div>
                     </Link>
-                  </AnimatedSection>
+                  </div>
                 )) : <p className="text-center col-span-3 text-[#F9F5FF]/70">No guides available</p>}
               </div>
               <div className="flex justify-center">
@@ -380,11 +371,11 @@ export default async function Home() {
           </div>
 
             {/* Payment Methods */}
-        <AnimatedSection className="w-full">
+        <div className="w-full">
           <PaymentMethods paymentMethods={uniquePaymentMethods} />
-        </AnimatedSection>
+        </div>
 
-        </AnimatedSection>
+        </div>
 
        
 
