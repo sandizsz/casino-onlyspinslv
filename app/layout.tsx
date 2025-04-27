@@ -14,12 +14,15 @@ const alexandria = localFont({
   src: "./fonts/SofiaProSemiBold.otf",
   variable: "--font-alexandria",
   weight: "700",
+  display: 'swap',
+  preload: true,
 });
 
 const drukTextWideBold = localFont({
   src: "./fonts/DrukWideMedium.ttf",
   variable: "--font-druk-text-wide-bold",
   display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {

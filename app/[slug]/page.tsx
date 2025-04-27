@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import AnimatedSection from '../components/AnimatedSection';
+// AnimatedSection removed for performance
 import { PageData } from '@/app/types/pageTypes';
 
 // Import page data
@@ -57,7 +57,7 @@ export default async function Page({ params }: PageProps) {
     <div className="bg-white text-[#9b98df] p-0 lg:p-4">
       <main className="relative pt-0">
         {/* Hero Section */}
-        <AnimatedSection className="relative overflow-hidden bg-gradient-to-b from-[#1D053F] to-[#110226] rounded-t-0 lg:rounded-t-3xl rounded-b-3xl">
+        <div className="relative overflow-hidden bg-gradient-to-b from-[#1D053F] to-[#110226] rounded-t-0 lg:rounded-t-3xl rounded-b-3xl">
           {/* Background effects */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute w-[400px] h-[400px] rounded-full bg-[#8126FF] blur-[150px] opacity-20 -top-48 -left-24"></div>
@@ -94,7 +94,7 @@ export default async function Page({ params }: PageProps) {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
         
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 mt-8 md:mt-12 relative">
 

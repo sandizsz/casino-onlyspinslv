@@ -5,4 +5,4 @@ Allow: /
 Disallow: /studio/
 
 # Sitemap
-Sitemap: https://balticslots.lv/sitemap.xml
+Sitemap: https://balticslots.com/sitemap.xml

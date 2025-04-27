@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import CasinoComponent from "@/app/components/CasinoComponent"
-import AnimatedSection from "@/app/components/AnimatedSection"
+// AnimatedSection removed for performance
 import { useLoading } from '@/app/context/LoadingContext'
 import type { Casino, Category } from '@/app/utils/interface'
 
@@ -33,7 +33,7 @@ export default function CategoryPageClient({ initialCasinos, initialCategory }: 
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1D053F] to-[#110226]">
-      <AnimatedSection className="w-full py-20 relative overflow-hidden">
+      <div className="w-full py-20 relative overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute w-[400px] h-[400px] rounded-full bg-[#8126FF] blur-[150px] opacity-20 -top-48 -left-24"></div>
@@ -52,13 +52,13 @@ export default function CategoryPageClient({ initialCasinos, initialCategory }: 
           
           <div className="space-y-6">
             {casinos?.map((casino, index) => (
-              <AnimatedSection key={casino._id}>
+              <div key={casino._id}>
                 <CasinoComponent casino={casino} index={index} categorySlug={category.slug.current} />
-              </AnimatedSection>
+              </div>
             ))}
           </div>
         </div>
-      </AnimatedSection>
+      </div>
     </div>
   )
 }

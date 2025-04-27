@@ -3,7 +3,6 @@ import Link from "next/link";
 import { client } from "../sanity/lib/client";
 import { Casino } from "./utils/interface";
 import CasinoComponent2 from "./components/CasinoComponent2";
-// AnimatedSection removed for performance
 import LiveCasinoComponent from "./components/LiveCasinoComponent";
 import { blackjackData } from "./data/pages/blackjack";
 import { sicboData } from "./data/pages/sicbo";
@@ -95,9 +94,6 @@ export default async function Home() {
     return casino.tags.some(tag => tag && tag._id === 'c1700974-296c-42d3-bbc7-0a539601f49e');
   });
   
-  // Debug log
-  console.log(`Found ${liveCasinos.length} casinos with the live tag`);
-  
   // Get first 12 casinos
   const casinos: Casino[] = allCasinos.slice(0, 12);
 
@@ -127,9 +123,9 @@ export default async function Home() {
             <div className="min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] py-12 sm:py-16 md:py-20 flex flex-col justify-center items-center">
               {/* Main Content - This is the LCP element */}
               <div className="relative text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-3 sm:mb-4 md:mb-8 px-2 sm:px-4 md:px-6">
-                <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-[#F9F5FF] font-display">
-                ONLINE CASINO 
-                <span className="bg-clip-text text-transparent bg-[linear-gradient(91.63deg,#773DFF,#362FFF)]"> JAUNUMI</span>
+                <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-[#F9F5FF]">
+                  <span className="inline-block">ONLINE CASINO</span>{' '}
+                  <span className="inline-block text-[#773DFF]">JAUNUMI</span>
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-[#9b98df] max-w-2xl mx-auto leading-relaxed mb-2 sm:mb-4">
                 Izbaudi svaigākos un ekskluzīvākos kazino piedāvājumus Latvijā
