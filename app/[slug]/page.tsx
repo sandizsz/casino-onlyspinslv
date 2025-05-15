@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { PageData } from '@/app/types/pageTypes';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 
 // Import page data
 import { blackjackData } from '../data/pages/blackjack';
