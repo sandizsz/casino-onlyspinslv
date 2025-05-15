@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import CasinoComponent from "@/app/components/CasinoComponent"
+import CasinoComponent from "@/app/components/CasinoComponent2"
 // AnimatedSection removed for performance
 import { useLoading } from '@/app/context/LoadingContext'
 import type { Casino, Category } from '@/app/utils/interface'
