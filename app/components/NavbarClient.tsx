@@ -262,17 +262,49 @@ export function NavbarClient({ categories }: NavbarClientProps) {
 
               {/* Center - Navigation Items - CENTERED WITH ABSOLUTE POSITIONING */}
               <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-center items-center space-x-2">
-                {categories.map((category) => (
-                  <Link
-                    key={category._id}
-                    href={`/kategorija/${category.slug.current}`}
-                    className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
-                  >
-                    {category.title}
-                  </Link>
-                ))}
+                {categories
+                  .filter(category => !category.title.toLowerCase().includes('bonusi'))
+                  .map((category) => (
+                    <Link
+                      key={category._id}
+                      href={`/kategorija/${category.slug.current}`}
+                      className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
+                    >
+                      {category.title}
+                    </Link>
+                  ))}
                 
-                {/* Desktop dropdown menu */}
+                {/* Kazino bonusi dropdown menu */}
+                {categories.some(category => category.title.toLowerCase().includes('bonusi')) && (
+                  <div className="relative group">
+                    <button
+                      className="flex items-center whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
+                    >
+                      Kazino bonusi
+                      <ChevronDown className="ml-1 w-3 h-3 group-hover:text-[#9b98df] transition-all duration-300" />
+                    </button>
+                    
+                    {/* Dropdown content for Kazino bonusi */}
+                    <div className="absolute left-0 top-full mt-1 w-48 bg-[#1D053F]/90 backdrop-blur-md border border-[#8126FF]/20 rounded-xl shadow-xl invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 z-50">
+                      <div className="py-2 px-1">
+                        {categories
+                          .filter(category => category.title.toLowerCase().includes('bonusi'))
+                          .map(category => (
+                            <Link
+                              key={category._id}
+                              href={`/kategorija/${category.slug.current}`}
+                              className="block px-4 py-2 text-sm font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in rounded-lg"
+                            >
+                              {category.title}
+                            </Link>
+                          ))
+                        }
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Desktop Kazino akadēmija dropdown menu */}
                 <div className="relative group">
                   <button
                     className="flex items-center whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
