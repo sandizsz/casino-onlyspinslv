@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { PageData } from '@/app/types/pageTypes';
+import type { Metadata } from 'next';
 
 // Import page data
 import { blackjackData } from '../data/pages/blackjack';
@@ -46,8 +47,7 @@ interface PageProps {
   };
 }
 
-// ✅ Generate metadata based on slug
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const page = pages.find((p) => p.slug === params.slug);
 
   if (!page) {
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: page.metaTitle || `${page.title} | Baltic Slots`,
     description: page.metaDescription || page.description,
-  };  
+  };
 }
 
 // ✅ Main Page Component
