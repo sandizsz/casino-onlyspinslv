@@ -257,15 +257,7 @@ export default async function Home() {
         
         {/* Casino List Section */}
          <div className="relative overflow-hidden w-full py-20 bg-[#000025] rounded-3xl">
-          {/* Animated Blobs for Casino List */}
-          <div className="absolute inset-0 w-full h-full overflow-hidden">
-            {/* Single top blob - centered behind title */}
-            <div className="absolute top-[5%] left-[30%] w-[40%] h-[35%] bg-[#3930ff]/40 blur-[75px] animate-blob-flame FancyBlob_animateOpacity__6GgAA"></div>
-            {/* Far-middle blob - positioned away from the top */}
-            <div className="absolute top-[60%] right-[15%] w-[35%] h-[45%] bg-[#3930ff]/35 blur-[80px] animate-blob-flame-delayed"></div>
-            {/* Bottom blob - well below the title area */}
-            <div className="absolute bottom-[10%] left-[25%] w-[30%] h-[40%] bg-[#3930ff]/30 blur-[60px] animate-blob-flame" style={{animationDelay: '1.5s'}}></div>
-          </div>
+
           <div className="relative z-10 container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="relative mb-16 text-center">
               {/* Background glow effect - removed to avoid multiple blob appearance */}
