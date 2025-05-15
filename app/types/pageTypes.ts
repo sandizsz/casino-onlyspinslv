@@ -4,4 +4,6 @@ export interface PageData {
   image: string;
   description: string;
   content: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
