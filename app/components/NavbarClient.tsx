@@ -16,7 +16,7 @@ const glowStyles = `
   }
 
   .navbar-sticky-gradient {
-    position: absolute;
+    position: absolute;ss
     top: 0;
     left: 0;
     right: 0;
