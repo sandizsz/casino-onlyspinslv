@@ -240,7 +240,7 @@ export default async function Home() {
               {/* Live Casino Component */}
               <div className="relative z-10 mx-auto max-w-6xl">
                 {liveCasinos[0] && (
-                  <LiveCasinoComponents casino={liveCasinos[0]} index={0} />
+                  <LiveCasinoComponent casino={liveCasinos[0]} index={0} />
                 )}
               </div>
             </div>
