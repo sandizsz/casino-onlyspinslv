@@ -12,7 +12,7 @@ import { GiftIcon } from "./GiftIcon"
 // Add CSS for glow and glassmorphism effects
 const glowStyles = `
   .glow-effect {
-    box-shadow: 0 0 14px 0 rgba(129, 38, 255, 0.4), 0 0 30px 0 rgba(129, 38, 255, 0.3), 0 0 45px 0 rgba(129, 38, 255, 0.1);
+    box-shadow: 0 0 14px 0 rgba(129, 38, 255, 0.4), 0 0 30px 0 rgba(129, 38, 255, 0.3), 0 0 45px 0 rgba(129, 38, 255, 0.2);
   }
 
   .navbar-sticky-gradient {
