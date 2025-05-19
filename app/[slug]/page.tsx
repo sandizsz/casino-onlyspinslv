@@ -49,9 +49,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string } | Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const page = pages.find((p) => p.slug === params.slug);
+  const { slug } = await Promise.resolve(params);
+  const page = pages.find((p) => p.slug === slug);
 
   if (!page) {
     return {
@@ -68,12 +69,12 @@ export async function generateMetadata({
 
 // ✅ This type is CRITICAL — treat params as a Promise (Next.js 15 behavior)
 interface PageProps {
-  params: { slug: string };
+  params: { slug: string } | Promise<{ slug: string }>;
 }
 
 // ✅ Page Component
 export default async function Page({ params }: PageProps) {
-  const { slug } = params;
+  const { slug } = await Promise.resolve(params);
   const page = pages.find((p) => p.slug === slug);
 
   if (!page) notFound();
