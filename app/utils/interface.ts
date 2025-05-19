@@ -7,6 +7,8 @@ export interface Category {
     current: string;
   };
   description?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export interface PaymentMethod {

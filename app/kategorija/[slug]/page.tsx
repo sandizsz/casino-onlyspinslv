@@ -11,6 +11,8 @@ interface Category {
     current: string;
   };
   description: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 interface PageProps {
@@ -63,7 +65,9 @@ async function getCategory(slug: string) {
     _id,
     title,
     description,
-    slug
+    slug,
+    metaTitle,
+    metaDescription
   }`;
 
   const data = await client.fetch(query);
@@ -72,6 +76,16 @@ async function getCategory(slug: string) {
 
 // Set to 0 during development to see changes immediately, adjust to higher value in production
 export const revalidate = 0;
+
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const category = await getCategory(params.slug);
+  return {
+    title: category?.metaTitle || category?.title,
+    description: category?.metaDescription || category?.description || '',
+  };
+}
 
 export default async function CategoryPage({ params }: PageProps) {
   const parameters = await params;
@@ -89,9 +103,10 @@ export default async function CategoryPage({ params }: PageProps) {
   const casinos: Casino[] = await getCasinosByCategory(slug);
   
   return (
-    <div className="bg-white text-[#9b98df] p-0 lg:p-4">
-      <main className="relative pt-0">
-        {/* Hero Section */}
+    <>
+      <div className="bg-white text-[#9b98df] p-0 lg:p-4">
+        <main className="relative pt-0">
+          {/* Hero Section */}
         <AnimatedSection className="relative overflow-hidden bg-[#000025] rounded-t-0 lg:rounded-t-3xl rounded-b-3xl">
           {/* Animated Blobs */}
           <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -158,5 +173,6 @@ export default async function CategoryPage({ params }: PageProps) {
         </div>
       </main>
     </div>
+    </>
   );
 }

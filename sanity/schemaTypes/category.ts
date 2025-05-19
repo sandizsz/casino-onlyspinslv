@@ -24,5 +24,18 @@ export const categoryType = defineType({
       title: 'Description',
       type: 'text',
     },
+    {
+      name: 'metaTitle',
+      title: 'Meta Title',
+      type: 'string',
+      description: 'SEO meta title for this category',
+    },
+    {
+      name: 'metaDescription',
+      title: 'Meta Description',
+      type: 'text',
+      description: 'SEO meta description for this category',
+      rows: 2,
+    },
   ],
 });
