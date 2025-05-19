@@ -68,20 +68,12 @@ export async function generateMetadata({
 
 // ✅ This type is CRITICAL — treat params as a Promise (Next.js 15 behavior)
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 // ✅ Page Component
 export default async function Page({ params }: PageProps) {
-  let slug: string;
-  try {
-    ({ slug } = await params);
-  } catch (error) {
-    console.error('Failed to resolve page params:', error);
-    notFound();
-    return null;
-  }
-
+  const { slug } = params;
   const page = pages.find((p) => p.slug === slug);
 
   if (!page) notFound();
