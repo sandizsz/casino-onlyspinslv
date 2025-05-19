@@ -1,3 +1,4 @@
+
 export const baccaratData = {
   slug: "bakara",
   title: "Bakara",
