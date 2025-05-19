@@ -40,12 +40,10 @@ const pages: PageData[] = [
   slotsData,
 ];
 
-// ✅ Static params
 export async function generateStaticParams() {
   return pages.map((page) => ({ slug: page.slug }));
 }
 
-// ✅ Metadataa
 export async function generateMetadata({
   params,
 }: {
@@ -67,11 +65,11 @@ export async function generateMetadata({
   };
 }
 
-interface PageProps {
+export default async function Page({
+  params,
+}: {
   params: { slug: string };
-}
-
-export default async function Page({ params }: PageProps) {
+}) {
   const { slug } = params;
   const page = pages.find((p) => p.slug === slug);
 
