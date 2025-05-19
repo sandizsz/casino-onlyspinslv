@@ -45,7 +45,7 @@ export async function generateStaticParams() {
   return pages.map((page) => ({ slug: page.slug }));
 }
 
-// ✅ Metadata
+// ✅ Metadataa
 export async function generateMetadata({
   params,
 }: {
