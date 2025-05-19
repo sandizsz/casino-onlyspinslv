@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -10,11 +9,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Add cache headers for better performance
   async headers() {
     return [
       {
-        // Apply these headers to all routes
         source: '/:path*',
         headers: [
           {
@@ -24,7 +21,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Apply specific headers to static assets
         source: '/_next/static/:path*',
         headers: [
           {
@@ -34,7 +30,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Apply specific headers to images
         source: '/images/:path*',
         headers: [
           {
@@ -47,4 +42,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
