@@ -8,7 +8,7 @@ import { PageData } from '@/app/types/pageTypes';
 import { blackjackData } from '../data/pages/blackjack';
 import { rouletteData } from '../data/pages/roulette';
 import { baccaratData } from '../data/pages/baccarat';
-import { sicboData } from "../data/pages/sicbo";
+import { sicboData } from '../data/pages/sicbo';
 import { slotsData } from '../data/pages/onlineslots';
 import { kenoData } from '../data/pages/keno';
 import { crapsData } from '../data/pages/craps';
@@ -47,11 +47,20 @@ export async function generateStaticParams() {
   return pages.map((page) => ({ slug: page.slug }));
 }
 
-// ✅ Generate metadata for each page
+// ✅ Correct type definition for dynamic metadata
 export async function generateMetadata(
-  { params }: { params: { slug: string } }
+  { params }: { params: { slug: string } } | { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
-  const page = pages.find((p) => p.slug === params.slug);
+  // Defensive: support both Promise and plain object
+  let slug: string;
+  if (typeof (params as any)?.then === 'function') {
+    // params is a Promise
+    const awaited = await (params as unknown as Promise<{ slug: string }>);
+    slug = awaited.slug;
+  } else {
+    slug = (params as { slug: string }).slug;
+  }
+  const page = pages.find((p) => p.slug === slug);
 
   if (!page) {
     return {
@@ -66,13 +75,23 @@ export async function generateMetadata(
   };
 }
 
+// ✅ Fix type and dynamic route usage for Next.js 15
 interface PageProps {
   params: { slug: string };
 }
 
-// ✅ Main Page Component
+// ✅ Main Page Component (no await on params needed here anymore)
 export default async function Page({ params }: PageProps) {
-  const page = pages.find((p) => p.slug === params.slug);
+  // Defensive: support both Promise and plain object for params
+  let slug: string;
+  if (typeof (params as any)?.then === 'function') {
+    // params is a Promise
+    const awaited = await (params as unknown as Promise<{ slug: string }>);
+    slug = awaited.slug;
+  } else {
+    slug = (params as { slug: string }).slug;
+  }
+  const page = pages.find((p) => p.slug === slug);
 
   if (!page) notFound();
 
