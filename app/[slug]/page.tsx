@@ -24,6 +24,15 @@ import {
   paymentMethodsData,
 } from '../data/pages/guides';
 
+// Helper type guard to check if a value is a Promise
+function isPromise<T>(value: unknown): value is Promise<T> {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    typeof (value as { then?: unknown }).then === 'function'
+  );
+}
+
 // ✅ Combine all page data into a single array
 const pages: PageData[] = [
   blackjackData,
@@ -53,7 +62,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   // Defensive: support both Promise and plain object
   let slug: string;
-  if (typeof (params as any)?.then === 'function') {
+  if (isPromise<{ slug: string }>(params)) {
     // params is a Promise
     const awaited = await (params as unknown as Promise<{ slug: string }>);
     slug = awaited.slug;
@@ -84,7 +93,7 @@ interface PageProps {
 export default async function Page({ params }: PageProps) {
   // Defensive: support both Promise and plain object for params
   let slug: string;
-  if (typeof (params as any)?.then === 'function') {
+  if (isPromise<{ slug: string }>(params)) {
     // params is a Promise
     const awaited = await (params as unknown as Promise<{ slug: string }>);
     slug = awaited.slug;
