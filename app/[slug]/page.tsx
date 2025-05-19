@@ -45,13 +45,13 @@ export async function generateStaticParams() {
   return pages.map((page) => ({ slug: page.slug }));
 }
 
-// ✅ Metadata with static params object (NOT a Promise here)
+// ✅ Metadata
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string } | Promise<{ slug: string }>;
+  params: { slug: string };
 }): Promise<Metadata> {
-  const { slug } = await Promise.resolve(params);
+  const { slug } = params;
   const page = pages.find((p) => p.slug === slug);
 
   if (!page) {
@@ -67,14 +67,12 @@ export async function generateMetadata({
   };
 }
 
-// ✅ This type is CRITICAL — treat params as a Promise (Next.js 15 behavior)
 interface PageProps {
-  params: { slug: string } | Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
-// ✅ Page Component
 export default async function Page({ params }: PageProps) {
-  const { slug } = await Promise.resolve(params);
+  const { slug } = params;
   const page = pages.find((p) => p.slug === slug);
 
   if (!page) notFound();
