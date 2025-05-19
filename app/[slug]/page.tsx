@@ -4,7 +4,6 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { PageData } from '@/app/types/pageTypes';
 
-// ✅ Statically import all page data
 import { blackjackData } from '../data/pages/blackjack';
 import { rouletteData } from '../data/pages/roulette';
 import { baccaratData } from '../data/pages/baccarat';
@@ -24,16 +23,6 @@ import {
   paymentMethodsData,
 } from '../data/pages/guides';
 
-// Helper type guard to check if a value is a Promise
-function isPromise<T>(value: unknown): value is Promise<T> {
-  return (
-    typeof value === 'object' &&
-    value !== null &&
-    typeof (value as { then?: unknown }).then === 'function'
-  );
-}
-
-// ✅ Combine all page data into a single array
 const pages: PageData[] = [
   blackjackData,
   kenoData,
@@ -51,25 +40,18 @@ const pages: PageData[] = [
   slotsData,
 ];
 
-// ✅ Define static paths for SSG
+// ✅ Static params
 export async function generateStaticParams() {
   return pages.map((page) => ({ slug: page.slug }));
 }
 
-// ✅ Correct type definition for dynamic metadata
-export async function generateMetadata(
-  { params }: { params: { slug: string } } | { params: Promise<{ slug: string }> }
-): Promise<Metadata> {
-  // Defensive: support both Promise and plain object
-  let slug: string;
-  if (isPromise<{ slug: string }>(params)) {
-    // params is a Promise
-    const awaited = await (params as unknown as Promise<{ slug: string }>);
-    slug = awaited.slug;
-  } else {
-    slug = (params as { slug: string }).slug;
-  }
-  const page = pages.find((p) => p.slug === slug);
+// ✅ Metadata with static params object (NOT a Promise here)
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const page = pages.find((p) => p.slug === params.slug);
 
   if (!page) {
     return {
@@ -84,22 +66,22 @@ export async function generateMetadata(
   };
 }
 
-// ✅ Fix type and dynamic route usage for Next.js 15
+// ✅ This type is CRITICAL — treat params as a Promise (Next.js 15 behavior)
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-// ✅ Main Page Component (no await on params needed here anymore)
+// ✅ Page Component
 export default async function Page({ params }: PageProps) {
-  // Defensive: support both Promise and plain object for params
   let slug: string;
-  if (isPromise<{ slug: string }>(params)) {
-    // params is a Promise
-    const awaited = await (params as unknown as Promise<{ slug: string }>);
-    slug = awaited.slug;
-  } else {
-    slug = (params as { slug: string }).slug;
+  try {
+    ({ slug } = await params);
+  } catch (error) {
+    console.error('Failed to resolve page params:', error);
+    notFound();
+    return null;
   }
+
   const page = pages.find((p) => p.slug === slug);
 
   if (!page) notFound();
@@ -107,7 +89,6 @@ export default async function Page({ params }: PageProps) {
   return (
     <div className="bg-white text-[#9b98df] p-0 lg:p-4">
       <main className="relative pt-0">
-        {/* Hero Section */}
         <div className="relative overflow-hidden bg-gradient-to-b from-[#1D053F] to-[#110226] rounded-t-0 lg:rounded-t-3xl rounded-b-3xl">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute w-[400px] h-[400px] rounded-full bg-[#8126FF] blur-[150px] opacity-20 -top-48 -left-24" />
