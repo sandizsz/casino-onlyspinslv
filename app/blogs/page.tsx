@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   description: 'Read our latest blog posts about casino games, strategies, and more.',
 };
 
+interface SanityImage {
+  _type: 'image';
+  asset: {
+    _ref: string;
+    _type: 'reference';
+  };
+}
+
 interface BlogPost {
   _id: string;
   title: string;
@@ -15,7 +23,7 @@ interface BlogPost {
   };
   publishedAt: string;
   excerpt: string;
-  image: any;
+  image: SanityImage;
 }
 
 async function getBlogPosts(): Promise<BlogPost[]> {

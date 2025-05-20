@@ -6,6 +6,45 @@ import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
 
+interface SanityImage {
+  _type: 'image';
+  asset: {
+    _ref: string;
+    _type: 'reference';
+  };
+}
+
+interface TableRow {
+  _key: string;
+  _type: string;
+  cells: string[];
+}
+
+interface SanityTable {
+  _key: string;
+  _type: 'table';
+  rows: TableRow[];
+}
+
+type PortableTextBlock = {
+  _key: string;
+  _type: 'block';
+  children: Array<{
+    _key: string;
+    _type: string;
+    marks: string[];
+    text: string;
+  }>;
+  markDefs: Array<{
+    _key: string;
+    _type: string;
+    href?: string;
+  }>;
+  style: string;
+};
+
+type ContentBlock = PortableTextBlock | SanityImage | SanityTable;
+
 interface BlogPost {
   _id: string;
   title: string;
@@ -13,8 +52,8 @@ interface BlogPost {
     current: string;
   };
   publishedAt: string;
-  content: any;
-  image: any;
+  content: ContentBlock[];
+  image: SanityImage;
   metaTitle?: string;
   metaDescription?: string;
   excerpt: string;
@@ -79,9 +118,19 @@ export async function generateStaticParams() {
   }));
 }
 
-const ptComponents = {
+type PortableTextImageValue = {
+  _type: 'image';
+  asset: {
+    _ref: string;
+  };
+  alt?: string;
+};
+
+import { PortableTextComponents } from '@portabletext/react';
+
+const ptComponents: PortableTextComponents = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value }) => {
       if (!value?.asset?._ref) {
         return null;
       }
@@ -96,7 +145,7 @@ const ptComponents = {
         </div>
       );
     },
-    table: ({ value }: any) => {
+    table: ({ value }) => {
       // Check if we have valid table data
       if (!value || !value.rows || !Array.isArray(value.rows) || value.rows.length === 0) {
         console.error('Invalid table data:', value);
@@ -112,14 +161,14 @@ const ptComponents = {
           <div className="my-8 overflow-x-auto">
             <table className="w-full border-collapse">
               <tbody>
-                {value.rows.map((row: any, rowIndex: number) => {
+                {value.rows.map((row: TableRow, rowIndex: number) => {
                   if (!row || !row.cells) {
                     console.error('Invalid row data:', row);
                     return null;
                   }
                   return (
-                    <tr key={rowIndex} className={rowIndex === 0 ? 'bg-[#8126FF]/10' : rowIndex % 2 === 0 ? 'bg-[#F9F5FF]/50' : 'bg-white'}>
-                      {row.cells.map((cell: any, cellIndex: number) => {
+                    <tr key={row._key || rowIndex} className={rowIndex === 0 ? 'bg-[#8126FF]/10' : rowIndex % 2 === 0 ? 'bg-[#F9F5FF]/50' : 'bg-white'}>
+                      {row.cells.map((cell: string, cellIndex: number) => {
                         const CellTag = rowIndex === 0 ? 'th' : 'td';
                         return (
                           <CellTag 
@@ -148,11 +197,12 @@ const ptComponents = {
     },
   },
   marks: {
-    link: ({ children, value }: any) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
+    link: ({ children, value }) => {
+      const href = value?.href || '#';
+      const rel = !href.startsWith('/') ? 'noreferrer noopener' : undefined;
       return (
         <Link 
-          href={value.href} 
+          href={href} 
           rel={rel} 
           className="text-[#8126FF] hover:underline"
         >

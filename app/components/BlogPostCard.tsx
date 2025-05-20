@@ -2,6 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
 
+interface SanityImage {
+  _type: 'image';
+  asset: {
+    _ref: string;
+    _type: 'reference';
+  };
+}
+
 interface BlogPostCardProps {
   post: {
     _id: string;
@@ -11,7 +19,7 @@ interface BlogPostCardProps {
     };
     publishedAt: string;
     excerpt: string;
-    image: any;
+    image: SanityImage;
   };
 }
 
