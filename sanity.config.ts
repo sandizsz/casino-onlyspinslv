@@ -8,6 +8,7 @@ import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
+import {table} from '@sanity/table'
 
 import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schemaTypes'
@@ -19,9 +20,8 @@ export default defineConfig({
   schema,
   // Keep the default studio components
 
- 
-
   plugins: [
+    table(),
     structureTool({
       structure: (S, context) => {
         return S.list()
@@ -59,6 +59,14 @@ export default defineConfig({
                 S.documentList()
                   .title('Payment Methods')
                   .filter('_type == "paymentMethod"')
+              ),
+            S.listItem()
+              .title('Blog Posts')
+              .schemaType('blogPost')
+              .child(
+                S.documentList()
+                  .title('Blog Posts')
+                  .filter('_type == "blogPost"')
               ),
             // Add a divider
             S.divider(),
