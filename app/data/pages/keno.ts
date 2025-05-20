@@ -2,6 +2,8 @@ export const kenoData = {
     slug: "keno",
     title: "Keno pamācība",
     image: "/images/keno.webp",
+    metaTitle: "Kas ir Keno",
+    metaDescription: "Uzzini, kas ir keno un kā to spēlēt gan īstā kazino, gan online kazino. Keno noteikumi, stratēģijas un nedaudz par to, kā radusies šī spēle. ",
     description: "Relaksējoša kazino spēle, kas piedāvā vienkāršu spēles gaitu ar potenciāli pievilcīgām izmaksām, ideāli piemērota neregulāriem spēlētājiem, kuri meklē izklaidi.",
     content: `
       <div class="prose">

@@ -2,6 +2,8 @@ export const rouletteData = {
   slug: "rulete",
   title: "Rulete",
   image: "/images/roulette.webp",
+  metaTitle: "Kas ir Rulete",
+  metaDescription: "Uzzini, kas ir rulete un kā to spēlēt gan īstā kazino, gan online kazino. Ruletes noteikumi, stratēģijas un nedaudz par to, kā radusies šī spēle.  ",
   description: "Šajā pamācībā ir viss, kas jums jāzina par to, kā palielināt savas izredzes uzvarēt ruletē, spēlējot šo aizraujošo kazino spēli.",
   content: `
    <h2>Ievads ruletē</h2>

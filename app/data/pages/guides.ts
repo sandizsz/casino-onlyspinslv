@@ -45,6 +45,8 @@ const gameGuides: GameGuide[] = [
 export const casinoGuidesData = {
   slug: "spelu-pamacibas",
   title: "Spēļu pamācības",
+  metaTitle: "Kazino spēļu pamācības",
+  metaDescription: "Vienmēr esi gribējis ieiet kazino un sēsties pie galda kā profiņš? Apskaties mūsu pamācības un pieredzes stāstus gan no īstiem, gan online kazino! ",
   image: "/images/roulette.webp",
   description: "Uzziniet, kā spēlēt populāras kazino spēles, izmantojot mūsu visaptverošās spēļu pamācības.",
   content: `
@@ -65,6 +67,8 @@ export const casinoGuidesData = {
 export const paymentMethodsData = {
   slug: "maksajumu-metodes",
   title: "Maksājumu metodes",
+  metaTitle: "Kazino maksājumu metodes",
+  metaDescription: "Kazino maksājumu metodes, lai Tava nauda vienmēr būtu drošībā. Pārbaudi kādas maksājumu metodes pieejamas kazino un izvēles sev ērtāko un drošāko. ",
   image: "/images/gambling-advice.webp",
   description: "Uzziniet vairāk par dažādām tiešsaistes azartspēļu apmaksas metodēm, tostarp e-naudu, bankas pārskaitījumiem, kredītkartēm un kriptovalūtām.",
   content: `
@@ -277,6 +281,8 @@ export const paymentMethodsData = {
 export const gamblingAdviceData = {
   slug: "padomi",
   title: "Padomi",
+  metaTitle: "Kā spēlēt online kazino",
+  metaDescription: "Kā spēlēt online kazino atbildīgi un plānojot savu izklaides budžetu. Praktiski padomi kā reģistrēties, kam pievērst uzmanību un no kā izvairīties online kazino.",
   image: "/images/gambling-advice.webp",
   description: "Visaptverošs kazino ceļvedis par populārākajām spēlēm, to noteikumiem un stratēģijām, lai uzlabotu savu spēļu pieredzi.",
   content: `

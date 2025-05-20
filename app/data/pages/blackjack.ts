@@ -2,6 +2,8 @@ export const blackjackData = {
   slug: "acite",
   title: "Acīte",
   image: "/images/blackjack.webp",
+  metaTitle: "Kas ir Acīte",
+  metaDescription: "Uzzini, kas ir acīte un kā to spēlēt gan īstā kazino, gan online kazino. Acītes noteikumi, stratēģijas un nedaudz par to, kā radusies šī spēle.  ",
   description: "Apgūstiet populārāko kazino kāršu spēli, kas apvieno prasmes un veiksmi. Uzziniet pamata stratēģiju, kāršu skaitīšanas tehnikas un to, kā maksimāli palielināt savas izredzes pret dīleri šajā klasiskajā galda spēlē, kas gadsimtiem ilgi ir izklaidējusi spēlētājus.",
   content: `
     

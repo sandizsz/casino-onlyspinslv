@@ -1,6 +1,8 @@
 export const sicboData = {
     slug: "sic-bo",
     title: "Sic Bo pamācība",
+    metaTitle: "Kas ir Sic Bo",
+    metaDescription: "Uzzini, kas ir Sic Bo un kā to spēlēt gan īstā kazino, gan online kazino. Sic Bo noteikumi, stratēģijas un nedaudz par to, kā radusies šī spēle. ",
     image: "/images/sicbo.webp",
     description: "Atklājiet Sic Bo, seno ķīniešu kauliņu spēli, kas piedāvā ātru darbību un dažādas derību iespējas, kur trīs kauliņi nosaka jūsu veiksmi.",
     content: `

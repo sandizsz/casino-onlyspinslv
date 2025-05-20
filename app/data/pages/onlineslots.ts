@@ -1,6 +1,8 @@
 export const slotsData = {
     slug: "spelu-automati",
     title: "Tiešsaistes spēļu automāti",
+    metaTitle: "Kas ir Sloti",
+    metaDescription: "Labākās slotu spēles un strīmi ar interesantākajiem spēļu automātiem online. Iepazīsti spēles un atrodi savu mīļāko kopā ar mums.",
     image: "/images/slots.webp",
     description: "Sākot ar pirmo mehānisko spēļu automātu 1894.gadā Liberty Bell un beidzot ar mūsdienīgiem videospēļu automātiem, atklājiet spēļu automātu evolūciju un stratēģijas gan fiziskajos, gan tiešsaistes kazino.",
     content: `

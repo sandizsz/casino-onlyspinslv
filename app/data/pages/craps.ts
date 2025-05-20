@@ -2,6 +2,8 @@ export const crapsData = {
     slug: "craps",
     title: "Craps pamācība",
     image: "/images/craps.webp",
+    metaTitle: "Kas ir Craps",
+    metaDescription: "Uzzini, kas ir kraps un kā to spēlēt gan īstā kazino, gan online kazino. Craps noteikumi, stratēģijas un nedaudz par to, kā radusies šī spēle.  ",
     description: "Iepazīstiet aizraujošo kauliņu spēli kraps, sākot no tās bagātās vēstures, kas aizsākās 12. gadsimtā, līdz mūsdienu tiešsaistes variācijām un stratēģijas padomiem.",
     content: `
      <h2>Craps vēsture</h2>

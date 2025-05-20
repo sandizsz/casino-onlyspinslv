@@ -60,7 +60,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: page.metaTitle || `${page.title} | Casino Only Spins`,
+    title: page.metaTitle || `${page.title} | Balticslots`,
     description: page.metaDescription || page.description,
   };
 }
