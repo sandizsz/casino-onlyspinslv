@@ -44,6 +44,13 @@ export async function generateStaticParams() {
   return pages.map((page) => ({ slug: page.slug }));
 }
 
+const LEGAL_SLUGS = [
+  'privatuma-politika',
+  'noteikumi-nosacijumi',
+  'sikfailu-politika',
+  'atruna',
+];
+
 export async function generateMetadata({
   params,
 }: {
@@ -59,10 +66,20 @@ export async function generateMetadata({
     };
   }
 
-  return {
+  const metadata: Metadata = {
     title: page.metaTitle || `${page.title} | Balticslots`,
     description: page.metaDescription || page.description,
   };
+
+  if (LEGAL_SLUGS.includes(slug)) {
+    metadata.robots = {
+      index: false,
+      follow: true,
+      nocache: true,
+    };
+  }
+
+  return metadata;
 }
 
 export default async function Page({
