@@ -118,15 +118,7 @@ export async function generateStaticParams() {
   }));
 }
 
-type PortableTextImageValue = {
-  _type: 'image';
-  asset: {
-    _ref: string;
-  };
-  alt?: string;
-};
-
-import { PortableTextComponents } from '@portabletext/react';
+  import { PortableTextComponents } from '@portabletext/react';
 
 const ptComponents: PortableTextComponents = {
   types: {
