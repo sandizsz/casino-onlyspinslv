@@ -3,8 +3,12 @@ import { client } from '@/sanity/lib/client';
 import { BlogPostCard } from '../components/BlogPostCard';
 
 export const metadata: Metadata = {
-  title: 'Blogs | Casino Only Spins',
+  title: 'Blogs | Balticslots',
   description: 'Read our latest blog posts about casino games, strategies, and more.',
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 interface SanityImage {

@@ -70,14 +70,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!post) {
     return {
-      title: 'Blog Post Not Found | Casino Only Spins',
+      title: 'Blog Post Not Found | Balticslots',
       description: 'The requested blog post could not be found.',
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
   return {
-    title: post.metaTitle || `${post.title} | Casino Only Spins`,
+    title: post.metaTitle || `${post.title} | Balticslots`,
     description: post.metaDescription || post.excerpt,
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
 
