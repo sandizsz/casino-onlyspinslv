@@ -119,8 +119,8 @@ export default async function Home() {
           </div>
 
           {/* Content - Prioritized for faster LCP */}
-          <div className="relative z-10 container mx-auto min-h-[100vh] sm:min-h-[100vh] lg:min-h-[96vh] content-center px-3 sm:px-4 md:px-6">
-            <div className="min-h-[70vh] sm:min-h-[75vh] md:min-h-[80vh] py-12 sm:py-16 md:py-20 flex flex-col justify-center items-center">
+          <div className="relative z-10 container mx-auto min-h-[90vh] sm:min-h-[95vh] lg:min-h-[96vh] content-center px-3 sm:px-4 md:px-6 pt-[var(--navbar-height,60px)]">
+            <div className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] py-8 sm:py-12 md:py-20 flex flex-col justify-center items-center">
               {/* Main Content - This is the LCP element */}
               <div className="relative text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-3 sm:mb-4 md:mb-8 px-2 sm:px-4 md:px-6">
                 <h1 className="text-2xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-light leading-tight text-[#F9F5FF]">

@@ -109,8 +109,8 @@ export function NavbarClient({ categories }: NavbarClientProps) {
         setIsScrolled(false)
       }
       
-      // Update navbar height after scroll state changes
-      setTimeout(updateNavbarHeight, 300) // Wait for transition to complete
+      // Update navbar height immediately for faster response
+      updateNavbarHeight()
     }
     
     // Function to update the navbar height CSS variable
@@ -129,7 +129,7 @@ export function NavbarClient({ categories }: NavbarClientProps) {
     handleScroll()
     
     // Set initial navbar height after component mounts
-    setTimeout(updateNavbarHeight, 100)
+    updateNavbarHeight()
     
     return () => {
       window.removeEventListener('resize', handleResize)
@@ -161,16 +161,16 @@ export function NavbarClient({ categories }: NavbarClientProps) {
           }
         }
       `}</style>
-      <nav className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${isMenuOpen ? 'bg-[#000025]' : 'bg-transparent'} safe-area-padding-top`}>
+      <nav className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${isMenuOpen ? 'bg-[#000025]' : 'bg-transparent'} safe-area-padding-top`}>
       <div className={`mx-auto relative ${isScrolled ? 
   'md:px-6  sm:py-2 px-0' : 
   'md:px-10 mt-2 sm:mt-4 px-3 sm:px-5'  // Keep some padding when not scrolled
-} transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]`}>
+} transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]`}>
   <div 
     className={`flex items-center ${isScrolled ? 
       'md:px-8 py-3 sm:py-4 md:py-5 backdrop-blur-lg mx-0 px-3 sm:px-5' : 
       'h-16 sm:h-18 md:h-20'
-    } transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] relative md:rounded-xl sm:rounded-2xl rounded-none w-full`}
+    } transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] relative md:rounded-xl sm:rounded-2xl rounded-none w-full`}
       style={isScrolled ? { 
         minHeight: '3.5rem',
         position: 'relative',
