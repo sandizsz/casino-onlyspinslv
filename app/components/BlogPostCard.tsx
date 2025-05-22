@@ -34,7 +34,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
     >
       <div className="relative h-full bg-gradient-to-br from-[#1D053F] to-[#000025] rounded-2xl overflow-hidden shadow-lg">
         {/* Image with overlay gradient */}
-        <div className="relative h-44 w-full overflow-hidden">
+        <div className="relative h-32 sm:h-44 w-full overflow-hidden">
           {post.image ? (
             <>
               <Image
@@ -67,7 +67,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
             })}
           </p>
           
-          <h2 className="text-[10px] sm:text-xs md:text-base font-semibold text-[#F9F5FF] mb-1 sm:mb-2 break-words">
+          <h2 className="text-xs sm:text-sm md:text-base font-semibold text-[#F9F5FF] mb-1 sm:mb-2 break-words">
             {post.title}
           </h2>
           <p className="text-[#F9F5FF]/70 text-xs sm:text-sm line-clamp-2 sm:line-clamp-3 mb-2 sm:mb-4">
