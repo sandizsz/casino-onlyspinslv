@@ -87,6 +87,10 @@ export function NavbarClient({ categories }: NavbarClientProps) {
   }, []);
 
   useEffect(() => {
+    // Use requestAnimationFrame for smoother scrolling performance
+    let ticking = false;
+    let lastScrollY = window.scrollY;
+    
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       
@@ -103,14 +107,19 @@ export function NavbarClient({ categories }: NavbarClientProps) {
     }
 
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      lastScrollY = window.scrollY;
       
-      // Update navbar height immediately for faster response
-      updateNavbarHeight()
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (lastScrollY > 20) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     }
     
     // Function to update the navbar height CSS variable
@@ -126,10 +135,13 @@ export function NavbarClient({ categories }: NavbarClientProps) {
     window.addEventListener('scroll', handleScroll)
     
     // Initial setup
-    handleScroll()
+    if (window.scrollY > 20) {
+      setIsScrolled(true);
+    }
     
     // Set initial navbar height after component mounts
-    updateNavbarHeight()
+    // Use a small delay to ensure the DOM is fully rendered
+    setTimeout(updateNavbarHeight, 0)
     
     return () => {
       window.removeEventListener('resize', handleResize)
