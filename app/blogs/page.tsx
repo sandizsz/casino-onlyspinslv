@@ -4,7 +4,7 @@ import { BlogPostCard } from '../components/BlogPostCard';
 
 export const metadata: Metadata = {
   title: 'Blogs | Balticslots',
-  description: 'Read our latest blog posts about casino games, strategies, and more.',
+  description: 'Lasiet mūsu jaunākos bloga ierakstus par kazino spēlēm, stratēģijām un daudz ko citu.',
   robots: {
     index: false,
     follow: false,
@@ -38,7 +38,11 @@ async function getBlogPosts(): Promise<BlogPost[]> {
       slug,
       publishedAt,
       excerpt,
-      image
+      image {
+        ...,
+        asset->,
+        alt
+      }
     }
   `);
 }
@@ -60,18 +64,18 @@ export default async function BlogsPage() {
             <div className="min-h-[75vh] py-8 sm:py-10 md:py-12 flex flex-col justify-end items-center pb-12 sm:pb-16 md:pb-20">
               <div className="relative text-center max-w-4xl mx-auto space-y-4 sm:space-y-5 md:space-y-6 mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6">
                 <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-light leading-tight text-[#F9F5FF] uppercase">
-                  Our Blog
+                  Mūsu Blogs
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-[#9b98df] max-w-2xl mx-auto leading-relaxed mb-2 sm:mb-4">
-                  Latest news, guides and insights about casino games and strategies
+                  Jaunākās ziņas, ceļveži un ieskati par kazino spēlēm un stratēģijām
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mt-8 md:mt-12 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {blogPosts.map((post) => (
               <BlogPostCard key={post._id} post={post} />
             ))}
@@ -79,7 +83,7 @@ export default async function BlogsPage() {
           
           {blogPosts.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-[#1D053F] text-lg">No blog posts found. Check back soon!</p>
+              <p className="text-[#1D053F] text-lg">Bloga ieraksti nav atrasti. Pārbaudiet vēlāk!</p>
             </div>
           )}
         </div>

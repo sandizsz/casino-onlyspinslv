@@ -34,6 +34,15 @@ export const blogPostType = defineType({
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility. Describe the image briefly.',
+          validation: Rule => Rule.required()
+        }
+      ],
       validation: Rule => Rule.required()
     },
     {

@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
-import { PortableText } from '@portabletext/react';
+import { PortableText, PortableTextComponents } from '@portabletext/react';
+import { BlogPostCard } from '../../components/BlogPostCard';
 
 interface SanityImage {
   _type: 'image';
@@ -12,6 +13,7 @@ interface SanityImage {
     _ref: string;
     _type: 'reference';
   };
+  alt?: string;
 }
 
 interface TableRow {
@@ -106,12 +108,33 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
           }
         }
       },
-      image,
+      image {
+        ...,
+        asset->,
+        alt
+      },
       metaTitle,
       metaDescription,
       excerpt
     }
   `, { slug });
+}
+
+async function getRelatedBlogPosts(currentPostId: string): Promise<BlogPost[]> {
+  return await client.fetch(`
+    *[_type == "blogPost" && _id != $currentPostId] | order(publishedAt desc)[0...6] {
+      _id,
+      title,
+      slug,
+      publishedAt,
+      excerpt,
+      image {
+        ...,
+        asset->,
+        alt
+      }
+    }
+  `, { currentPostId });
 }
 
 export async function generateStaticParams() {
@@ -126,7 +149,7 @@ export async function generateStaticParams() {
   }));
 }
 
-  import { PortableTextComponents } from '@portabletext/react';
+  // PortableTextComponents is already imported at the top of the file
 
 const ptComponents: PortableTextComponents = {
   types: {
@@ -215,6 +238,7 @@ const ptComponents: PortableTextComponents = {
 
 export default async function BlogPostPage({ params }: Props) {
   const post = await getBlogPost(params.slug);
+  const relatedPosts = post ? await getRelatedBlogPosts(post._id) : [];
 
   if (!post) {
     notFound();
@@ -241,7 +265,7 @@ export default async function BlogPostPage({ params }: Props) {
               />
               <Image
                 src={urlFor(post.image).url()}
-                alt={post.title}
+                alt={post.image.alt || post.title}
                 fill
                 className="object-cover opacity-40 -z-10"
                 priority
@@ -253,7 +277,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="min-h-[75vh] py-8 sm:py-10 md:py-12 flex flex-col justify-end items-center pb-12 sm:pb-16 md:pb-20">
               <div className="relative text-center max-w-4xl mx-auto space-y-4 sm:space-y-5 md:space-y-6 mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6">
                 <div className="text-[#F9F5FF]/70 text-sm mb-2">
-                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                  {new Date(post.publishedAt).toLocaleDateString('lv-LV', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
@@ -289,10 +313,33 @@ export default async function BlogPostPage({ params }: Props) {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              Back to all blogs
+              Skatīt visus rakstus
             </Link>
           </div>
         </div>
+        
+        {/* Related Blog Posts Carousel */}
+        {relatedPosts.length > 0 && (
+          <div className="bg-gradient-to-b from-[#F9F5FF] to-white py-12 mt-16">
+            <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-light text-[#1D053F] mb-2">Citi raksti</h2>
+                <p className="text-[#1D053F]/70 max-w-2xl mx-auto">Izpētiet vairāk rakstu par kazino spēlēm un stratēģijām</p>
+              </div>
+              
+              <div className="relative">
+                {/* Posts Grid - Simple version without interactive carousel */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-4">
+                  {relatedPosts.slice(0, 3).map((post) => (
+                    <BlogPostCard key={post._id} post={post} />
+                  ))}
+                </div>
+              </div>
+              
+            
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
