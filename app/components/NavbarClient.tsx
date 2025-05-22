@@ -87,14 +87,9 @@ export function NavbarClient({ categories }: NavbarClientProps) {
   }, []);
 
   useEffect(() => {
-    // Function to update the navbar height CSS variable
-    const updateNavbarHeight = () => {
-      const navbarElement = document.querySelector('nav')
-      if (navbarElement) {
-        const height = navbarElement.offsetHeight
-        document.documentElement.style.setProperty('--navbar-height', `${height}px`)
-      }
-    }
+    // Use requestAnimationFrame for smoother scrolling performance
+    let ticking = false;
+    let lastScrollY = window.scrollY;
     
     const handleResize = () => {
       const screenWidth = window.innerWidth;
@@ -111,64 +106,46 @@ export function NavbarClient({ categories }: NavbarClientProps) {
       updateNavbarHeight()
     }
 
-    // Create a sentinel element for scroll detection
-    const createScrollSentinel = () => {
-      // Remove any existing sentinel
-      const existingSentinel = document.getElementById('scroll-sentinel');
-      if (existingSentinel) {
-        existingSentinel.remove();
+    const handleScroll = () => {
+      lastScrollY = window.scrollY;
+      
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (lastScrollY > 20) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-      
-      // Create new sentinel
-      const sentinel = document.createElement('div');
-      sentinel.id = 'scroll-sentinel';
-      sentinel.style.position = 'absolute';
-      sentinel.style.top = '20px'; // Match our scroll threshold
-      sentinel.style.left = '0';
-      sentinel.style.width = '1px';
-      sentinel.style.height = '1px';
-      sentinel.style.pointerEvents = 'none';
-      sentinel.style.opacity = '0';
-      document.body.appendChild(sentinel);
-      
-      return sentinel;
-    };
+    }
     
-    // Use Intersection Observer for more efficient scroll detection
-    const setupScrollObserver = () => {
-      const sentinel = createScrollSentinel();
-      
-      const observer = new IntersectionObserver((entries) => {
-        // When sentinel goes out of view (scrolled down), show navbar background
-        setIsScrolled(!entries[0].isIntersecting);
-      }, { threshold: 1.0 });
-      
-      observer.observe(sentinel);
-      return observer;
-    };
+    // Function to update the navbar height CSS variable
+    const updateNavbarHeight = () => {
+      const navbarElement = document.querySelector('nav')
+      if (navbarElement) {
+        const height = navbarElement.offsetHeight
+        document.documentElement.style.setProperty('--navbar-height', `${height}px`)
+      }
+    }
 
-    // Set up event listeners
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('scroll', handleScroll)
     
-    // Initialize
-    handleResize();
-    const scrollObserver = setupScrollObserver();
-    
-    // Set initial scroll state
+    // Initial setup
     if (window.scrollY > 20) {
       setIsScrolled(true);
     }
     
-    // Set initial navbar height
-    updateNavbarHeight();
+    // Set initial navbar height after component mounts
+    // Use a small delay to ensure the DOM is fully rendered
+    setTimeout(updateNavbarHeight, 0)
     
     return () => {
-      window.removeEventListener('resize', handleResize);
-      scrollObserver.disconnect();
-      const sentinel = document.getElementById('scroll-sentinel');
-      if (sentinel) {
-        sentinel.remove();
-      }
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
@@ -195,21 +172,8 @@ export function NavbarClient({ categories }: NavbarClientProps) {
             padding-top: env(safe-area-inset-top);
           }
         }
-        
-        /* Instant navbar background on scroll using CSS */
-        .navbar-scroll-bg {
-          background-color: transparent;
-          transition: background-color 0.2s ease;
-        }
-        
-        @media (prefers-reduced-motion: no-preference) {
-          .navbar-scroll-bg.scrolled {
-            background-color: #000025;
-            backdrop-filter: blur(8px);
-          }
-        }
       `}</style>
-      <nav className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] navbar-scroll-bg ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'bg-[#000025]' : ''} safe-area-padding-top`}>
+      <nav className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${isMenuOpen ? 'bg-[#000025]' : 'bg-transparent'} safe-area-padding-top`}>
       <div className={`mx-auto relative ${isScrolled ? 
   'md:px-6  sm:py-2 px-0' : 
   'md:px-10 mt-2 sm:mt-4 px-3 sm:px-5'  // Keep some padding when not scrolled

@@ -1,6 +1,5 @@
 import { client } from "@/sanity/lib/client";
 import Link from "next/link";
-import AnimatedSection from "../components/AnimatedSection";
 
 interface Category {
   _id: string;
@@ -28,7 +27,7 @@ export default async function CategoryPage() {
 
   return (
     <div className="min-h-screen bg-[#0D1117]">
-      <AnimatedSection className="w-full py-20 bg-gradient-to-b from-[#1E2A44] to-[#0D1117] relative overflow-hidden">
+      <div className="w-full py-20 bg-gradient-to-b from-[#1E2A44] to-[#0D1117] relative overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-6xl font-['Orbitron'] font-bold text-center text-[#C1FF72] [text-shadow:_0_0_30px_#C1FF72] mb-12">
             Kazino kategorijas
@@ -62,7 +61,7 @@ export default async function CategoryPage() {
             )}
           </div>
         </div>
-      </AnimatedSection>
+      </div>
     </div>
   );
 }

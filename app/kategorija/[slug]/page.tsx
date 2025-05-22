@@ -1,7 +1,6 @@
 
 import { client } from "@/sanity/lib/client";
 import CasinoComponent2 from "@/app/components/CasinoComponent2";
-import AnimatedSection from "@/app/components/AnimatedSection";
 import { Casino } from '@/app/utils/interface';
 
 interface Category {
@@ -107,7 +106,7 @@ export default async function CategoryPage({ params }: PageProps) {
       <div className="bg-white text-[#9b98df] p-0 lg:p-4">
         <main className="relative pt-0">
           {/* Hero Section */}
-        <AnimatedSection className="relative overflow-hidden bg-[#000025] rounded-t-0 lg:rounded-t-3xl rounded-b-3xl">
+        <div className="relative overflow-hidden bg-[#000025] rounded-t-0 lg:rounded-t-3xl rounded-b-3xl">
           {/* Animated Blobs */}
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             {/* First flame blob */}
@@ -145,20 +144,18 @@ export default async function CategoryPage({ params }: PageProps) {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </div>
         
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8 md:mt-12">
           <div className="space-y-4">
             <div className="grid md:grid-cols-1">
               {casinos?.map((casino, index) => (
                 <div key={casino._id} className="md:col-span-1">
-                  <AnimatedSection>
-                    <CasinoComponent2 
-                      casino={casino} 
-                      index={index} 
-                      categorySlug={slug}  // Pass the category slug
-                    />
-                  </AnimatedSection>
+                  <CasinoComponent2 
+                    casino={casino} 
+                    index={index} 
+                    categorySlug={slug}  // Pass the category slug
+                  />
                 </div>
               ))}
             </div>
