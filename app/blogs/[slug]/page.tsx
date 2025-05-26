@@ -310,7 +310,7 @@ export default async function BlogPostPage({ params }: Props) {
                       <span className="flex flex-wrap items-center gap-2">
                         {(post.authors ?? []).map((author, idx) => (
                           <span key={author._id} className="flex items-center gap-2.5">
-                              <Link href={`/authors/${author.slug?.current}`}
+                              <Link href={`/autors/${author.slug?.current}`}
                                 className="flex items-center gap-2.5 focus-visible:ring-2 focus-visible:ring-[#8126FF] rounded-full author-link group"
                                 tabIndex={0}
                               >
