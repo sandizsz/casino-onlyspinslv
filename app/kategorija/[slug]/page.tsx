@@ -2,6 +2,30 @@
 import { client } from "@/sanity/lib/client";
 import CasinoComponent2 from "@/app/components/CasinoComponent2";
 import { Casino } from '@/app/utils/interface';
+import { PortableText, PortableTextComponents } from '@portabletext/react';
+import { urlFor } from '@/sanity/lib/image';
+import Image from 'next/image';
+
+interface SanityImage {
+  _type: 'image';
+  asset: {
+    _ref: string;
+    _type: 'reference';
+  };
+  alt?: string;
+}
+
+interface TableRow {
+  _key: string;
+  _type: string;
+  cells: string[];
+}
+
+interface SanityTable {
+  _key: string;
+  _type: 'table';
+  rows: TableRow[];
+}
 
 interface Category {
   _id: string;
@@ -10,6 +34,7 @@ interface Category {
     current: string;
   };
   description: string;
+  richText?: any[];
   metaTitle?: string;
   metaDescription?: string;
 }
@@ -64,6 +89,16 @@ async function getCategory(slug: string) {
     _id,
     title,
     description,
+    richText[] {
+      ...,
+      _type == "table" => {
+        ...,
+        rows[] {
+          ...,
+          cells
+        }
+      }
+    },
     slug,
     metaTitle,
     metaDescription
@@ -77,6 +112,94 @@ async function getCategory(slug: string) {
 export const revalidate = 0;
 
 import { Metadata } from 'next';
+
+// Define PortableText components for rendering rich content
+const ptComponents: PortableTextComponents = {
+  block: {
+    // Default rendering for blocks
+    normal: ({children}) => {
+      // Replace newlines with <br /> tags
+      return <p className="mb-4 whitespace-pre-wrap">{children}</p>;
+    },
+  },
+  types: {
+    image: ({ value }) => {
+      if (!value?.asset?._ref) {
+        return null;
+      }
+      return (
+        <div className="my-6 relative w-full h-64 md:h-96">
+          <Image
+            src={urlFor(value).url()}
+            alt={value.alt || 'Category image'}
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+      );
+    },
+    table: ({ value }) => {
+      // Check if we have valid table data
+      if (!value || !value.rows || !Array.isArray(value.rows) || value.rows.length === 0) {
+        console.error('Invalid table data:', value);
+        return (
+          <div className="my-4 p-4 border border-red-300 bg-red-50 text-red-800 rounded">
+            Table data could not be displayed
+          </div>
+        );
+      }
+
+      try {
+        return (
+          <div className="my-8 overflow-x-auto">
+            <table className="w-full border-collapse">
+              <tbody>
+                {value.rows.map((row: TableRow, rowIndex: number) => {
+                  if (!row || !row.cells) {
+                    console.error('Invalid row data:', row);
+                    return null;
+                  }
+                  return (
+                    <tr key={row._key || rowIndex} className={rowIndex === 0 ? 'bg-[#8126FF]/10' : rowIndex % 2 === 0 ? 'bg-[#F9F5FF]/50' : 'bg-white'}>
+                      {row.cells.map((cell: string, cellIndex: number) => {
+                        const CellTag = rowIndex === 0 ? 'th' : 'td';
+                        return (
+                          <CellTag 
+                            key={cellIndex}
+                            className={`border border-[#8126FF]/20 p-2 ${rowIndex === 0 ? 'text-[#1D053F] font-semibold text-left' : 'text-[#1D053F]/80'}`}
+                          >
+                            {cell}
+                          </CellTag>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        );
+      } catch (error) {
+        console.error('Error rendering table:', error);
+        return (
+          <div className="my-4 p-4 border border-red-300 bg-red-50 text-red-800 rounded">
+            Error rendering table: {error instanceof Error ? error.message : 'Unknown error'}
+          </div>
+        );
+      }
+    },
+  },
+  marks: {
+    link: ({ children, value }) => {
+      const rel = value?.href?.startsWith('/') ? undefined : 'noreferrer noopener';
+      return (
+        <a href={value?.href} rel={rel} className="text-[#8126FF] hover:underline">
+          {children}
+        </a>
+      );
+    },
+  },
+};
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const category = await getCategory(params.slug);
@@ -167,6 +290,13 @@ export default async function CategoryPage({ params }: PageProps) {
               </div>
             )}
           </div>
+          
+          {/* Rich Text Content Section - After Casino Listings */}
+          {category.richText && category.richText.length > 0 && (
+            <div className="prose prose-lg legal-content max-w-3xl mx-auto mt-12 mb-12 text-[#F9F5FF] prose-p:mb-4">
+              <PortableText value={category.richText} components={ptComponents} />
+            </div>
+          )}
         </div>
       </main>
     </div>

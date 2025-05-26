@@ -25,6 +25,24 @@ export const categoryType = defineType({
       type: 'text',
     },
     {
+      name: 'richText',
+      title: 'Rich Text Section',
+      type: 'array',
+      of: [
+        {
+          type: 'block'
+        },
+        {
+          type: 'image',
+          options: { hotspot: true }
+        },
+        {
+          type: 'table'
+        }
+      ],
+      description: 'Add detailed rich text content for this casino category.'
+    },
+    {
       name: 'metaTitle',
       title: 'Meta Title',
       type: 'string',

@@ -2,19 +2,25 @@
 
 import { useState } from 'react'
 import CasinoComponent from "@/app/components/CasinoComponent2"
+import { PortableText } from '@portabletext/react';
 // AnimatedSection removed for performance
 import { useLoading } from '@/app/context/LoadingContext'
 import type { Casino, Category } from '@/app/utils/interface'
 
+// Extended Category interface with richText for this file
+interface ExtendedCategory extends Category {
+  richText?: any[];
+}
+
 interface CategoryPageClientProps {
   initialCasinos: Casino[]
-  initialCategory: Category | null
+  initialCategory: ExtendedCategory | null
 }
 
 export default function CategoryPageClient({ initialCasinos, initialCategory }: CategoryPageClientProps) {
   const { setIsLoading } = useLoading()
   const [casinos] = useState(initialCasinos)
-  const [category] = useState(initialCategory)
+  const [category] = useState<ExtendedCategory | null>(initialCategory)
   const [error] = useState(!initialCategory)
 
   setIsLoading(false)
@@ -48,6 +54,12 @@ export default function CategoryPageClient({ initialCasinos, initialCategory }: 
             <p className="text-lg text-center text-[#F9F5FF]/70 mb-12 max-w-3xl mx-auto">
               {category.description}
             </p>
+          )}
+
+          {category.richText && category.richText.length > 0 && (
+            <section className="legal-content max-w-3xl mx-auto mb-12">
+              <PortableText value={category.richText} />
+            </section>
           )}
           
           <div className="space-y-6">
