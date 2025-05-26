@@ -6,25 +6,11 @@ import { PortableText, PortableTextComponents } from '@portabletext/react';
 import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
 
-interface SanityImage {
-  _type: 'image';
-  asset: {
-    _ref: string;
-    _type: 'reference';
-  };
-  alt?: string;
-}
-
+// This interface is used in the PortableText table component
 interface TableRow {
   _key: string;
   _type: string;
   cells: string[];
-}
-
-interface SanityTable {
-  _key: string;
-  _type: 'table';
-  rows: TableRow[];
 }
 
 interface Category {
@@ -34,7 +20,10 @@ interface Category {
     current: string;
   };
   description: string;
-  richText?: any[];
+  richText?: Array<{
+    _type: string;
+    [key: string]: unknown;
+  }>;
   metaTitle?: string;
   metaDescription?: string;
 }

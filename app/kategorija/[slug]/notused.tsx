@@ -9,7 +9,10 @@ import type { Casino, Category } from '@/app/utils/interface'
 
 // Extended Category interface with richText for this file
 interface ExtendedCategory extends Category {
-  richText?: any[];
+  richText?: Array<{
+    _type: string;
+    [key: string]: unknown;
+  }>;
 }
 
 interface CategoryPageClientProps {
