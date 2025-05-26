@@ -67,6 +67,13 @@ export const blogPostType = defineType({
       validation: Rule => Rule.max(160)
     },
     {
+      name: 'authors',
+      title: 'Authors',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'author' }] }],
+      validation: Rule => Rule.required().min(1),
+    },
+    {
       name: 'content',
       title: 'Content',
       type: 'array',

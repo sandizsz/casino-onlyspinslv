@@ -68,6 +68,14 @@ export default defineConfig({
                   .title('Blog Posts')
                   .filter('_type == "blogPost"')
               ),
+            S.listItem()
+              .title('Authors')
+              .schemaType('author')
+              .child(
+                S.documentList()
+                  .title('Authors')
+                  .filter('_type == "author"')
+              ),
             // Add a divider
             S.divider(),
             // Orderable casino list
