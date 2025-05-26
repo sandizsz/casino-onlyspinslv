@@ -47,6 +47,16 @@ type PortableTextBlock = {
 
 type ContentBlock = PortableTextBlock | SanityImage | SanityTable;
 
+interface AuthorRef {
+  _id: string;
+  name: string;
+  slug: { current: string };
+  image?: {
+    asset?: { url: string };
+    alt?: string;
+  };
+}
+
 interface BlogPost {
   _id: string;
   title: string;
@@ -59,6 +69,7 @@ interface BlogPost {
   metaTitle?: string;
   metaDescription?: string;
   excerpt: string;
+  authors?: AuthorRef[];
 }
 
 interface Props {
@@ -115,7 +126,16 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
       },
       metaTitle,
       metaDescription,
-      excerpt
+      excerpt,
+      authors[]-> {
+        _id,
+        name,
+        slug,
+        image {
+          asset->,
+          alt
+        },
+      }
     }
   `, { slug });
 }
@@ -276,12 +296,47 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="relative z-10 container mx-auto min-h-[75vh] content-center px-3 sm:px-4 md:px-6">
             <div className="min-h-[75vh] py-8 sm:py-10 md:py-12 flex flex-col justify-end items-center pb-12 sm:pb-16 md:pb-20">
               <div className="relative text-center max-w-4xl mx-auto space-y-4 sm:space-y-5 md:space-y-6 mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6">
-                <div className="text-[#F9F5FF]/70 text-sm mb-2">
-                  {new Date(post.publishedAt).toLocaleDateString('lv-LV', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
+                <div className="flex flex-wrap justify-center items-center gap-2 text-[#F9F5FF]/70 text-sm mb-2">
+                  <span>
+                    {new Date(post.publishedAt).toLocaleDateString('lv-LV', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </span>
+                  {post.authors && (post.authors ?? []).length > 0 && (
+                    <>
+                      <span className="mx-2 text-[#F9F5FF]/40">|</span>
+                      <span className="flex flex-wrap items-center gap-2">
+                        {(post.authors ?? []).map((author, idx) => (
+                          <span key={author._id} className="flex items-center gap-2.5">
+                              <Link href={`/authors/${author.slug?.current}`}
+                                className="flex items-center gap-2.5 focus-visible:ring-2 focus-visible:ring-[#8126FF] rounded-full author-link group"
+                                tabIndex={0}
+                              >
+                              {author.image?.asset?.url && (
+                                <span className="relative block w-7 h-7">
+                                  <Image
+                                    src={author.image.asset.url || urlFor(author.image).url()}
+                                    alt={author.image.alt || author.name}
+                                    width={28}
+                                    height={28}
+                                    className="rounded-full border border-[#8126FF] object-cover transition-all duration-150 group-hover:scale-105 group-hover:shadow-sm group-focus-visible:ring-2 group-focus-visible:ring-[#8126FF]"
+                                  />
+                                </span>
+                              )}
+                              <span
+                                className="text-[#F9F5FF] font-medium whitespace-nowrap transition-all duration-150 group-hover:font-semibold group-focus-visible:font-semibold"
+                              >
+                                {author.name}
+                              </span>
+                            </Link>
+                            {idx < (post.authors ?? []).length - 1 && <span className="text-[#F9F5FF]/40 ml-1">,</span>}
+                          </span>
+                        ))}
+                      </span>
+                    </>
+                  )}
                 </div>
                 <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-light leading-tight text-[#F9F5FF]">
                   {post.title}
