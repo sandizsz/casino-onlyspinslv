@@ -16,6 +16,7 @@ interface TableRow {
 interface Category {
   _id: string;
   title: string;
+  pageHeading?: string;
   slug: {
     current: string;
   };
@@ -77,6 +78,7 @@ async function getCategory(slug: string) {
   const query = `*[_type == "category" && slug.current == "${slug}"][0] {
     _id,
     title,
+    pageHeading,
     description,
     richText[] {
       ...,
@@ -232,9 +234,9 @@ export default async function CategoryPage({ params }: PageProps) {
             <div className="min-h-[70vh] py-8 sm:py-10 md:py-12 flex flex-col justify-center items-center pt-16 sm:pt-20">
               {/* Main Content */}
               <div className="relative text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-3 sm:mb-4 md:mb-8 px-2 sm:px-4 md:px-6">
-              <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl uppercase  leading-tight text-[#F9F5FF]">
-              {category.title}  
-                </h1>
+              <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl uppercase leading-tight text-[#F9F5FF]">
+                {category.pageHeading || category.title}
+              </h1>
                 {category.description && (
                   <p className="text-base sm:text-lg md:text-xl text-[#9b98df] max-w-2xl mx-auto leading-relaxed mb-2 sm:mb-4">
                     {category.description}
