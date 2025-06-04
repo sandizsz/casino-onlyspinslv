@@ -5,11 +5,7 @@ import { BlogPostCard } from '../components/BlogPostCard';
 export const metadata: Metadata = {
   title: 'Blogs | Balticslots',
   description: 'Lasiet mūsu jaunākos bloga ierakstus par kazino spēlēm, stratēģijām un daudz ko citu.',
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+};  
 
 interface SanityImage {
   _type: 'image';
@@ -60,9 +56,9 @@ export default async function BlogsPage() {
             <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#000025] to-transparent" />
           </div>
 
-          <div className="relative z-10 container mx-auto min-h-[75vh] content-center px-3 sm:px-4 md:px-6">
-            <div className="min-h-[75vh] py-8 sm:py-10 md:py-12 flex flex-col justify-end items-center pb-12 sm:pb-16 md:pb-20">
-              <div className="relative text-center max-w-4xl mx-auto space-y-4 sm:space-y-5 md:space-y-6 mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6">
+          <div className="relative z-10 container mx-auto min-h-[50vh] sm:min-h-[60vh] md:min-h-[75vh] content-center px-3 sm:px-4 md:px-6">
+            <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[75vh] py-6 sm:py-8 md:py-12 flex flex-col justify-end items-center pb-8 sm:pb-12 md:pb-20">
+              <div className="relative text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 md:space-y-6 mb-3 sm:mb-5 md:mb-8 px-2 sm:px-4 md:px-6">
                 <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-4xl font-light leading-tight text-[#F9F5FF] uppercase">
                   Mūsu Blogs
                 </h1>

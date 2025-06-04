@@ -273,17 +273,17 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
             </div>
           )}
 
-          <div className="relative z-10 container mx-auto min-h-[75vh] content-center px-3 sm:px-4 md:px-6">
-            <div className="min-h-[75vh] py-8 sm:py-10 md:py-12 flex flex-col justify-end items-center pb-12 sm:pb-16 md:pb-20">
-              <div className="relative text-center max-w-4xl mx-auto space-y-4 sm:space-y-5 md:space-y-6 mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6">
+          <div className="relative z-10 container mx-auto min-h-[50vh] sm:min-h-[60vh] md:min-h-[75vh] content-center px-3 sm:px-4 md:px-6">
+            <div className="min-h-[50vh] sm:min-h-[60vh] md:min-h-[75vh] py-6 sm:py-8 md:py-12 flex flex-col justify-end items-center pb-8 sm:pb-12 md:pb-20">
+              <div className="relative text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 md:space-y-6 mb-3 sm:mb-5 md:mb-8 px-2 sm:px-4 md:px-6">
                 {author.image?.asset?.url && (
-                  <div className="mb-4 sm:mb-6 flex justify-center">
+                  <div className="mb-3 sm:mb-4 flex justify-center">
                     <Image
                       src={author.image.asset.url}
                       alt={author.name}
-                      width={96}
-                      height={96}
-                      className="rounded-full object-cover border-2 border-[#8126FF]/70 shadow-lg"
+                      width={72}
+                      height={72}
+                      className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-[#8126FF]/70 shadow-lg"
                       priority
                     />
                   </div>
