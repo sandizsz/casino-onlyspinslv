@@ -16,17 +16,6 @@ interface ClaimButtonProps {
 }
 
 export default function ClaimButton({ offerUrl, offerTitle, categorySlug, categoryUrls, className }: ClaimButtonProps) {
-  const getFriendlyUrl = () => {
-    const baseUrl = `/${offerTitle.toLowerCase().replace(/\s+/g, '')}-offer`;
-    if (categorySlug && categoryUrls?.length) {
-      const categoryUrl = categoryUrls.find(cu => cu.categorySlug === categorySlug);
-      if (categoryUrl?.urlNumber) {
-        return `${baseUrl}${categoryUrl.urlNumber}`;
-      }
-    }
-    return baseUrl;
-  };
-
   const getUrl = () => {
     if (categorySlug && categoryUrls?.length) {
       const categoryUrl = categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url;
@@ -37,7 +26,7 @@ export default function ClaimButton({ offerUrl, offerTitle, categorySlug, catego
 
   return (
     <Link
-      href={getFriendlyUrl()}
+      href={getUrl()}
       onClick={(e) => {
         e.preventDefault();
         window.open(getUrl(), '_blank');
