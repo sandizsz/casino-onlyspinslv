@@ -15,7 +15,7 @@ interface ClaimButtonProps {
   className?: string;
 }
 
-export default function ClaimButton({ offerUrl, offerTitle, categorySlug, categoryUrls, className }: ClaimButtonProps) {
+export default function ClaimButton({ offerUrl,  categorySlug, categoryUrls, className }: ClaimButtonProps) {
   const getUrl = () => {
     if (categorySlug && categoryUrls?.length) {
       const categoryUrl = categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url;
