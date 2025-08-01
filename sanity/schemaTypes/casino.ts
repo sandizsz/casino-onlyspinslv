@@ -20,6 +20,17 @@ export const casinoType = defineType({
       type: 'image',
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      description: 'URL-friendly name for the casino page',
+      options: {
+        source: 'offerTitle',
+        maxLength: 96,
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'offerTitle',
       title: 'Offer Title',
       type: 'string',
