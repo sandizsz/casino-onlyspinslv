@@ -2,13 +2,23 @@ import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { PortableText } from '@portabletext/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import ClaimButton from '@/app/components/ClaimButton';
 import { TypedObject } from '@portabletext/types';
 import CasinoHeroComponent from '@/app/components/CasinoHeroComponent';
+
+// Define more specific types for Portable Text blocks
+interface PortableTextBlock extends TypedObject {
+  _type: string;
+  listItem?: string;
+  children?: Array<{
+    _type?: string;
+    text: string;
+    marks?: string[];
+  }>;
+}
 
 // Define TypeScript interfaces
 interface SanityImage {
@@ -194,7 +204,7 @@ export default async function CasinoPage({ params }: PageProps) {
                   
                   {/* Bubble-style bullet points */}
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {casino.offerText.map((block: any, blockIndex: number) => {
+                    {casino.offerText.map((block: PortableTextBlock, blockIndex: number) => {
                       // Process bullet list blocks as bubbles
                       if (block._type === 'block' && block.listItem === 'bullet') {
                         return (
@@ -214,7 +224,7 @@ export default async function CasinoPage({ params }: PageProps) {
                   
                   {/* Regular content (non-bullet points) */}
                   <div className="legal-content text-[#1D053F]">
-                    {casino.offerText.map((block: any, blockIndex: number) => {
+                    {casino.offerText.map((block: PortableTextBlock, blockIndex: number) => {
                       // Only render non-bullet content in this section
                       if (block._type === 'block' && !block.listItem) {
                         return <PortableText key={blockIndex} value={[block]} />;
