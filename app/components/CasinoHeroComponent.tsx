@@ -216,60 +216,7 @@ const CasinoHeroComponent: React.FC<CasinoHeroProps> = ({ casino, casinoImageUrl
                   />
                 </div>
                 
-                {/* Small gauge in corner - Mobile & Tablet only */}
-                {casino.rating && (
-                  <div className="lg:hidden absolute bottom-0 right-0 bg-[#1D053F] p-2 rounded-tl-lg w-[80px] h-[65px] flex items-center justify-center">
-                      <div className="w-[105px] h-[60px]">
-                      <GaugeComponent
-                        id={`gauge-${casino._id}`}
-                        type="semicircle"
-                        arc={{
-                          colorArray: getGaugeColors(casino.rating),
-                          subArcs: [{
-                            limit: 10,
-                            color: getGaugeArcColor(casino.rating),
-                            showTick: true
-                          }],
-                          width: 0.2,
-                          padding: 0.02,
-                          cornerRadius: 1,
-                          gradient: true
-                        }}
-                        pointer={{
-                          type: "arrow",
-                          color: '#F9F5FF',
-                          length: 10,
-                          width: 20,
-                          elastic: true
-                        }}
-                        value={casino.rating}
-                        minValue={0}
-                        maxValue={10}
-                        labels={{
-                          valueLabel: {
-                            formatTextValue: value => value.toFixed(1),
-                            style: { 
-                              fontSize: "60px",
-                              fontWeight: "bold",
-                              fill: '#F9F5FF',
-                              textShadow: 'none'
-                            }
-                          },
-                          tickLabels: {
-                            hideMinMax: true,
-                            ticks: [],
-                            defaultTickValueConfig: {
-                              hide: true
-                            },
-                            defaultTickLineConfig: {
-                              hide: true
-                            }
-                          }
-                        }}
-                      />
-                    </div>
-                  </div>
-                )}
+                {/* Rating box removed from mobile */}
               </div>
             )}
             
