@@ -472,7 +472,7 @@ main {
       @apply uppercase text-[#000025] text-sm font-thin mt-6 mb-4;
     }
     p:not(.game-guide-label) {
-      @apply text-[#000025] leading-relaxed;
+      @apply text-[#000025] leading-relaxed mb-6;
     }
     ul {
       @apply mb-6 text-[#000025] space-y-3;
