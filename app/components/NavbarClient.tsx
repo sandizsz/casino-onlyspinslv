@@ -349,6 +349,14 @@ export function NavbarClient({ categories }: NavbarClientProps) {
                     </div>
                   </div>
                 </div>
+                
+                {/* Blogs link */}
+                <Link
+                  href="/blogs"
+                  className="whitespace-nowrap px-2 py-1.5 text-xs lg:text-sm font-light text-white hover:text-[#9b98df] transition-all duration-300 ease-in"
+                >
+                  Blogs
+                </Link>
               </div>
 
               {/* Right - Social Links + Gift Icon */}
@@ -456,6 +464,18 @@ export function NavbarClient({ categories }: NavbarClientProps) {
                     className="block w-full px-5 py-2.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
                   >
                     Maksājumu metodes
+                  </Link>
+                </div>
+                
+                {/* Blogs Section */}
+                <div className="space-y-3">
+                  <h3 className="text-sm uppercase text-[#8126FF]/70 font-medium tracking-wider px-2">Blogs</h3>
+                  <Link
+                    href="/blogs"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block w-full px-5 py-2.5 rounded-xl text-base font-light text-white hover:text-[#F9F5FF] hover:bg-[#8126FF]/20 transition-all duration-300 ease-in border border-transparent hover:border-[#8126FF]/30"
+                  >
+                    Blogs
                   </Link>
                 </div>
 
