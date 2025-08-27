@@ -90,6 +90,18 @@ export default function Footer() {
               />
             </a>
           </div>
+          <div className="relative p-4">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/25 rounded-full blur-2xl opacity-85 transition-all duration-300"></div>
+            <div className="block relative z-10 transform hover:scale-110 hover:rotate-2 transition-all duration-300">
+              <Image 
+                src="/images/18+.png"
+                alt="18+ Age Restriction"
+                width={150}
+                height={150}
+                className="h-12 w-auto object-contain opacity-100 transition-all duration-300"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
