@@ -15,7 +15,7 @@ interface ClaimButtonProps {
   className?: string;
 }
 
-export default function ClaimButton({ offerUrl,  categorySlug, categoryUrls, className }: ClaimButtonProps) {
+export default function ClaimButton({ offerUrl, offerTitle, categorySlug, categoryUrls, className }: ClaimButtonProps) {
   const getUrl = () => {
     if (categorySlug && categoryUrls?.length) {
       const categoryUrl = categoryUrls.find(cu => cu.categorySlug === categorySlug)?.url;
@@ -24,9 +24,18 @@ export default function ClaimButton({ offerUrl,  categorySlug, categoryUrls, cla
     return offerUrl;
   };
 
+  // Generate the short link path similar to the right column CTA
+  const getShortLinkPath = () => {
+    if (categorySlug && categoryUrls?.length) {
+      const urlNumber = categoryUrls.find(cu => cu.categorySlug === categorySlug)?.urlNumber || '';
+      return `/${offerTitle.toLowerCase().replace(/\s+/g, '')}-offer${urlNumber}`;
+    }
+    return `/${offerTitle.toLowerCase().replace(/\s+/g, '')}-offer`;
+  };
+
   return (
     <Link
-      href={getUrl()}
+      href={getShortLinkPath()}
       onClick={(e) => {
         e.preventDefault();
         window.open(getUrl(), '_blank');
